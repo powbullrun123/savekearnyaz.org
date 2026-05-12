@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Kearny AZ — Our Town. Our Water. Our Fight.</title>
+<meta name="description" content="Kearny, Arizona faces a historic water emergency. Mayor Curtis Stacy and the Town Council are fighting back with MARS technology and Project 88 to secure water independence.">
+<meta property="og:title" content="Save Kearny AZ — Our Town. Our Water. Our Fight.">
+<meta property="og:description" content="A small Arizona town refuses to disappear. Here's how Kearny is writing its own survival story.">
+<meta property="og:url" content="https://www.savekearnyaz.org/">
+<link rel="canonical" href="https://www.savekearnyaz.org/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   SAVE KEARNY AZ — Hero's Journey Edition
+   Color System: Desert Earth + Emergency Red + Hope Gold
+   ═══════════════════════════════════════════════════════ */
+:root {
+  --navy: #1B2A40;
+  --deep: #071018;
+  --gold: #C9A84C;
+  --gold-light: #E8D5A3;
+  --cream: #F5F0E8;
+  --red-emergency: #B22222;
+  --red-dark: #8B1A1A;
+  --earth: #3D2B1F;
+  --earth-light: #6B4226;
+  --sky: #87CEEB;
+  --water-blue: #1a6b8a;
+  --water-deep: #0d4a5e;
+  --green-hope: #2d6a4f;
+  --green-light: #52b788;
+  --white: #FAFAF8;
+  --text: #1a1a1a;
+  --text-light: #555;
+  --shadow: rgba(0,0,0,0.18);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── UTILITY ── */
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.section-lead {
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  line-height: 1.7;
+  max-width: 750px;
+  color: var(--text-light);
+}
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 24px 0;
+  border: none;
+}
+
+/* ── EMERGENCY TICKER ── */
+.ticker {
+  background: var(--red-emergency);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+.ticker::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  animation: tickerSweep 4s infinite;
+}
+@keyframes tickerSweep { to { left: 200%; } }
+
+/* ── NAV ── */
+.main-nav {
+  background: var(--deep);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  border-bottom: 2px solid var(--gold);
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--gold);
+}
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a {
+  color: var(--cream);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger span {
+  width: 26px; height: 2px;
+  background: var(--gold);
+  transition: 0.3s;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(7,16,24,0.97);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+.mobile-menu.active { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--cream);
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none; border: none;
+  color: var(--gold);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ── CHAPTER LABEL ── */
+.chapter-label {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   CHAPTER 1: ONCE UPON A TIME IN KEARNY
+   — The hero shot, the town we love
+   ══════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--deep);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('kearny-lake.webp') center/cover no-repeat;
+  filter: brightness(0.45) saturate(1.1);
+  transform: scale(1.05);
+  animation: heroBreath 20s ease-in-out infinite alternate;
+}
+@keyframes heroBreath {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(7,16,24,0.5) 0%,
+    rgba(7,16,24,0.2) 40%,
+    rgba(7,16,24,0.7) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 900px;
+}
+.hero-chapter {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 1s 0.3s forwards;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 1s 0.6s forwards;
+}
+.hero-title em {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-sub {
+  font-family: var(--font-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 36px;
+  opacity: 0;
+  animation: fadeUp 1s 0.9s forwards;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 1s 1.2s forwards;
+}
+.stat-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-width: 140px;
+  backdrop-filter: blur(8px);
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gold);
+}
+.stat-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 1s 1.5s forwards;
+}
+.btn {
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--deep);
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════
+   CHAPTER 2: THE GATHERING STORM
+   — Antagonist 1: The Drought
+   ══════════════════════════════════════ */
+.storm {
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+.storm-bg {
+  position: absolute;
+  inset: 0;
+  background: url('Parched-ground.webp') center/cover no-repeat;
+  opacity: 0.15;
+  filter: saturate(0.5);
+}
+.storm .section-inner { position: relative; z-index: 2; }
+.storm .section-title { color: #fff; }
+.storm .section-title em { color: var(--red-emergency); }
+.storm .section-lead { color: rgba(255,255,255,0.75); }
+
+.threat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+.threat-card {
+  background: rgba(178,34,34,0.08);
+  border: 1px solid rgba(178,34,34,0.3);
+  border-radius: 12px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.threat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red-emergency);
+}
+.threat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--red-emergency);
+}
+.threat-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+.threat-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.threat-card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+}
+.threat-stat {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: rgba(178,34,34,0.2);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--red-emergency);
+  letter-spacing: 0.04em;
+}
+
+/* ══════════════════════════════════════
+   CHAPTER 3: THE TRAGEDIES
+   — Empty pool, ghost town threat
+   ══════════════════════════════════════ */
+.tragedy {
+  padding: 100px 0;
+  background: #fff;
+}
+.tragedy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+.tragedy-img {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+}
+.tragedy-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.tragedy-img .img-label {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 12px 20px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.label-before { background: linear-gradient(transparent, rgba(45,106,79,0.85)); }
+.label-after { background: linear-gradient(transparent, rgba(139,26,26,0.85)); }
+
+.tragedy-quote {
+  grid-column: 1 / -1;
+  background: var(--deep);
+  padding: 48px 40px;
+  text-align: center;
+}
+.tragedy-quote blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+.tragedy-quote blockquote em { color: var(--gold); font-style: normal; }
+.tragedy-quote cite {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  font-style: normal;
+  letter-spacing: 0.06em;
+}
+.ghost-town-section {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.ghost-img {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+.ghost-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.2) contrast(1.1);
+  transition: filter 0.5s;
+}
+.ghost-img:hover img { filter: sepia(0) contrast(1); }
+.ghost-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--red-dark);
+}
+.ghost-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+
+/* ══════════════════════════════════════
+   CHAPTER 4: THE HEROES ARRIVE
+   — Mayor Curtis Stacy + Town Council
+   ══════════════════════════════════════ */
+.heroes {
+  padding: 100px 0;
+  background: linear-gradient(170deg, var(--navy) 0%, var(--deep) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.heroes::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.heroes .section-inner { position: relative; z-index: 2; }
+
+.mayor-feature {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+.mayor-photo-wrap {
+  position: relative;
+}
+.mayor-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  aspect-ratio: 3/4;
+  background: var(--navy);
+}
+.mayor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mayor-name-plate {
+  background: var(--gold);
+  color: var(--deep);
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.mayor-name-plate h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+.mayor-name-plate span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mayor-story h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.mayor-story h3 em { color: var(--gold); }
+.mayor-story p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 18px;
+}
+.mayor-story .highlight-box {
+  background: rgba(201,168,76,0.1);
+  border-left: 4px solid var(--gold);
+  padding: 20px 24px;
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+}
+.highlight-box p {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  font-style: italic;
+  margin: 0;
+}
+
+.council-strip {
+  margin-top: 64px;
+  text-align: center;
+}
+.council-strip h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.council-strip p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+.partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.partner-tag {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.03em;
+}
+
+/* ══════════════════════════════════════
+   CHAPTER 5: THE QUEST — MARS & PROJECT 88
+   ══════════════════════════════════════ */
+.quest {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f0f7f4 0%, var(--cream) 100%);
+  position: relative;
+}
+.quest .section-title em { color: var(--water-blue); }
+
+.quest-narrative {
+  font-family: var(--font-accent);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text-light);
+  max-width: 800px;
+  margin-bottom: 48px;
+}
+.quest-narrative strong { color: var(--text); }
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.pillar {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 24px;
+  border: 1px solid rgba(26,107,138,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(26,107,138,0.12);
+}
+.pillar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--water-blue), var(--green-hope));
+}
+.pillar-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.pillar h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+.pillar p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* ══════════════════════════════════════
+   COMMUNITY PROGRESS
+   ══════════════════════════════════════ */
+.progress-section {
+  padding: 80px 0;
+  background: var(--deep);
+}
+.progress-section .section-title { color: #fff; }
+.progress-section .section-title em { color: var(--green-light); }
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.progress-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(82,183,136,0.2);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+.progress-card h4 {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.progress-bar-bg {
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  width: 0;
+  transition: width 1.5s ease;
+}
+.fill-green { background: linear-gradient(90deg, var(--green-hope), var(--green-light)); }
+.fill-blue { background: linear-gradient(90deg, var(--water-deep), var(--sky)); }
+.fill-gold { background: linear-gradient(90deg, var(--earth-light), var(--gold)); }
+.progress-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+}
+.progress-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════════
+   WELLS STATUS
+   ══════════════════════════════════════ */
+.wells {
+  padding: 80px 0;
+  background: #fff;
+}
+.well-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.well-card {
+  border: 1px solid #e0ddd5;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.well-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.well-card.vault {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(232,213,163,0.08));
+}
+.well-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.status-active { background: rgba(45,106,79,0.1); color: var(--green-hope); }
+.status-rehab { background: rgba(201,168,76,0.15); color: var(--earth-light); }
+.status-vault { background: rgba(201,168,76,0.2); color: var(--gold); }
+.status-offline { background: rgba(139,26,26,0.1); color: var(--red-dark); }
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.dot-green { background: var(--green-hope); }
+.dot-gold { background: var(--gold); animation: pulse 2s infinite; }
+.dot-red { background: var(--red-dark); }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.well-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.well-meta {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+.well-card p {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-light);
+}
+.well-gpm {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  background: rgba(26,107,138,0.08);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--water-blue);
+}
+
+/* ══════════════════════════════════════
+   EMERGENCY GUIDELINES
+   ══════════════════════════════════════ */
+.guidelines {
+  padding: 80px 0;
+  background: var(--cream);
+}
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+.rule-card {
+  border-radius: 10px;
+  padding: 24px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.rule-card.prohibited {
+  background: rgba(178,34,34,0.06);
+  border: 1px solid rgba(178,34,34,0.15);
+}
+.rule-card.permitted {
+  background: rgba(45,106,79,0.06);
+  border: 1px solid rgba(45,106,79,0.15);
+}
+.rule-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.rule-card h4 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.rule-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+.rules-authority {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION PAGES (future links)
+   ══════════════════════════════════════ */
+.future-pages {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--navy), var(--deep));
+}
+.pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.page-link-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.page-link-card:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+.page-link-card .page-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+.page-link-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.page-link-card p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+.page-link-card .coming-soon {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 10px;
+  background: rgba(201,168,76,0.15);
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ══════════════════════════════════════
+   CONTACT
+   ══════════════════════════════════════ */
+.contact {
+  padding: 80px 0;
+  background: #fff;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+.contact-card {
+  border: 1px solid #e0ddd5;
+  border-radius: 14px;
+  padding: 32px;
+}
+.contact-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.contact-card .contact-sub {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.contact-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.contact-row .c-icon { font-size: 1rem; flex-shrink: 0; }
+.contact-row a {
+  color: var(--water-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.contact-row a:hover { color: var(--gold); }
+.contact-row span {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.contact-card.placeholder {
+  border-style: dashed;
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.04);
+}
+.placeholder-note {
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep);
+  border-top: 2px solid var(--gold);
+  padding: 32px 24px;
+  text-align: center;
+}
+footer p {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.78rem;
+}
+footer a { color: var(--gold-light); }
+
+/* ══════════════════════════════════════
+   FAQ ACCORDION
+   ══════════════════════════════════════ */
+.faq {
+  padding: 80px 0;
+  background: var(--cream);
+}
+.faq-list { max-width: 750px; margin-top: 40px; }
+.faq-item {
+  border-bottom: 1px solid #ddd8cc;
+  padding: 20px 0;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  transition: color 0.3s;
+  gap: 16px;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-toggle {
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-a-inner {
+  padding-top: 14px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-light);
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+}
+.faq-item.open .faq-toggle {
+  transform: rotate(45deg);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mayor-feature { grid-template-columns: 1fr; }
+  .mayor-photo-wrap { max-width: 280px; margin: 0 auto; }
+  .tragedy-grid { grid-template-columns: 1fr; }
+  .ghost-town-section { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 12px; }
+  .stat-card { min-width: 120px; padding: 12px 14px; }
+}
+@media (max-width: 480px) {
+  .section-inner { padding: 0 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .threat-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .well-grid { grid-template-columns: 1fr; }
+  .pages-grid { grid-template-columns: 1fr 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ EMERGENCY TICKER ═══ -->
+<div class="ticker">
+  ⚠️ ACTIVE WATER EMERGENCY — Level 5WE &nbsp;|&nbsp; Current Runway: Late August 2026 &nbsp;|&nbsp; Reduction Goal: 33%+ Achieved &nbsp;|&nbsp; Every Drop Counts
+</div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="main-nav" id="mainNav">
+  <a href="#" class="nav-logo">SaveKearnyAZ</a>
+  <ul class="nav-links">
+    <li><a href="#situation">The Situation</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#wells">Wells</a></li>
+    <li><a href="#actions">What To Do</a></li>
+    <li><a href="#p88">Project 88</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="#situation" onclick="closeMobile()">The Situation</a>
+  <a href="#progress" onclick="closeMobile()">Progress</a>
+  <a href="#wells" onclick="closeMobile()">Wells</a>
+  <a href="#actions" onclick="closeMobile()">What To Do</a>
+  <a href="#p88" onclick="closeMobile()">Project 88</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 1: ONCE UPON A TIME IN KEARNY
+     ═══════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-chapter">Chapter I — Once Upon A Time</div>
+    <h1 class="hero-title">A Town Called <em>Kearny</em></h1>
+    <p class="hero-sub">
+      Nestled along the Gila River in Pinal County, Arizona, Kearny has been home to copper miners, 
+      ranchers, and families for over a century. It's the kind of place where neighbors wave, 
+      kids swim in the town pool, and the lake shimmers at sunset. But today — this little town 
+      is fighting for its life.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">0.76</div>
+        <div class="stat-label">Acre-Feet Allotted<br>for All of 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2%</div>
+        <div class="stat-label">Coolidge Dam<br>Capacity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">33%</div>
+        <div class="stat-label">Reduction Achieved<br>by Residents</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Aug</div>
+        <div class="stat-label">Current Water<br>Runway</div>
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#situation" class="btn btn-gold">Read the Story ↓</a>
+      <a href="#p88" class="btn btn-outline">The Solution →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 2: THE GATHERING STORM
+     — Antagonist: Drought + Globe Decree
+     ═══════════════════════════════════════════════════ -->
+<section class="storm" id="situation">
+  <div class="storm-bg"></div>
+  <div class="section-inner">
+    <div class="chapter-label">Chapter II — The Gathering Storm</div>
+    <h2 class="section-title">The Villains Are <em>Not People.</em><br>They're Forces of Nature — and Law.</h2>
+    <hr class="divider" style="background: var(--red-emergency);">
+    <p class="section-lead">
+      Two antagonists are conspiring against Kearny. The first is an unprecedented drought that has 
+      emptied Coolidge Dam to less than 2% of its capacity. The second is a 91-year-old federal court 
+      decree that puts Kearny last in line for every remaining drop.
+    </p>
+
+    <div class="threat-grid">
+      <!-- VILLAIN 1: THE DROUGHT -->
+      <div class="threat-card">
+        <div class="threat-icon">🔥</div>
+        <h3>Antagonist #1 — The Drought</h3>
+        <p>
+          Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. 
+          Coolidge Dam — the sole source of Kearny's water allocation — has drained to barely 
+          19,765 acre-feet out of a 910,000 acre-foot capacity. No snowpack. No monsoons in sight.
+          The taps are running on borrowed time.
+        </p>
+        <span class="threat-stat">Dam at 2% Capacity</span>
+      </div>
+
+      <!-- VILLAIN 2: THE DECREE -->
+      <div class="threat-card">
+        <div class="threat-icon">⚖️</div>
+        <h3>Antagonist #2 — The Globe Equity Decree of 1935</h3>
+        <p>
+          A federal court decree that divides Gila River water among competing users. Kearny's 
+          rights are "junior" — established later than neighboring communities and tribal nations. 
+          Under the prior appropriation doctrine, senior rights drink first. When the dam runs dry, 
+          Kearny is the first to be cut off. In 2026, that cut was devastating: from 610 acre-feet 
+          down to 0.76.
+        </p>
+        <span class="threat-stat">610 → 0.76 Acre-Feet</span>
+      </div>
+
+      <!-- VILLAIN 3: WATER RIGHTS LAWYERS -->
+      <div class="threat-card">
+        <div class="threat-icon">📜</div>
+        <h3>Antagonist #3 — The Competing Claims</h3>
+        <p>
+          Water rights attorneys representing senior appropriators and tribal nations could challenge 
+          any loose or unexercised groundwater claim along the Gila River corridor. Without clear 
+          legal standing on Kearny's deep wells, the town risks losing access to the very 
+          infrastructure sitting beneath its feet.
+        </p>
+        <span class="threat-stat">Legal Battle Looming</span>
+      </div>
+
+      <!-- THE MATH -->
+      <div class="threat-card">
+        <div class="threat-icon">⏳</div>
+        <h3>The Math — Zero Day</h3>
+        <p>
+          Before conservation efforts began, Kearny was on track to hit "zero water day" by 
+          July 15, 2026. You turn on your faucet and nothing comes out — for any purpose. 
+          Drinking, bathing, cooking, sanitation — all gone. That's not a hypothetical. 
+          That's the trajectory Mayor Stacy communicated in the April 8 emergency letter.
+        </p>
+        <span class="threat-stat">Originally: July 15, 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 3: THE TRAGEDIES
+     — Empty pool, ghost town threat
+     ═══════════════════════════════════════════════════ -->
+<section class="tragedy" id="tragedy">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--red-dark);">Chapter III — What's Already Been Lost</div>
+    <h2 class="section-title">The Pool Is <em>Empty.</em><br>The Laughter Has Stopped.</h2>
+    <hr class="divider" style="background: var(--red-dark);">
+    <p class="section-lead">
+      The Kearny town pool wasn't just a pool. It was where kids learned to swim. Where families 
+      gathered on summer afternoons. Where the community came together. Now it sits empty — 
+      a concrete monument to what this crisis has already taken.
+    </p>
+
+    <div class="tragedy-grid">
+      <div class="tragedy-img">
+        <img src="kearny-public-pool.webp" alt="Kids swimming in the Kearny town pool — before the crisis" loading="lazy">
+        <div class="img-label label-before">✦ Before — Summer Days at the Town Pool</div>
+      </div>
+      <div class="tragedy-img">
+        <img src="empty-pool.webp" alt="Empty Kearny town pool — no water, no kids, no laughter" loading="lazy">
+        <div class="img-label label-after">✦ After — Not a Drop. Not a Sound.</div>
+      </div>
+      <div class="tragedy-quote">
+        <blockquote>
+          "When you drain the pool, you don't just lose water.<br>
+          You lose the <em>heart</em> of a community."
+        </blockquote>
+        <cite>— A Kearny Resident</cite>
+      </div>
+    </div>
+
+    <div class="ghost-town-section">
+      <div class="ghost-img">
+        <img src="ghost-town-kearny.webp" alt="Abandoned buildings — what could happen if water runs out" loading="lazy">
+      </div>
+      <div class="ghost-text">
+        <h3>This Is What Happens When a Town Runs Out of Water.</h3>
+        <p>
+          Arizona is full of ghost towns. Places where the mine closed, the well went dry, 
+          or the people just gave up. Kearny has watched it happen to its neighbors. 
+          The abandoned buildings. The empty streets. The silence where children used to play.
+        </p>
+        <p>
+          <strong>This will not be Kearny's fate.</strong> Not if Mayor Curtis Stacy and the 
+          Town Council have anything to say about it. Not if the residents who have already 
+          cut their water usage by 33% have anything to say about it. And not if the MARS 
+          technology beneath their feet lives up to its promise.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 4: THE HEROES ARRIVE
+     — Mayor Curtis Stacy + Council
+     ═══════════════════════════════════════════════════ -->
+<section class="heroes" id="heroes">
+  <div class="section-inner">
+    <div class="chapter-label">Chapter IV — The Heroes Step Forward</div>
+    <h2 class="section-title" style="color: #fff;">
+      Meet the Man Who Refuses<br>to Let Kearny <em>Die.</em>
+    </h2>
+    <hr class="divider">
+
+    <div class="mayor-feature">
+      <div class="mayor-photo-wrap">
+        <div class="mayor-photo">
+          <img src="Mayor-photo.webp" alt="Mayor Curtis Stacy — Town of Kearny, Arizona" loading="lazy">
+        </div>
+        <div class="mayor-name-plate">
+          <h3>Curtis Stacy</h3>
+          <span>Mayor — Town of Kearny, AZ</span>
+        </div>
+      </div>
+
+      <div class="mayor-story">
+        <h3>Leadership Under Fire.<br><em>Action Over Panic.</em></h3>
+        <p>
+          When the Gila Water Commissioner delivered the devastating news — 0.76 acre-feet 
+          for all of 2026 — Mayor Curtis Stacy didn't flinch. He declared a Level 5WE Water 
+          Emergency under A.R.S. § 26-311, implemented immediate mandatory conservation, 
+          and began mobilizing every resource available to secure Kearny's water future.
+        </p>
+        <p>
+          Under his leadership, the Town has activated emergency well rehabilitation, 
+          opened negotiations with ASARCO and Resolution Copper, engaged the Governor's 
+          Water Policy Office, secured a USDA-funded well rehabilitation contract, and 
+          pursued EPA grant funding through Congressman Crane's office.
+        </p>
+        <div class="highlight-box">
+          <p>
+            "We will not manage Kearny's decline. We will engineer Kearny's survival. 
+            Our residents have done their part — 33% conservation and counting. 
+            Now it's time for us to deliver a permanent solution."
+          </p>
+        </div>
+        <p>
+          The results speak for themselves. Residents rallied behind the Mayor's conservation 
+          orders, pushing the water runway from a terrifying July 15 deadline all the way to 
+          late August — and Well 3, coming online in July, extends that even further. 
+          But conservation alone won't win this fight. That's where MARS and Project 88 come in.
+        </p>
+      </div>
+    </div>
+
+    <!-- COUNCIL & PARTNERS -->
+    <div class="council-strip">
+      <h3 style="color: var(--gold);">The Coalition Fighting for Kearny</h3>
+      <p>Mayor Stacy and the Town Council aren't alone. Here's who's at the table:</p>
+      <div class="partners-list">
+        <span class="partner-tag">Town Council</span>
+        <span class="partner-tag">ASARCO</span>
+        <span class="partner-tag">Resolution Copper</span>
+        <span class="partner-tag">Governor's Water Policy Office</span>
+        <span class="partner-tag">Congressman Crane (EPA Grant)</span>
+        <span class="partner-tag">Senator Rogers</span>
+        <span class="partner-tag">County Attorney Miller</span>
+        <span class="partner-tag">GRIC</span>
+        <span class="partner-tag">Gila River Water Commissioner</span>
+        <span class="partner-tag">USDA — Well Rehabilitation</span>
+        <span class="partner-tag">ADWR</span>
+        <span class="partner-tag">Project 88</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COMMUNITY PROGRESS
+     ═══════════════════════════════════════════════════ -->
+<section class="progress-section" id="progress">
+  <div class="section-inner">
+    <div class="chapter-label">The Scoreboard</div>
+    <h2 class="section-title">Kearny Is <em>Fighting Back</em></h2>
+    <hr class="divider">
+
+    <div class="progress-grid">
+      <div class="progress-card">
+        <h4>Usage Reduction (7-Day Avg)</h4>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill fill-green" data-width="87"></div>
+        </div>
+        <div class="progress-value">32.3%</div>
+        <div class="progress-note">Goal: 30%+ ✅ At goal and holding for 3 weeks</div>
+      </div>
+      <div class="progress-card">
+        <h4>Water Reclaim Rate</h4>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill fill-blue" data-width="68"></div>
+        </div>
+        <div class="progress-value">~48%</div>
+        <div class="progress-note">Goal: 60–70% recapture | Continue capturing grey water</div>
+      </div>
+      <div class="progress-card">
+        <h4>Water Runway Extended</h4>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill fill-gold" data-width="75"></div>
+        </div>
+        <div class="progress-value">+6 Weeks</div>
+        <div class="progress-note">From July 15 → Late August. Well 3 adds more in July.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CHAPTER 5: THE QUEST — MARS & PROJECT 88
+     ═══════════════════════════════════════════════════ -->
+<section class="quest" id="p88">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--water-blue);">Chapter V — The Quest for Water Independence</div>
+    <h2 class="section-title">Project 88 — <em>Finding Water</em><br>Where No One Thought to Look</h2>
+    <hr class="divider" style="background: var(--water-blue);">
+
+    <div class="quest-narrative">
+      Every hero's journey has a turning point — the moment when the tide begins to shift. 
+      For Kearny, that moment is <strong>MARS</strong>: <strong>Managed Aquifer Recharge and Storage</strong>. 
+      It's not science fiction. It's proven hydrology, already deployed in Phoenix, Tucson, and 
+      across the American Southwest.
+      <br><br>
+      Project 88 asks one simple question: <strong>Does Kearny already own the solution to its own 
+      water crisis?</strong>
+      <br><br>
+      Our research of ADWR public records has identified two deep-bore wells — 
+      <strong>Sites 23CCC</strong> (1,250 ft) and <strong>23CAA</strong> (1,150 ft) — that show 
+      as "Data Gaps" in current records. At that depth, these wells punch through the alluvial layer 
+      the Globe Equity Decree governs and into <strong>fractured granite</strong> — a formation that 
+      produces cleaner, drought-resistant water from a completely separate legal classification 
+      called <strong>percolating groundwater</strong>.
+      <br><br>
+      The Decree's handcuffs have a geological floor. Project 88 is here to find it — and if 
+      the geology confirms what the data suggests, to help Kearny develop a water supply that 
+      <strong>no drought and no 1935 decree can touch</strong>.
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-icon">🔍</div>
+        <h3>The Vault Wells</h3>
+        <p>
+          Two dormant wells at 1,150–1,250 ft depth with 18-inch casings — capable of 2,000+ GPM 
+          if rehabilitated. Infrastructure worth $500K–$1M to replicate, already sitting inside 
+          city limits, waiting to be verified.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚖️</div>
+        <h3>Below the Decree</h3>
+        <p>
+          The Globe Equity Decree governs alluvial subflow — saturated Holocene sediment near the 
+          river surface. At 1,250 feet in fractured granite, these wells may access legally separate 
+          percolating groundwater outside the Decree's reach.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">💧</div>
+        <h3>The Effluent Strategy</h3>
+        <p>
+          Stop sending treated effluent downstream for free. Inject it back into the Vault wells 
+          and earn ADWR Long-Term Storage Credits — a water bank Kearny owns outright, 
+          recoverable on demand under ARS Title 45.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🤝</div>
+        <h3>No Upfront Cost</h3>
+        <p>
+          Project 88 operates on a verify-first model. Phase 1 is a site inspection — nearly free. 
+          No capital commitment until the data confirms the opportunity is real. 
+          The Town risks nothing.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     WELL STATUS
+     ═══════════════════════════════════════════════════ -->
+<section class="wells" id="wells">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--water-blue);">Infrastructure Report</div>
+    <h2 class="section-title">The Town's <em>Water Wells</em></h2>
+    <hr class="divider" style="background: var(--water-blue);">
+
+    <div class="well-grid">
+      <div class="well-card">
+        <div class="well-status status-active"><span class="status-dot dot-green"></span> Active</div>
+        <h4>Wells 2 & 2A</h4>
+        <div class="well-meta">Shallow — Currently On Standby for Testing</div>
+        <p>Primary production wells. Currently shut down temporarily to test Well 4's standalone capacity and potentially reduce apportionment usage.</p>
+        <span class="well-gpm">500 GPM combined</span>
+      </div>
+
+      <div class="well-card">
+        <div class="well-status status-active"><span class="status-dot dot-green"></span> Active</div>
+        <h4>Well 4</h4>
+        <div class="well-meta">Reactivated — Emergency Use</div>
+        <p>Reactivated this year due to the emergency. Currently producing at reduced capacity in its unrehabilitated state.</p>
+        <span class="well-gpm">26 GPM current</span>
+      </div>
+
+      <div class="well-card">
+        <div class="well-status status-rehab"><span class="status-dot dot-gold"></span> Rehabilitation Underway</div>
+        <h4>Well 3 — USDA Project</h4>
+        <div class="well-meta">1,200 Feet Deep — Outside GEC</div>
+        <p>Full rehab underway: pump pulled, new casing being installed, electrical work next. USDA-funded. Contract signed, work started.</p>
+        <span class="well-gpm">Target: July 2026 | Historically 30 GPM</span>
+      </div>
+
+      <div class="well-card vault">
+        <div class="well-status status-vault"><span class="status-dot dot-gold"></span> Project 88 Priority</div>
+        <h4>Site 23CCC — "The Vault"</h4>
+        <div class="well-meta">1,250 Feet — 18" Casing — Granite Aquifer</div>
+        <p>Currently shows as a Data Gap in public records. At this depth, likely below Globe Equity Decree jurisdiction. 18-inch casing built for high-volume production.</p>
+        <span class="well-gpm">Potential: 2,000+ GPM</span>
+      </div>
+
+      <div class="well-card vault">
+        <div class="well-status status-vault"><span class="status-dot dot-gold"></span> Project 88 Priority</div>
+        <h4>Site 23CAA — "The Vault"</h4>
+        <div class="well-meta">1,150 Feet — Granite Aquifer</div>
+        <p>Second deep-bore asset showing as Data Gap. Both Vault sites represent infrastructure that would cost $500K–$1M+ to replicate — sitting dormant and unverified.</p>
+        <span class="well-gpm">Potential: 2,000+ GPM</span>
+      </div>
+
+      <div class="well-card">
+        <div class="well-status status-offline"><span class="status-dot dot-red"></span> Offline</div>
+        <h4>Well 3 (Pre-Rehab)</h4>
+        <div class="well-meta">1,200 Feet — Non-Functional</div>
+        <p>Completely non-functional prior to USDA rehabilitation project. Out of service for 20 years. First to be rehabilitated under current contract.</p>
+        <span class="well-gpm">Expected online: July 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     EMERGENCY GUIDELINES
+     ═══════════════════════════════════════════════════ -->
+<section class="guidelines" id="actions">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--red-dark);">Emergency Orders — Level 5WE</div>
+    <h2 class="section-title">What You <em>Can</em> and Cannot Do</h2>
+    <hr class="divider" style="background: var(--red-dark);">
+
+    <div class="rules-grid">
+      <div class="rule-card prohibited">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <h4>No Lawn or Landscape Watering</h4>
+          <p>Strictly prohibited. No exceptions for ornamental plants, grass, gardens, or shrubs using Kearny municipal water.</p>
+        </div>
+      </div>
+      <div class="rule-card prohibited">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <h4>No Vehicle Washing</h4>
+          <p>Strictly prohibited using Kearny water. Exception only for public health and safety vehicles.</p>
+        </div>
+      </div>
+      <div class="rule-card prohibited">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <h4>No Pool Filling — Any Size</h4>
+          <p>Strictly prohibited. Includes small kiddie pools, spas, and wading pools. Water can be hauled in from outside vendors.</p>
+        </div>
+      </div>
+      <div class="rule-card prohibited">
+        <div class="rule-icon">🚫</div>
+        <div>
+          <h4>No Driveway or Sidewalk Washing</h4>
+          <p>Strictly prohibited. Dust control using lake water is permitted if you pump and haul it yourself.</p>
+        </div>
+      </div>
+      <div class="rule-card permitted">
+        <div class="rule-icon">✅</div>
+        <div>
+          <h4>Sanitation & Life-Supporting Use</h4>
+          <p>Bathing, cooking, drinking, laundry (reduced), dishes, and toilet use are permitted. Keep showers short.</p>
+        </div>
+      </div>
+      <div class="rule-card permitted">
+        <div class="rule-icon">✅</div>
+        <div>
+          <h4>Grey Water Reuse — Encouraged</h4>
+          <p>Capturing grey water from showers and sinks for outdoor plants is actively encouraged. This reduces municipal usage.</p>
+        </div>
+      </div>
+      <div class="rule-card permitted">
+        <div class="rule-icon">✅</div>
+        <div>
+          <h4>Fix All Leaks Immediately</h4>
+          <p>Check toilets — most common hidden leak source. Town staff can assist. Call Town Hall if you need help.</p>
+        </div>
+      </div>
+      <div class="rule-card permitted">
+        <div class="rule-icon">✅</div>
+        <div>
+          <h4>Haul Water for Non-Essentials</h4>
+          <p>Landscaping, pool, and dust control water can be hauled from outside vendors. Town Hall has vendor referrals.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="rules-authority">
+      Emergency orders issued by Mayor Curtis Stacy under the authority of A.R.S. § 26-311 — Water Conservation Level 5WE
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════ -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--navy);">Common Questions</div>
+    <h2 class="section-title">Frequently <em>Asked</em></h2>
+    <hr class="divider">
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>How is Kearny's water allotment calculated?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">The amount of water in Coolidge Dam (San Carlos Reservoir) determines Kearny's annual apportionment. With the dam at less than 2% capacity as of April 2026, the allotment was slashed to 0.76 acre-feet for the entire year.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Why are other towns like Hayden not affected the same way?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Kearny's water rights are "junior" — established later than neighboring towns. Under the prior appropriation doctrine, senior rights get water first. Kearny feels the shortage before anyone else.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>What happens if we run out of water?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">You turn on your faucet and nothing comes out — for any purpose. Drinking, bathing, cooking, sanitation — all gone. That's the reality Mayor Stacy described in the April 8 emergency letter. The original trajectory had Kearny reaching zero on or around July 15.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>What is MARS and why does it matter?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">MARS stands for Managed Aquifer Recharge and Storage. It's a proven technology used across Arizona that allows treated water to be injected back into underground aquifers for long-term storage and recovery. For Kearny, MARS could turn treated effluent — currently sent downstream for free — into a permanent water bank the Town owns and controls.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Can tribal nations take Kearny's deep well water?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">Tribal water rights under the Globe Equity Decree apply to alluvial subflow — water in shallow river sediment. At 1,150–1,250 feet in granite, Project 88 believes these wells access percolating groundwater — a separate legal category the Decree does not govern. This requires formal hydrogeological confirmation.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>What is the reclaim percentage and why does it matter?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">It measures how much water is returned to the wastewater treatment plant vs. how much is pumped out. The goal is 60–70%. Currently around 48–50%. Higher reclaim means less net draw on the allotment — and more water to potentially inject back underground via MARS.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SITE MAP / FUTURE PAGES
+     ═══════════════════════════════════════════════════ -->
+<section class="future-pages">
+  <div class="section-inner">
+    <div class="chapter-label">Explore More</div>
+    <h2 class="section-title" style="color: #fff;">More Resources <em>Coming Soon</em></h2>
+    <hr class="divider">
+
+    <div class="pages-grid">
+      <a href="situation.html" class="page-link-card">
+        <div class="page-icon">📊</div>
+        <h4>The Situation</h4>
+        <p>Full data breakdown, dam levels, allotment history, and timeline</p>
+        <span class="coming-soon">Coming Soon</span>
+      </a>
+      <a href="progress.html" class="page-link-card">
+        <div class="page-icon">📈</div>
+        <h4>Progress</h4>
+        <p>Weekly conservation tracking, reclaim rates, and community wins</p>
+        <span class="coming-soon">Coming Soon</span>
+      </a>
+      <a href="wells.html" class="page-link-card">
+        <div class="page-icon">🔧</div>
+        <h4>Wells</h4>
+        <p>Detailed status of every well, rehabilitation timelines, and capacity data</p>
+        <span class="coming-soon">Coming Soon</span>
+      </a>
+      <a href="what-to-do.html" class="page-link-card">
+        <div class="page-icon">📋</div>
+        <h4>What To Do</h4>
+        <p>Conservation tips, vendor list, grey water guides, and leak detection</p>
+        <span class="coming-soon">Coming Soon</span>
+      </a>
+      <a href="project88.html" class="page-link-card">
+        <div class="page-icon">💧</div>
+        <h4>Project 88</h4>
+        <p>The full MARS strategy, hydrogeological research, and ARS Title 45 framework</p>
+        <span class="coming-soon">Coming Soon</span>
+      </a>
+      <a href="#contact" class="page-link-card">
+        <div class="page-icon">📞</div>
+        <h4>Contact</h4>
+        <p>Town Hall, emergency contacts, and Project 88 team</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="chapter-label" style="color: var(--navy);">Get Help & Get Involved</div>
+    <h2 class="section-title">Who To <em>Call</em></h2>
+    <hr class="divider">
+
+    <div class="contact-grid">
+      <!-- TOWN HALL -->
+      <div class="contact-card">
+        <h4>🏛️ Town of Kearny — Official</h4>
+        <div class="contact-sub">For water emergency questions, leaks, vendor referrals, and compliance</div>
+        <div class="contact-row">
+          <span class="c-icon">📞</span>
+          <a href="tel:5203635547">(520) 363-5547</a>
+        </div>
+        <div class="contact-row">
+          <span class="c-icon">📍</span>
+          <span>912-C Tilbury Drive, PO Box 639, Kearny, AZ 85137</span>
+        </div>
+        <div class="contact-row">
+          <span class="c-icon">📠</span>
+          <span>(520) 363-7527 — Fax</span>
+        </div>
+      </div>
+
+      <!-- PROJECT 88 — PLACEHOLDER -->
+      <div class="contact-card placeholder">
+        <h4>💧 Project 88 — Water Initiative</h4>
+        <div class="contact-sub">Kearny Basin Water Initiative</div>
+        <p class="placeholder-note">
+          <!-- PLACEHOLDER: Contact information for Project 88 lead will be added 
+               pending approval from Town leadership. -->
+          Project 88 contact information will be published upon formal coordination 
+          with Town leadership. For Project 88 inquiries in the interim, please contact 
+          Town Hall at (520) 363-5547.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>
+    SaveKearnyAZ.org &nbsp;|&nbsp; Project 88 — Kearny Basin Water Initiative<br>
+    © 2026 — Built for the people of Kearny, Arizona
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── MOBILE MENU ──
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileClose');
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+    });
+  }
+  if (mobileClose) {
+    mobileClose.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+    });
+  }
+
+  // ── PROGRESS BARS — ANIMATE ON SCROLL ──
+  var barObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var bars = entry.target.querySelectorAll('.progress-bar-fill');
+        bars.forEach(function(bar) {
+          var w = bar.getAttribute('data-width');
+          setTimeout(function() {
+            bar.style.width = (w > 100 ? 100 : w) + '%';
+          }, 300);
+        });
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  var progressGrids = document.querySelectorAll('.progress-grid');
+  progressGrids.forEach(function(el) { barObs.observe(el); });
+
+  // ── FADE IN ON SCROLL ──
+  var fadeObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        fadeObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  var fadeEls = document.querySelectorAll('.threat-card, .pillar, .well-card, .rule-card, .page-link-card');
+  fadeEls.forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    fadeObs.observe(el);
+  });
+
+});
+
+// ── MOBILE MENU CLOSE ──
+function closeMobile() {
+  document.getElementById('mobileMenu').classList.remove('active');
+}
+
+// ── FAQ ACCORDION ──
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(function(i) {
+    if (i !== item) i.classList.remove('open');
+  });
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
