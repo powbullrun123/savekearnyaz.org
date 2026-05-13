@@ -726,6 +726,42 @@ footer a { color: var(--gold-light); }
   .pages-grid { grid-template-columns: 1fr 1fr; }
   .rules-grid { grid-template-columns: 1fr; }
 }
+   /* ── HIGH-IMPACT QUOTE FRAMES ── */
+.framed-quote-container {
+  padding: 100px 20px; /* More space around the quote */
+  background-color: #071018; /* Deep Navy Background */
+  text-align: center;
+}
+
+.gold-frame {
+  border: 6px double #C9A84C; /* Thicker Gold Border */
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: rgba(201, 168, 76, 0.05); /* Subtle Gold Tint */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Makes it look like it's popping off the page */
+}
+
+.quote-text {
+  color: #FFFFFF; /* Pure White for maximum readability */
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 6vw, 42px); /* HUGE font that scales for mobile */
+  line-height: 1.3;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.quote-author {
+  color: #C9A84C; /* Deep Gold for the Name */
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 </style>
 </head>
 <body>
@@ -795,15 +831,6 @@ footer a { color: var(--gold-light); }
     </div>
   </div>
 </section>
-   <section class="framed-quote-container">
-  <div class="gold-frame">
-    <p class="quote-text">
-      "We think of our land and water and human resources not as static and sterile possessions but as life-giving assets to be directed by wise provisions for future days."
-    </p>
-    <p class="quote-author">— Franklin D. Roosevelt</p>
-  </div>
-</section>
-
 
 <!-- ═══════════════════════════════════════════════════
      CHAPTER 2: THE GATHERING STORM
