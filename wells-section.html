@@ -1,0 +1,636 @@
+<!-- ============================================================
+     WELLS SECTION — Replace existing wells section in index.html
+     Drop this entire block where the current wells section lives.
+     ============================================================ -->
+
+<!-- WELLS CSS — Add to your <style> block or paste before the section -->
+<style>
+/* ── Wells Section ── */
+.wells-section {
+  padding: 80px 20px 100px;
+  background: linear-gradient(180deg, #0a1628 0%, #0d1f3a 50%, #0a1628 100%);
+  position: relative;
+  overflow: hidden;
+}
+.wells-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C44, transparent);
+}
+.wells-intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+.wells-intro .chapter-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 12px;
+}
+.wells-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  color: #F5F0E8;
+  margin: 0 0 8px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wells-intro h2 em {
+  font-style: italic;
+  color: #C9A84C;
+}
+.wells-intro .intro-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #b0b8c8;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+.wells-intro .intro-text strong {
+  color: #F5F0E8;
+}
+.wells-intro hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C66, transparent);
+  margin: 20px auto;
+  max-width: 200px;
+}
+
+/* ── Filter Tabs ── */
+.wells-filter {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.wells-filter button {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border: 1px solid #C9A84C44;
+  border-radius: 20px;
+  background: transparent;
+  color: #8090a8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.wells-filter button:hover {
+  border-color: #C9A84C;
+  color: #C9A84C;
+}
+.wells-filter button.active {
+  background: #C9A84C;
+  color: #0a1628;
+  border-color: #C9A84C;
+  font-weight: 700;
+}
+
+/* ── Wells Track (horizontal scroll) ── */
+.wells-track-wrapper {
+  position: relative;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+.wells-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0 30px;
+  scrollbar-width: thin;
+  scrollbar-color: #C9A84C44 transparent;
+}
+.wells-track::-webkit-scrollbar {
+  height: 6px;
+}
+.wells-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wells-track::-webkit-scrollbar-thumb {
+  background: #C9A84C44;
+  border-radius: 3px;
+}
+.wells-track::-webkit-scrollbar-thumb:hover {
+  background: #C9A84C;
+}
+
+/* ── Well Card ── */
+.well-card {
+  flex: 0 0 300px;
+  min-height: 380px;
+  background: linear-gradient(165deg, #111f36 0%, #0d1a2e 100%);
+  border: 1px solid #1e3050;
+  border-radius: 12px;
+  padding: 24px;
+  scroll-snap-align: start;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.well-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+.well-card:hover {
+  border-color: #C9A84C55;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+/* Status color bars */
+.well-card[data-status="active"]::before { background: #22c55e; }
+.well-card[data-status="rehab"]::before { background: #f59e0b; }
+.well-card[data-status="priority"]::before { background: #C9A84C; }
+.well-card[data-status="secondary"]::before { background: #6b7fa3; }
+.well-card[data-status="shallow"]::before { background: #60a5fa; }
+.well-card[data-status="low"]::before { background: #9ca3af; }
+.well-card[data-status="deficient"]::before { background: #78716c; }
+.well-card[data-status="offline"]::before { background: #ef4444; }
+
+.well-card .well-number {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b7fa3;
+  margin-bottom: 4px;
+}
+.well-card .well-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #F5F0E8;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.well-card .well-badge {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.badge-active { background: #22c55e22; color: #22c55e; border: 1px solid #22c55e44; }
+.badge-rehab { background: #f59e0b22; color: #f59e0b; border: 1px solid #f59e0b44; }
+.badge-priority { background: #C9A84C22; color: #C9A84C; border: 1px solid #C9A84C44; }
+.badge-secondary { background: #6b7fa322; color: #6b7fa3; border: 1px solid #6b7fa344; }
+.badge-shallow { background: #60a5fa22; color: #60a5fa; border: 1px solid #60a5fa44; }
+.badge-low { background: #9ca3af22; color: #9ca3af; border: 1px solid #9ca3af44; }
+.badge-deficient { background: #78716c22; color: #78716c; border: 1px solid #78716c44; }
+.badge-offline { background: #ef444422; color: #ef4444; border: 1px solid #ef444444; }
+
+.well-card .well-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #8898b0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* ── Stat Grid inside card ── */
+.well-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+.well-stat {
+  background: #0a152544;
+  border: 1px solid #1a2a4466;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.well-stat .stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #5a6f8a;
+  margin-bottom: 2px;
+}
+.well-stat .stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #F5F0E8;
+  font-weight: 700;
+}
+.well-stat .stat-value.gold { color: #C9A84C; }
+
+/* ── Legend ── */
+.wells-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #1e3050;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  color: #6b7fa3;
+  letter-spacing: 0.5px;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .wells-section { padding: 50px 12px 60px; }
+  .well-card { flex: 0 0 270px; min-height: 360px; padding: 20px; }
+  .wells-track { gap: 14px; }
+  .wells-filter { gap: 6px; }
+  .wells-filter button { font-size: 11px; padding: 6px 12px; }
+}
+</style>
+
+<!-- ═══════════ WELLS SECTION HTML ═══════════ -->
+<section class="wells-section" id="wells">
+  <div class="wells-intro">
+    <div class="chapter-label">Infrastructure Report</div>
+    <h2>21 Wells Beneath <em>Kearny</em></h2>
+    <hr>
+    <p class="intro-text">
+      The wells beneath Kearny tell the story of the town itself. The first holes were hand-dug
+      by homesteaders chasing shallow water along the Gila River bottom. When the <strong>copper boom</strong>
+      arrived, the mining companies needed industrial water — and they drilled deeper, harder, and wider.
+      Two of those wells punched through <strong>1,100+ feet of fractured granite</strong> with
+      <strong>18-inch casing</strong> built for high-volume production. They were overbuilt on purpose —
+      drought-resistant infrastructure designed to outlast any dry spell. Today, those two "Vault" wells
+      may hold the key to Kearny's survival. Here is every well within city limits, from the shallowest
+      domestic holes to the deepest assets in the basin.
+    </p>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="wells-filter">
+    <button class="active" onclick="filterWells('all')">All 21</button>
+    <button onclick="filterWells('priority')">Priority</button>
+    <button onclick="filterWells('active')">Active</button>
+    <button onclick="filterWells('rehab')">Rehab</button>
+    <button onclick="filterWells('secondary')">Secondary</button>
+    <button onclick="filterWells('shallow')">Shallow</button>
+    <button onclick="filterWells('deficient')">Data Gap</button>
+  </div>
+
+  <!-- Horizontal Scroll Track -->
+  <div class="wells-track-wrapper">
+    <div class="wells-track" id="wellsTrack">
+
+      <!-- ── 1. 23CCC — THE VAULT ── -->
+      <div class="well-card" data-status="priority" data-cat="priority">
+        <div class="well-number">Well #1 · Site 23CCC</div>
+        <div class="well-name">"The Vault" — Primary</div>
+        <span class="well-badge badge-priority">Project 88 Priority</span>
+        <div class="well-desc">The crown jewel. 1,250 feet deep with 18-inch casing — built for high-volume public supply. Punches through alluvial sediment into fractured granite, potentially below Globe Equity Decree jurisdiction. Currently capped and showing as a Data Gap in ADWR records.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value gold">1,250 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value gold">18"</div></div>
+          <div class="well-stat"><div class="stat-label">Elevation</div><div class="stat-value">2,065 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Potential</div><div class="stat-value gold">2,000+ GPM</div></div>
+        </div>
+      </div>
+
+      <!-- ── 2. 23CAA — THE VAULT ── -->
+      <div class="well-card" data-status="priority" data-cat="priority">
+        <div class="well-number">Well #2 · Site 23CAA</div>
+        <div class="well-name">"The Vault" — Secondary</div>
+        <span class="well-badge badge-priority">Project 88 Priority</span>
+        <div class="well-desc">Second deep-bore asset at 1,150 feet. Highest elevation in the entire inventory at 2,240 ft. Also showing as a Data Gap — no casing data on file. Infrastructure worth $500K–$1M to replicate, sitting dormant and unverified inside city limits.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value gold">1,150 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">Unknown</div></div>
+          <div class="well-stat"><div class="stat-label">Elevation</div><div class="stat-value">2,240 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Potential</div><div class="stat-value gold">2,000+ GPM</div></div>
+        </div>
+      </div>
+
+      <!-- ── 3. 23CDB — Active Monitor ── -->
+      <div class="well-card" data-status="active" data-cat="active">
+        <div class="well-number">Well #3 · Site 23CDB</div>
+        <div class="well-name">Deep Monitor Well</div>
+        <span class="well-badge badge-active">Active Monitor</span>
+        <div class="well-desc">Active public supply well at 1,150 feet with 13-inch casing. Drilled in 1966 during the mining era. Water level measured at 389 ft below surface — deep but confirmed present. Key reference point for aquifer modeling.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">1,150 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">13"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">389 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1966</div></div>
+        </div>
+      </div>
+
+      <!-- ── 4. 35CAA — Active Monitor ── -->
+      <div class="well-card" data-status="active" data-cat="active">
+        <div class="well-number">Well #4 · Site 35CAA</div>
+        <div class="well-name">South Basin Supply</div>
+        <span class="well-badge badge-active">Active Monitor</span>
+        <div class="well-desc">600-foot public supply well with 8-inch casing, drilled 1967. Water sits at just 22.7 feet below the surface — one of the shallowest water levels in the inventory. Located in the south basin near the river corridor.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">600 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">22.7 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1967</div></div>
+        </div>
+      </div>
+
+      <!-- ── 5. 35ACC — Active Monitor ── -->
+      <div class="well-card" data-status="active" data-cat="active">
+        <div class="well-number">Well #5 · Site 35ACC</div>
+        <div class="well-name">South Basin Supply #2</div>
+        <span class="well-badge badge-active">Active Monitor</span>
+        <div class="well-desc">500-foot public supply well with 10-inch casing, drilled 1978. Shallow water at 22.2 ft — nearly identical to neighboring 35CAA. These two south basin wells confirm a robust shallow aquifer layer near the Gila River.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">500 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">10"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">22.2 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1978</div></div>
+        </div>
+      </div>
+
+      <!-- ── 6. 22CDB — Secondary ── -->
+      <div class="well-card" data-status="secondary" data-cat="secondary">
+        <div class="well-number">Well #6 · Site 22CDB</div>
+        <div class="well-name">West Ridge Well</div>
+        <span class="well-badge badge-secondary">Secondary Review</span>
+        <div class="well-desc">400-foot well with 8-inch casing — the newest in the inventory, drilled in 2019. Water at 160 ft below surface. Elevated position at 2,020 ft. Worth evaluating for supplemental capacity or monitoring.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">400 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">160 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">2019</div></div>
+        </div>
+      </div>
+
+      <!-- ── 7. 27CCA2 — Secondary ── -->
+      <div class="well-card" data-status="secondary" data-cat="secondary">
+        <div class="well-number">Well #7 · Site 27CCA2</div>
+        <div class="well-name">Central Basin Monitor</div>
+        <span class="well-badge badge-secondary">Secondary Review</span>
+        <div class="well-desc">291-foot well, no casing data. Water measured at 39 ft below surface — last reading was 1958. Historical marker for the central basin aquifer. Needs updated water level measurement.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">291 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">—</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">39 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Last Read</div><div class="stat-value">1958</div></div>
+        </div>
+      </div>
+
+      <!-- ── 8. 27CCC3 — Low Yield ── -->
+      <div class="well-card" data-status="low" data-cat="secondary">
+        <div class="well-number">Well #8 · Site 27CCC3</div>
+        <div class="well-name">West Corridor — Unused</div>
+        <span class="well-badge badge-low">Low Yield</span>
+        <div class="well-desc">130-foot well with 16-inch casing, drilled 1994. Despite the large casing, classified as unused/low yield. Water at only 12 ft below surface. May have value as a recharge injection point for MARS.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">130 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">16"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">12 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1994</div></div>
+        </div>
+      </div>
+
+      <!-- ── 9. 27DCC — Active Monitor ── -->
+      <div class="well-card" data-status="active" data-cat="active">
+        <div class="well-number">Well #9 · Site 27DCC</div>
+        <div class="well-name">River Bottom Monitor</div>
+        <span class="well-badge badge-active">Active Monitor</span>
+        <div class="well-desc">110-foot well with 8-inch casing, drilled 1966. Water at 12.4 ft — very shallow. 37 water level readings on file, making this one of the most documented wells in the basin. Key for tracking alluvial water trends.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">110 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">12.4 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Readings</div><div class="stat-value">37</div></div>
+        </div>
+      </div>
+
+      <!-- ── 10. 34ABB — Active Monitor ── -->
+      <div class="well-card" data-status="active" data-cat="active">
+        <div class="well-number">Well #10 · Site 34ABB</div>
+        <div class="well-name">South Central Monitor</div>
+        <span class="well-badge badge-active">Active Monitor</span>
+        <div class="well-desc">107-foot well with 6-inch casing, drilled 1953. Water at 10 ft. Part of the shallow alluvial system near the river. Consistent readings provide valuable long-term aquifer data.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">107 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">6"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">10 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1953</div></div>
+        </div>
+      </div>
+
+      <!-- ── 11. 23DDA — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #11 · Site 23DDA</div>
+        <div class="well-name">North Corridor Shallow</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">100-foot well with 8-inch casing, drilled 1966. Water at just 8 ft below surface — among the shallowest in the inventory. Domestic use classification. Located in the northern section of town limits.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">100 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">8 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1966</div></div>
+        </div>
+      </div>
+
+      <!-- ── 12. 23DDB — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #12 · Site 23DDB</div>
+        <div class="well-name">North Corridor Shallow #2</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">100-foot well with 6-inch casing, drilled 1966. Water at 5.5 ft — the shallowest confirmed water level in Kearny. Paired with 23DDA to monitor the northern alluvial pocket.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">100 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">6"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">5.5 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1966</div></div>
+        </div>
+      </div>
+
+      <!-- ── 13. 27BDD — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #13 · Site 27BDD</div>
+        <div class="well-name">Central Domestic Well</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">82-foot domestic well with 6-inch casing, drilled 1951. One of the oldest surviving wells in Kearny. Water at 17 ft. A living artifact of pre-mining era water infrastructure.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">82 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">6"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">17 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1951</div></div>
+        </div>
+      </div>
+
+      <!-- ── 14. 34BAA — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #14 · Site 34BAA</div>
+        <div class="well-name">South Irrigation Well</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">75-foot irrigation well with 16-inch casing, drilled 1952. Large casing suggests it was built for volume — possibly agricultural or mining support. Water at 9 ft. Potential MARS recharge candidate.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">75 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">16"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">9 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1952</div></div>
+        </div>
+      </div>
+
+      <!-- ── 15. 34BBA — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #15 · Site 34BBA</div>
+        <div class="well-name">South Monitor — Most Data</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">62-foot well with 8-inch casing, drilled 1949. The most documented well in the basin with 47 water level readings on file. Water at 8 ft. Invaluable for long-term aquifer trend analysis since the late 1940s.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">62 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">8 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Readings</div><div class="stat-value">47</div></div>
+        </div>
+      </div>
+
+      <!-- ── 16. 27CCA1 — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #16 · Site 27CCA1</div>
+        <div class="well-name">Recreation Well</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">57-foot recreation well with 8-inch casing, drilled 1968. Classified for recreational use — likely served the town pool or park system. Water at 35 ft. A reminder of what Kearny could reclaim.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">57 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">35 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1968</div></div>
+        </div>
+      </div>
+
+      <!-- ── 17. 33ABB — Shallow ── -->
+      <div class="well-card" data-status="shallow" data-cat="shallow">
+        <div class="well-number">Well #17 · Site 33ABB</div>
+        <div class="well-name">West Domestic Well</div>
+        <span class="well-badge badge-shallow">Shallow Asset</span>
+        <div class="well-desc">54-foot domestic well with 8-inch casing. Water at 28.9 ft. Last measurement taken in 1994 — over 30 years without an update. Needs a current water level reading to assess viability.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">54 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">8"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">28.9 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Last Read</div><div class="stat-value">1994</div></div>
+        </div>
+      </div>
+
+      <!-- ── 18. 35DBB1 — Data Deficient ── -->
+      <div class="well-card" data-status="deficient" data-cat="deficient">
+        <div class="well-number">Well #18 · Site 35DBB1</div>
+        <div class="well-name">Southeast Irrigation</div>
+        <span class="well-badge badge-deficient">Data Gap</span>
+        <div class="well-desc">Depth unknown. Classified for irrigation use. Drilled 1952. Water at 15 ft. No casing data on file. One of several data-deficient wells that need field verification to fully map the basin's infrastructure.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">Unknown</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">—</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">15 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1952</div></div>
+        </div>
+      </div>
+
+      <!-- ── 19. 28DBD — Data Deficient ── -->
+      <div class="well-card" data-status="deficient" data-cat="deficient">
+        <div class="well-number">Well #19 · Site 28DBD</div>
+        <div class="well-name">West Basin Unknown</div>
+        <span class="well-badge badge-deficient">Data Gap</span>
+        <div class="well-desc">Depth unknown with 4-inch casing. Water at 20.6 ft. Last reading in 2006. Small casing suggests domestic or monitoring purpose. Needs field visit to determine current status and depth.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">Unknown</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">4"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">20.6 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Last Read</div><div class="stat-value">2006</div></div>
+        </div>
+      </div>
+
+      <!-- ── 20. 35AAA — Data Deficient ── -->
+      <div class="well-card" data-status="deficient" data-cat="deficient">
+        <div class="well-number">Well #20 · Site 35AAA</div>
+        <div class="well-name">East Basin — 30" Casing</div>
+        <span class="well-badge badge-deficient">Data Gap</span>
+        <div class="well-desc">Depth unknown but the 30-inch casing is the largest in the entire inventory — a massive pipe suggesting serious industrial or municipal intent. Water at 23 ft. Last read 2006. This well demands investigation.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">Unknown</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value gold">30"</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">23.1 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Last Read</div><div class="stat-value">2006</div></div>
+        </div>
+      </div>
+
+      <!-- ── 21. 35DBB2 — Data Deficient ── -->
+      <div class="well-card" data-status="deficient" data-cat="deficient">
+        <div class="well-number">Well #21 · Site 35DBB2</div>
+        <div class="well-name">Southeast Basin</div>
+        <span class="well-badge badge-deficient">Data Gap</span>
+        <div class="well-desc">Depth unknown, no casing data. Drilled 1967. Water at just 7 ft — extremely shallow. Neighbor to 35DBB1 (Well #18). Likely accessing the same shallow alluvial pocket near the river.</div>
+        <div class="well-stats">
+          <div class="well-stat"><div class="stat-label">Depth</div><div class="stat-value">Unknown</div></div>
+          <div class="well-stat"><div class="stat-label">Casing</div><div class="stat-value">—</div></div>
+          <div class="well-stat"><div class="stat-label">Water Level</div><div class="stat-value">7 ft</div></div>
+          <div class="well-stat"><div class="stat-label">Drilled</div><div class="stat-value">1967</div></div>
+        </div>
+      </div>
+
+    </div><!-- /wells-track -->
+  </div><!-- /wells-track-wrapper -->
+
+  <!-- Legend -->
+  <div class="wells-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#C9A84C;"></div>Project 88 Priority</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div>Active Monitor</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div>Rehabilitation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6b7fa3;"></div>Secondary Review</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#60a5fa;"></div>Shallow Asset</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9ca3af;"></div>Low Yield</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#78716c;"></div>Data Gap</div>
+  </div>
+
+</section>
+
+<!-- WELLS FILTER SCRIPT — Add before </body> -->
+<script>
+function filterWells(cat) {
+  var cards = document.querySelectorAll('.well-card');
+  var btns = document.querySelectorAll('.wells-filter button');
+  btns.forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+  cards.forEach(function(card) {
+    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  // Scroll track back to start on filter
+  document.getElementById('wellsTrack').scrollLeft = 0;
+}
+</script>
