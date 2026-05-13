@@ -392,7 +392,720 @@ a { color: inherit; text-decoration: none; }
 .council-strip p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 28px; }
 .partners-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .partner-tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.25); padding: 10px 18px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.03em; }
+<!-- ════════════════════════════════════════════════════════════════════
+     HYDROLOGY INTRO SECTION — Paste this ABOVE the existing Project 88
+     "Chapter V" section in your index.html.
+     
+     Image required: well-diagram.webp (same folder as index.html)
+     ════════════════════════════════════════════════════════════════════ -->
 
+<style>
+/* ── HYDROLOGY SECTION ── */
+.hydro-section {
+  background: linear-gradient(175deg, #060e18 0%, #0d1a2e 40%, #0a1628 100%);
+  padding: 5rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hydro-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4FC3D4, #C9A84C, #4FC3D4, transparent);
+}
+.hydro-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Chapter Tag */
+.hydro-chapter {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #4FC3D4;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+/* Main heading */
+.hydro-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.hydro-heading em {
+  color: #4FC3D4;
+  font-style: italic;
+}
+
+/* Subheading */
+.hydro-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  color: #8fa8bf;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* Gold rule */
+.hydro-rule {
+  width: 80px;
+  height: 2px;
+  background: #C9A84C;
+  border: none;
+  margin: 0 auto 2.5rem;
+}
+
+/* Intro prose block */
+.hydro-prose {
+  background: rgba(79, 195, 212, 0.06);
+  border-left: 4px solid #4FC3D4;
+  border-radius: 0 8px 8px 0;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 2.5rem;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hydro-prose p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  color: #d0dde8;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.hydro-prose p:last-child { margin-bottom: 0; }
+.hydro-prose strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.hydro-prose .hydro-highlight {
+  color: #4FC3D4;
+  font-weight: 700;
+}
+.hydro-prose .hydro-gold {
+  color: #C9A84C;
+  font-weight: 700;
+}
+
+/* Diagram container */
+.hydro-diagram-wrap {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  border: 2px solid rgba(201, 168, 76, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 60px rgba(79,195,212,0.06);
+  position: relative;
+}
+.hydro-diagram-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hydro-diagram-caption {
+  background: rgba(13, 26, 46, 0.95);
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-weight: 700;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Two-column key takeaways */
+.hydro-takeaways {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+}
+.hydro-take {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(79, 195, 212, 0.15);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem;
+  position: relative;
+}
+.hydro-take::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  border-radius: 8px 0 0 8px;
+}
+.hydro-take.take-problem::before { background: #e74c3c; }
+.hydro-take.take-solution::before { background: #27ae60; }
+.hydro-take-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.take-problem .hydro-take-label { color: #e74c3c; }
+.take-solution .hydro-take-label { color: #27ae60; }
+.hydro-take h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.12rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+.hydro-take p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: #8fa8bf;
+  line-height: 1.7;
+}
+
+/* Beeville callout */
+.hydro-proof {
+  max-width: 860px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.hydro-proof-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(201, 168, 76, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+.hydro-proof-text h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: #C9A84C;
+  margin-bottom: 0.4rem;
+}
+.hydro-proof-text p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  color: #b0bfcc;
+  line-height: 1.75;
+}
+.hydro-proof-text strong {
+  color: #d0dde8;
+}
+
+/* ══════════════════════════════════
+   PRESIDENTIAL QUOTE FRAMES
+   Gold double-border with corner ornaments
+   ══════════════════════════════════ */
+.quote-frame {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2.8rem 3rem;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.04) 0%, transparent 70%);
+}
+/* Outer gold border */
+.quote-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid #C9A84C;
+  border-radius: 6px;
+  pointer-events: none;
+}
+/* Inner gold border */
+.quote-frame::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 4px;
+  pointer-events: none;
+}
+/* Corner ornaments */
+.quote-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #C9A84C;
+  border-style: solid;
+  z-index: 2;
+}
+.quote-corner.tl { top: -5px; left: -5px; border-width: 3px 0 0 3px; }
+.quote-corner.tr { top: -5px; right: -5px; border-width: 3px 3px 0 0; }
+.quote-corner.bl { bottom: -5px; left: -5px; border-width: 0 0 3px 3px; }
+.quote-corner.br { bottom: -5px; right: -5px; border-width: 0 3px 3px 0; }
+
+.quote-frame .quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  color: #C9A84C;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  opacity: 0.55;
+}
+.quote-frame blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #ffffff;
+  line-height: 1.65;
+  margin: 0 0 1.2rem;
+  letter-spacing: 0.01em;
+}
+.quote-frame .quote-author {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+.quote-frame .quote-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  color: #6a8297;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 700px) {
+  .hydro-takeaways { grid-template-columns: 1fr; }
+  .hydro-section { padding: 3rem 1rem 2.5rem; }
+  .hydro-proof { flex-direction: column; align-items: center; text-align: center; }
+  .hydro-prose { padding: 1.2rem 1.3rem; }
+  .quote-frame { padding: 2rem 1.5rem; }
+  .quote-frame blockquote { font-size: 1.1rem; }
+}
+</style>
+
+
+<!-- ── HYDROLOGY SECTION ── -->
+<section class="hydro-section" id="hydrology">
+  <div class="hydro-inner">
+
+    <div class="hydro-chapter">The Science Behind Project 88</div>
+    <h2 class="hydro-heading">Understanding the <em>Two Aquifers</em><br>Beneath Kearny</h2>
+    <p class="hydro-sub">
+      Why shallow wells are failing — and why going deeper changes everything.
+    </p>
+    <hr class="hydro-rule">
+
+    <!-- Prose Intro -->
+    <div class="hydro-prose">
+      <p>
+        Most of Kearny's existing water infrastructure was built to tap
+        <strong>alluvial aquifers</strong> — shallow, sandy layers of river sediment
+        near the surface. These aquifers recharge from rainfall and river flow.
+        The problem? <span class="hydro-highlight">They also lose water to evaporation</span>,
+        and during a mega-drought, they dry up fast. When alluvial wells fail, pumps
+        spin in open air and the taps go silent.
+      </p>
+      <p>
+        But beneath that alluvial layer sits something entirely different:
+        <span class="hydro-gold">fractured bedrock</span>. Granite formations riddled
+        with natural fractures that collect and store water deep underground —
+        <strong>protected from evaporation, protected from surface drought,
+        and potentially outside the reach of the Globe Equity Decree</strong>.
+        This is the water Project 88 is designed to find.
+      </p>
+      <p>
+        The diagram below shows exactly what's happening beneath Kearny — and why
+        drilling deeper into the granite aquifer isn't just an option.
+        <strong>It may be the only path to permanent water security.</strong>
+      </p>
+    </div>
+
+    <!-- Diagram -->
+    <div class="hydro-diagram-wrap">
+      <img src="well-diagram.webp"
+           alt="Hydrological diagram showing shallow alluvial well failure due to bedrock drawdown — original condition vs. current condition with deeper bedrock aquifer access"
+           width="1400" height="788" loading="lazy">
+      <div class="hydro-diagram-caption">
+        Shallow Well Failure vs. Deep Bedrock Aquifer — The Project 88 Approach
+      </div>
+    </div>
+
+    <!-- Takeaway Cards -->
+    <div class="hydro-takeaways">
+      <div class="hydro-take take-problem">
+        <div class="hydro-take-label">⚠ The Problem</div>
+        <h4>Alluvial Wells Are Drying Up</h4>
+        <p>
+          Shallow wells draw from river sediment that evaporates rapidly in drought.
+          When the water table drops, pumps hit air. That's exactly what's happening
+          in Kearny right now — and across the American Southwest.
+        </p>
+      </div>
+      <div class="hydro-take take-solution">
+        <div class="hydro-take-label">✦ The Solution</div>
+        <h4>Bedrock Aquifer — A Separate Source</h4>
+        <p>
+          Fractured granite at 1,000+ feet stores water in natural vaults, shielded
+          from evaporation and surface conditions. Deeper wells accessing this formation
+          tap a completely independent water supply — drought-resistant and legally distinct.
+        </p>
+      </div>
+    </div>
+
+    <!-- Beeville Proof Point -->
+    <div class="hydro-proof">
+      <div class="hydro-proof-icon">🤠</div>
+      <div class="hydro-proof-text">
+        <h4>Proven in Texas — Beeville's Well Rehabilitation</h4>
+        <p>
+          In 2025, Beeville, Texas faced a catastrophic water crisis when Lake Corpus Christi
+          — their primary surface water source — dropped to critical levels. City leaders
+          turned to <strong>deep well rehabilitation and new drilling</strong>, tapping the
+          Evangeline and Jasper aquifers beneath the failing surface supply. By relining
+          and reactivating older, deeper wells, Beeville secured over
+          <strong>2 million gallons per day</strong> of groundwater — stabilizing the
+          community's supply and buying time for long-term solutions. The same principle
+          applies here: <strong>the water Kearny needs may already be sitting beneath
+          infrastructure it already owns.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- ★ JFK QUOTE — GOLD FRAME ★ -->
+    <div class="quote-frame">
+      <div class="quote-corner tl"></div>
+      <div class="quote-corner tr"></div>
+      <div class="quote-corner bl"></div>
+      <div class="quote-corner br"></div>
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>
+        Anyone who can solve the problems of water will be worthy of
+        two Nobel Prizes&nbsp;&mdash; one for peace and one for science.
+      </blockquote>
+      <div class="quote-author">John F. Kennedy</div>
+      <div class="quote-title">35th President of the United States</div>
+    </div>
+
+  </div>
+</section>
+   <!-- ════════════════════════════════════════════════════════════════════
+     LEGAL BRIDGE — Paste this AFTER the hydrology section
+     and BEFORE the existing "Chapter V — The Quest for Water Independence"
+     
+     Uses same .quote-frame styles defined in hydrology-section.html
+     ════════════════════════════════════════════════════════════════════ -->
+
+<style>
+/* ── LEGAL BRIDGE SECTION ── */
+.legal-bridge {
+  background: linear-gradient(180deg, #0a1628 0%, #0c1e34 50%, #0a1628 100%);
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+.legal-bridge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(180deg, rgba(79,195,212,0.4), rgba(201,168,76,0.4));
+}
+.legal-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+/* Bridge heading */
+.legal-bridge-tag {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #C9A84C;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+.legal-bridge-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+.legal-bridge-heading em {
+  color: #C9A84C;
+  font-style: italic;
+}
+
+/* The core argument — styled as a visual statement */
+.legal-argument {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 2.5rem;
+}
+.legal-arg-box {
+  padding: 1.6rem 1.5rem;
+  border-radius: 8px;
+}
+.legal-arg-decree {
+  background: rgba(231, 76, 60, 0.07);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+.legal-arg-bedrock {
+  background: rgba(39, 174, 96, 0.07);
+  border: 1px solid rgba(39, 174, 96, 0.2);
+}
+.legal-arg-box .arg-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.legal-arg-decree .arg-label { color: #e74c3c; }
+.legal-arg-bedrock .arg-label { color: #27ae60; }
+.legal-arg-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.07rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+.legal-arg-box p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  color: #8fa8bf;
+  line-height: 1.75;
+}
+.legal-arg-box strong { color: #d0dde8; }
+
+/* Center arrow divider */
+.legal-arg-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  color: #C9A84C;
+  font-size: 1.6rem;
+}
+
+/* Key statute callout */
+.legal-statute {
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.legal-statute-code {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 0.5rem;
+}
+.legal-statute p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.98rem;
+  color: #b0bfcc;
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.legal-statute strong {
+  color: #ffffff;
+}
+.legal-statute .statute-em {
+  color: #4FC3D4;
+  font-weight: 700;
+}
+
+/* Twain fighting quote — special treatment */
+.quote-frame-fight {
+  max-width: 600px;
+  margin: 3rem auto 0;
+  position: relative;
+  padding: 2.2rem 2.5rem;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(231,76,60,0.04) 0%, transparent 70%);
+}
+.quote-frame-fight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid #C9A84C;
+  border-radius: 6px;
+  pointer-events: none;
+}
+.quote-frame-fight::after {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 4px;
+  pointer-events: none;
+}
+.quote-frame-fight .quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  color: #C9A84C;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  opacity: 0.55;
+}
+.quote-frame-fight blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-style: italic;
+  color: #ffffff;
+  line-height: 1.55;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+.quote-frame-fight .quote-author {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+.quote-frame-fight .quote-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  color: #6a8297;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 700px) {
+  .legal-argument {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .legal-arg-arrow {
+    transform: rotate(90deg);
+    padding: 0.5rem 0;
+  }
+  .legal-bridge { padding: 3rem 1rem; }
+  .quote-frame-fight { padding: 1.8rem 1.3rem; }
+  .quote-frame-fight blockquote { font-size: 1.2rem; }
+}
+</style>
+
+
+<!-- ── LEGAL BRIDGE ── -->
+<section class="legal-bridge">
+  <div class="legal-inner">
+
+    <div class="legal-bridge-tag">Why This Matters Legally</div>
+    <h3 class="legal-bridge-heading">The Decree Has a <em>Geological Floor</em></h3>
+
+    <!-- Side-by-side argument -->
+    <div class="legal-argument">
+
+      <div class="legal-arg-box legal-arg-decree">
+        <div class="arg-label">⚖ Globe Equity Decree — 1935</div>
+        <h4>Governs Alluvial Subflow</h4>
+        <p>
+          The Decree allocates water found in <strong>Holocene river sediment</strong>
+          — the shallow, sandy layer along the Gila River. This is the water Kearny's
+          existing shallow wells tap. Under prior appropriation,
+          <strong>Kearny is last in line</strong> — and in 2026, that line ran dry.
+        </p>
+      </div>
+
+      <div class="legal-arg-arrow">&rarr;</div>
+
+      <div class="legal-arg-box legal-arg-bedrock">
+        <div class="arg-label">✦ Bedrock Aquifer — Below the Decree</div>
+        <h4>Percolating Groundwater</h4>
+        <p>
+          At 1,150–1,250 feet in <strong>fractured granite</strong>, water is no longer
+          "subflow" of the Gila River. It's <strong>percolating groundwater</strong>
+          — a separate legal classification the Decree was never written to govern.
+          No senior priority. No allocation table. A different aquifer entirely.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Statute reference -->
+    <div class="legal-statute">
+      <div class="legal-statute-code">ARS Title 45 — Arizona Water Code</div>
+      <p>
+        Under Arizona's <strong>prior appropriation doctrine</strong>, the first entity to
+        put <span class="statute-em">percolating groundwater</span> to
+        <strong>beneficial use</strong> establishes a priority right. If Project 88's
+        Vault wells confirm access to bedrock water outside the Decree's jurisdiction,
+        Kearny could establish <span class="statute-em">new, independent water rights</span>
+        — owned by the Town, protected from senior claims, and recoverable on demand.
+      </p>
+    </div>
+
+    <!-- ★ FDR QUOTE — GOLD FRAME ★ -->
+    <div class="quote-frame">
+      <div class="quote-corner tl"></div>
+      <div class="quote-corner tr"></div>
+      <div class="quote-corner bl"></div>
+      <div class="quote-corner br"></div>
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>
+        We think of our land and water and human resources not as static
+        and sterile possessions but as life-giving assets to be directed
+        by wise provision for future days.
+      </blockquote>
+      <div class="quote-author">Franklin D. Roosevelt</div>
+      <div class="quote-title">32nd President of the United States</div>
+    </div>
+
+    <!-- ★ MARK TWAIN — FIGHTING TRANSITION ★ -->
+    <div class="quote-frame-fight">
+      <div class="quote-corner tl"></div>
+      <div class="quote-corner tr"></div>
+      <div class="quote-corner bl"></div>
+      <div class="quote-corner br"></div>
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>
+        Whiskey is for drinking;&nbsp; water is for fighting over.
+      </blockquote>
+      <div class="quote-author">Mark Twain</div>
+      <div class="quote-title">And Kearny is ready to fight.</div>
+    </div>
+
+  </div>
+</section>
+<!-- ── END LEGAL BRIDGE ── -->
+<!-- ── END HYDROLOGY SECTION ── -->
 /* ══════════════════════════════════════
    CHAPTER 5: THE QUEST — MARS & PROJECT 88
    ══════════════════════════════════════ */
