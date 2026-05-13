@@ -994,6 +994,327 @@ footer a { color: var(--gold-light); }
       The Decree's handcuffs have a geological floor. Project 88 is here to find it — and if 
       the geology confirms what the data suggests, to help Kearny develop a water supply that 
       <strong>no drought and no 1935 decree can touch</strong>.
+       <!-- ════════════════════════════════════════════════════════════════════
+     HYDROLOGY INTRO SECTION — Paste this ABOVE the existing Project 88
+     "Chapter V" section in your index.html.
+     
+     Image required: well-diagram.webp (same folder as index.html)
+     ════════════════════════════════════════════════════════════════════ -->
+
+<style>
+/* ── HYDROLOGY SECTION ── */
+.hydro-section {
+  background: linear-gradient(175deg, #060e18 0%, #0d1a2e 40%, #0a1628 100%);
+  padding: 5rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hydro-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4FC3D4, #C9A84C, #4FC3D4, transparent);
+}
+.hydro-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Chapter Tag */
+.hydro-chapter {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #4FC3D4;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+/* Main heading */
+.hydro-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.hydro-heading em {
+  color: #4FC3D4;
+  font-style: italic;
+}
+
+/* Subheading */
+.hydro-sub {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #8fa8bf;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* Gold rule */
+.hydro-rule {
+  width: 80px;
+  height: 2px;
+  background: #C9A84C;
+  border: none;
+  margin: 0 auto 2.5rem;
+}
+
+/* Intro prose block */
+.hydro-prose {
+  background: rgba(79, 195, 212, 0.06);
+  border-left: 4px solid #4FC3D4;
+  border-radius: 0 8px 8px 0;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 2.5rem;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hydro-prose p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.98rem;
+  color: #d0dde8;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.hydro-prose p:last-child { margin-bottom: 0; }
+.hydro-prose strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.hydro-prose .hydro-highlight {
+  color: #4FC3D4;
+  font-weight: 700;
+}
+.hydro-prose .hydro-gold {
+  color: #C9A84C;
+  font-weight: 700;
+}
+
+/* Diagram container */
+.hydro-diagram-wrap {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  border: 2px solid rgba(201, 168, 76, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 60px rgba(79,195,212,0.06);
+  position: relative;
+}
+.hydro-diagram-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hydro-diagram-caption {
+  background: rgba(13, 26, 46, 0.95);
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-weight: 700;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Two-column key takeaways */
+.hydro-takeaways {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+}
+.hydro-take {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(79, 195, 212, 0.15);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem;
+  position: relative;
+}
+.hydro-take::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  border-radius: 8px 0 0 8px;
+}
+.hydro-take.take-problem::before { background: #e74c3c; }
+.hydro-take.take-solution::before { background: #27ae60; }
+.hydro-take-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.take-problem .hydro-take-label { color: #e74c3c; }
+.take-solution .hydro-take-label { color: #27ae60; }
+.hydro-take h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+.hydro-take p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  color: #8fa8bf;
+  line-height: 1.7;
+}
+
+/* Beeville callout */
+.hydro-proof {
+  max-width: 860px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.03));
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.hydro-proof-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(201, 168, 76, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+.hydro-proof-text h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #C9A84C;
+  margin-bottom: 0.4rem;
+}
+.hydro-proof-text p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  color: #b0bfcc;
+  line-height: 1.75;
+}
+.hydro-proof-text strong {
+  color: #d0dde8;
+}
+
+@media (max-width: 700px) {
+  .hydro-takeaways { grid-template-columns: 1fr; }
+  .hydro-section { padding: 3rem 1rem 2.5rem; }
+  .hydro-proof { flex-direction: column; align-items: center; text-align: center; }
+  .hydro-prose { padding: 1.2rem 1.3rem; }
+}
+</style>
+
+
+<!-- ── HYDROLOGY SECTION ── -->
+<section class="hydro-section" id="hydrology">
+  <div class="hydro-inner">
+
+    <div class="hydro-chapter">The Science Behind Project 88</div>
+    <h2 class="hydro-heading">Understanding the <em>Two Aquifers</em><br>Beneath Kearny</h2>
+    <p class="hydro-sub">
+      Why shallow wells are failing — and why going deeper changes everything.
+    </p>
+    <hr class="hydro-rule">
+
+    <!-- Prose Intro -->
+    <div class="hydro-prose">
+      <p>
+        Most of Kearny's existing water infrastructure was built to tap
+        <strong>alluvial aquifers</strong> — shallow, sandy layers of river sediment
+        near the surface. These aquifers recharge from rainfall and river flow.
+        The problem? <span class="hydro-highlight">They also lose water to evaporation</span>,
+        and during a mega-drought, they dry up fast. When alluvial wells fail, pumps
+        spin in open air and the taps go silent.
+      </p>
+      <p>
+        But beneath that alluvial layer sits something entirely different:
+        <span class="hydro-gold">fractured bedrock</span>. Granite formations riddled
+        with natural fractures that collect and store water deep underground —
+        <strong>protected from evaporation, protected from surface drought,
+        and potentially outside the reach of the Globe Equity Decree</strong>.
+        This is the water Project 88 is designed to find.
+      </p>
+      <p>
+        The diagram below shows exactly what's happening beneath Kearny — and why
+        drilling deeper into the granite aquifer isn't just an option.
+        <strong>It may be the only path to permanent water security.</strong>
+      </p>
+    </div>
+
+    <!-- Diagram -->
+    <div class="hydro-diagram-wrap">
+      <img src="well-diagram.webp"
+           alt="Hydrological diagram showing shallow alluvial well failure due to bedrock drawdown — original condition vs. current condition with deeper bedrock aquifer access"
+           width="1400" height="788" loading="lazy">
+      <div class="hydro-diagram-caption">
+        Shallow Well Failure vs. Deep Bedrock Aquifer — The Project 88 Approach
+      </div>
+    </div>
+
+    <!-- Takeaway Cards -->
+    <div class="hydro-takeaways">
+      <div class="hydro-take take-problem">
+        <div class="hydro-take-label">⚠ The Problem</div>
+        <h4>Alluvial Wells Are Drying Up</h4>
+        <p>
+          Shallow wells draw from river sediment that evaporates rapidly in drought.
+          When the water table drops, pumps hit air. That's exactly what's happening
+          in Kearny right now — and across the American Southwest.
+        </p>
+      </div>
+      <div class="hydro-take take-solution">
+        <div class="hydro-take-label">✦ The Solution</div>
+        <h4>Bedrock Aquifer — A Separate Source</h4>
+        <p>
+          Fractured granite at 1,000+ feet stores water in natural vaults, shielded
+          from evaporation and surface conditions. Deeper wells accessing this formation
+          tap a completely independent water supply — drought-resistant and legally distinct.
+        </p>
+      </div>
+    </div>
+
+    <!-- Beeville Proof Point -->
+    <div class="hydro-proof">
+      <div class="hydro-proof-icon">🤠</div>
+      <div class="hydro-proof-text">
+        <h4>Proven in Texas — Beeville's Well Rehabilitation</h4>
+        <p>
+          In 2025, Beeville, Texas faced a catastrophic water crisis when Lake Corpus Christi
+          — their primary surface water source — dropped to critical levels. City leaders
+          turned to <strong>deep well rehabilitation and new drilling</strong>, tapping the
+          Evangeline and Jasper aquifers beneath the failing surface supply. By relining
+          and reactivating older, deeper wells, Beeville secured over
+          <strong>2 million gallons per day</strong> of groundwater — stabilizing the
+          community's supply and buying time for long-term solutions. The same principle
+          applies here: <strong>the water Kearny needs may already be sitting beneath
+          infrastructure it already owns.</strong>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ── END HYDROLOGY SECTION ── -->
     </div>
     <div class="pillar-grid">
       <div class="pillar"><div class="pillar-icon">🔍</div><h3>The Vault Wells</h3><p>Two dormant wells at 1,150–1,250 ft depth with 18-inch casings — capable of 2,000+ GPM if rehabilitated. Infrastructure worth $500K–$1M to replicate, already sitting inside city limits, waiting to be verified.</p></div>
