@@ -332,23 +332,72 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ══════════════════════════════════════
-   CHAPTER 2: THE GATHERING STORM
+   CHAPTER 2: THE GATHERING STORM (REVISED)
    ══════════════════════════════════════ */
-.storm { background: var(--deep); position: relative; overflow: hidden; padding: 100px 0; }
-.storm-bg { position: absolute; inset: 0; background: url('parched-ground.webp') center/cover no-repeat; opacity: 0.15; filter: saturate(0.5); }
-.storm .section-inner { position: relative; z-index: 2; }
-.storm .section-title { color: #fff; }
-.storm .section-title em { color: var(--red-emergency); }
-.storm .section-lead { color: rgba(255,255,255,0.75); }
-.threat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 48px; }
-.threat-card { background: rgba(178,34,34,0.08); border: 1px solid rgba(178,34,34,0.3); border-radius: 12px; padding: 32px 28px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
-.threat-card:hover { transform: translateY(-4px); border-color: var(--red-emergency); }
-.threat-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--red-emergency); }
-.threat-icon { font-size: 2.2rem; margin-bottom: 16px; }
-.threat-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.threat-card p { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.7); }
-.threat-stat { display: inline-block; margin-top: 12px; padding: 6px 14px; background: rgba(178,34,34,0.2); border-radius: 20px; font-size: 0.8rem; font-weight: 700; color: var(--red-emergency); letter-spacing: 0.04em; }
+.storm { 
+    background: #AED6F1; /* Light Blue Background */
+    position: relative; 
+    overflow: hidden; 
+    padding: 100px 0; 
+}
 
+.storm-bg { 
+    position: absolute; 
+    inset: 0; 
+    background: url('parched-ground.webp') center/cover no-repeat; 
+    opacity: 0.1; /* Lowered slightly for better contrast against light blue */
+    filter: saturate(0.2); 
+}
+
+.storm .section-inner { position: relative; z-index: 2; }
+
+/* Keeping the Title Dark for Readability */
+.storm .section-title { color: #1a1a1a; } 
+.storm .section-title em { color: #B22222; } /* Red Emergency */
+
+/* Updated the Lead text and Paragraphs to GOLD */
+.storm .section-lead, .threat-card p { 
+    color: #B8860B !important; /* Goldenrod for visibility */
+    font-weight: 600; /* Added weight so gold pops on blue */
+}
+
+.threat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 48px; }
+
+.threat-card { 
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white to lift cards off the blue */
+    border: 1px solid rgba(184, 134, 11, 0.3); /* Subtle gold border */
+    border-radius: 12px; 
+    padding: 32px 28px; 
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.3s, border-color 0.3s; 
+}
+
+.threat-card:hover { transform: translateY(-4px); border-color: #B8860B; }
+.threat-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #B8860B; }
+
+.threat-icon { font-size: 2.2rem; margin-bottom: 16px; }
+
+/* Card Headers remain dark for hierarchy */
+.threat-card h3 { 
+    font-family: var(--font-display); 
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: #1a1a1a; 
+    margin-bottom: 10px; 
+}
+
+.threat-stat { 
+    display: inline-block; 
+    margin-top: 12px; 
+    padding: 6px 14px; 
+    background: #B8860B; /* Gold Badge */
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: #ffffff; /* White text on gold badge */
+    letter-spacing: 0.04em; 
+}
 /* ══════════════════════════════════════
    CHAPTER 3: THE TRAGEDIES
    ══════════════════════════════════════ */
