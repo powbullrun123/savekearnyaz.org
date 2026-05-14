@@ -886,22 +886,6 @@ footer a { color: var(--gold-light); }
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileClose = document.getElementById('mobileClose');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('open');
-  });
-
-  mobileClose.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-  });
-
-  function closeMobile() {
-    mobileMenu.classList.remove('open');
-  }
 
   // Close if user taps outside the menu
   document.addEventListener('click', (e) => {
