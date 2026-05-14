@@ -444,19 +444,59 @@ a { color: inherit; text-decoration: none; }
 .partner-tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.25); padding: 10px 18px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.03em; }
 
 /* ══════════════════════════════════════
-   CHAPTER 5: THE QUEST — MARS & PROJECT 88
+   CHAPTER 5: THE QUEST — MARS & PROJECT 88 (REVISED)
    ══════════════════════════════════════ */
-.quest { padding: 100px 0; background: linear-gradient(180deg, #f0f7f4 0%, var(--cream) 100%); position: relative; }
+.quest { 
+    padding: 100px 0; 
+    background: linear-gradient(180deg, #f0f7f4 0%, var(--cream) 100%); 
+    position: relative; 
+}
+
 .quest .section-title em { color: var(--water-blue); }
-.quest-narrative { font-family: var(--font-accent); font-size: 1.15rem; line-height: 1.85; color: var(--text-light); max-width: 800px; margin-bottom: 48px; }
-.quest-narrative strong { color: var(--text); }
+
+.quest-narrative { 
+    font-family: var(--font-accent); 
+    font-size: 1.25rem; /* Increased from 1.15rem (~1pt increase) */
+    line-height: 1.85; 
+    color: #2c3e50; /* Darkened from var(--text-light) to a Deep Charcoal */
+    max-width: 800px; 
+    margin-bottom: 48px; 
+}
+
+.quest-narrative strong { 
+    color: #000000; /* Maximum contrast for emphasis */
+}
+
 .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 32px; }
-.pillar { background: #fff; border-radius: 14px; padding: 32px 24px; border: 1px solid rgba(26,107,138,0.15); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+
+.pillar { 
+    background: #fff; 
+    border-radius: 14px; 
+    padding: 32px 24px; 
+    border: 1px solid rgba(26,107,138,0.25); /* Slightly darker border for definition */
+    transition: transform 0.3s, box-shadow 0.3s; 
+    position: relative; 
+    overflow: hidden; 
+}
+
 .pillar:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,107,138,0.12); }
 .pillar::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--water-blue), var(--green-hope)); }
+
 .pillar-icon { font-size: 2rem; margin-bottom: 16px; }
-.pillar h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
-.pillar p { font-size: 0.9rem; line-height: 1.7; color: var(--text-light); }
+
+.pillar h3 { 
+    font-family: var(--font-display); 
+    font-size: 1.2rem; /* Increased from 1.1rem */
+    font-weight: 700; 
+    margin-bottom: 10px; 
+    color: var(--navy); 
+}
+
+.pillar p { 
+    font-size: 1.0rem; /* Increased from 0.9rem (~1pt increase) */
+    line-height: 1.7; 
+    color: #34495e; /* Darkened for better readability on white cards */
+}
 
 /* ══════════════════════════════════════
    COMMUNITY PROGRESS
