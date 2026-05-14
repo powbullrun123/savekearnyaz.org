@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Situation — Save Kearny AZ</title>
+<meta name="description" content="Kearny AZ water crisis explained: drought, dam levels, the Globe Equity Decree, emergency orders, and the path to recovery through deep well rehabilitation.">
+<meta property="og:title" content="The Situation — Save Kearny AZ">
+<meta property="og:description" content="Why Kearny is running out of water — and what's being done about it.">
+<meta property="og:url" content="https://www.savekearnyaz.org/situation.html">
+<link rel="canonical" href="https://www.savekearnyaz.org/situation.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B2A40; --deep: #071018; --gold: #C9A84C; --gold-light: #E8D5A3;
+  --cream: #F5F0E8; --red-emergency: #B22222; --red-dark: #8B1A1A;
+  --sky: #87CEEB; --water-blue: #1a6b8a; --green-hope: #2d6a4f;
+  --text: #1a1a1a; --text-light: #555;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.main-nav { background: var(--deep); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99; border-bottom: 2px solid var(--gold); }
+.nav-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; color: var(--gold); }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { color: var(--cream); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 26px; height: 2px; background: var(--gold); transition: 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(7,16,24,0.97); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.mobile-menu.active { display: flex; }
+.mobile-menu a { font-family: var(--font-display); font-size: 1.5rem; color: var(--cream); font-weight: 700; }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; transition: gap 0.3s; }
+.back-link:hover { gap: 12px; }
+
+/* PAGE HERO */
+.page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; overflow: hidden; background: var(--deep); }
+.page-hero-bg { position: absolute; inset: 0; background: url('parched-ground.webp') center/cover no-repeat; filter: brightness(0.35) saturate(0.8); }
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,16,24,0.6) 0%, rgba(7,16,24,0.3) 50%, rgba(7,16,24,0.8) 100%); }
+.page-hero-content { position: relative; z-index: 2; max-width: 900px; padding: 80px 24px 60px; margin: 0 auto; }
+.page-hero-content .chapter-tag { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--red-emergency); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.page-hero-content .chapter-tag::before { content: ''; width: 40px; height: 2px; background: var(--red-emergency); }
+.page-hero-content h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px; }
+.page-hero-content h1 em { color: var(--red-emergency); font-style: italic; }
+.page-hero-content .hero-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 700px; }
+.crisis-stat-bar { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+.crisis-stat { background: rgba(178,34,34,0.15); border: 1px solid rgba(178,34,34,0.3); border-radius: 8px; padding: 14px 20px; min-width: 140px; }
+.crisis-stat .cs-num { font-family: var(--font-display); font-size: 1.8rem; font-weight: 900; color: var(--red-emergency); }
+.crisis-stat .cs-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+/* SECTION FRAMEWORK */
+.sit-section { padding: 80px 24px; }
+.sit-inner { max-width: 960px; margin: 0 auto; }
+.sit-tag { font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.sit-tag::before { content: ''; width: 30px; height: 2px; }
+.sit-heading { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+.sit-heading em { font-style: italic; }
+.sit-divider { width: 60px; height: 3px; border: none; margin: 20px 0; }
+.sit-prose { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; max-width: 780px; margin-bottom: 20px; }
+.sit-prose strong { font-weight: 700; }
+
+/* SECTION 1: THE CAUSE — HEAT */
+.cause-section { background: linear-gradient(180deg, #1a0a02 0%, #2d1810 50%, #1a0a02 100%); color: #fff; }
+.cause-section .sit-tag { color: #e74c3c; }
+.cause-section .sit-tag::before { background: #e74c3c; }
+.cause-section .sit-heading { color: #fff; }
+.cause-section .sit-heading em { color: #e74c3c; }
+.cause-section .sit-divider { background: #e74c3c; }
+.cause-section .sit-prose { color: rgba(255,255,255,0.8); }
+.cause-section .sit-prose strong { color: #fff; }
+
+/* Photo slot */
+.photo-slot { border-radius: 12px; overflow: hidden; border: 2px solid rgba(201,168,76,0.2); margin: 32px 0; position: relative; background: rgba(255,255,255,0.03); }
+.photo-slot img { width: 100%; display: block; }
+.photo-slot .photo-caption { padding: 12px 20px; background: rgba(7,16,24,0.9); font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; text-align: center; }
+.photo-placeholder { min-height: 300px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border: 2px dashed rgba(201,168,76,0.2); border-radius: 12px; margin: 32px 0; }
+.photo-placeholder span { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-style: italic; }
+
+/* Water source cards */
+.source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 40px 0; }
+.source-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); border-radius: 10px; padding: 24px; position: relative; overflow: hidden; }
+.source-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; }
+.source-card.primary::before { background: var(--red-emergency); }
+.source-card.secondary::before { background: var(--gold); }
+.source-card.tertiary::before { background: #6b7fa3; }
+.source-card h4 { font-family: var(--font-display); font-size: 1.1rem; color: #fff; margin-bottom: 6px; }
+.source-card .source-type { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.source-card.primary .source-type { color: var(--red-emergency); }
+.source-card.secondary .source-type { color: var(--gold); }
+.source-card.tertiary .source-type { color: #6b7fa3; }
+.source-card p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+.source-card .source-stat { margin-top: 12px; font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; }
+.source-card.primary .source-stat { color: var(--red-emergency); }
+.source-card.secondary .source-stat { color: var(--gold); }
+
+/* Dam level timeline */
+.timeline-bar { margin: 40px 0; }
+.tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 20px; align-items: center; margin-bottom: 16px; }
+.tl-year { font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: var(--gold); text-align: right; }
+.tl-bar-wrap { position: relative; }
+.tl-bar { height: 28px; border-radius: 6px; display: flex; align-items: center; padding: 0 12px; font-size: 0.75rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; transition: width 1.5s ease; }
+.tl-bar.catastrophic { background: linear-gradient(90deg, #8B1A1A, #B22222); }
+.tl-bar.critical { background: linear-gradient(90deg, #B8860B, #DAA520); }
+.tl-bar.low { background: linear-gradient(90deg, #1a6b8a, #2d8ab8); }
+.tl-bar.moderate { background: linear-gradient(90deg, #2d6a4f, #52b788); }
+.tl-bar.good { background: linear-gradient(90deg, #1a6b8a, #87CEEB); }
+
+/* SECTION 2: THE POLITICS */
+.politics-section { background: var(--cream); }
+.politics-section .sit-tag { color: var(--navy); }
+.politics-section .sit-tag::before { background: var(--navy); }
+.politics-section .sit-heading { color: var(--navy); }
+.politics-section .sit-heading em { color: var(--gold); }
+.politics-section .sit-divider { background: var(--gold); }
+
+/* Priority ladder */
+.priority-ladder { margin: 40px 0; }
+.ladder-rung { display: flex; align-items: stretch; margin-bottom: 2px; border-radius: 6px; overflow: hidden; }
+.ladder-rank { width: 50px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: #fff; flex-shrink: 0; }
+.ladder-body { padding: 16px 20px; flex: 1; }
+.ladder-body h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.ladder-body p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+.ladder-rung.senior .ladder-rank { background: #2d6a4f; }
+.ladder-rung.senior .ladder-body { background: rgba(45,106,79,0.08); border: 1px solid rgba(45,106,79,0.15); }
+.ladder-rung.senior .ladder-body h4 { color: #2d6a4f; }
+.ladder-rung.junior .ladder-rank { background: var(--red-emergency); }
+.ladder-rung.junior .ladder-body { background: rgba(178,34,34,0.06); border: 1px solid rgba(178,34,34,0.15); }
+.ladder-rung.junior .ladder-body h4 { color: var(--red-emergency); }
+
+/* Key fact callout */
+.key-fact { background: rgba(201,168,76,0.08); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 32px 0; }
+.key-fact p { font-family: var(--font-accent); font-size: 1.15rem; color: var(--navy); line-height: 1.7; font-style: italic; }
+.key-fact strong { color: var(--red-emergency); font-style: normal; }
+
+/* SECTION 3: THE EMERGENCY */
+.emergency-section { background: var(--red-emergency); color: #fff; position: relative; overflow: hidden; }
+.emergency-section::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(0,0,0,0.03) 40px, rgba(0,0,0,0.03) 80px); }
+.emergency-section .sit-inner { position: relative; z-index: 2; }
+.emergency-section .sit-tag { color: #fff; }
+.emergency-section .sit-tag::before { background: #fff; }
+.emergency-section .sit-heading { color: #fff; }
+.emergency-section .sit-heading em { color: var(--gold); }
+.emergency-section .sit-divider { background: var(--gold); }
+.emergency-section .sit-prose { color: rgba(255,255,255,0.9); }
+.emergency-section .sit-prose strong { color: #fff; }
+
+.emergency-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+.e-rule { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 20px; display: flex; gap: 12px; align-items: flex-start; }
+.e-rule-icon { font-size: 1.5rem; flex-shrink: 0; }
+.e-rule h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.e-rule p { font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+/* SECTION 4: THE PATH FORWARD */
+.forward-section { background: linear-gradient(180deg, var(--deep) 0%, #0c1e34 50%, var(--deep) 100%); color: #fff; }
+.forward-section .sit-tag { color: #52b788; }
+.forward-section .sit-tag::before { background: #52b788; }
+.forward-section .sit-heading { color: #fff; }
+.forward-section .sit-heading em { color: #52b788; }
+.forward-section .sit-divider { background: #52b788; }
+.forward-section .sit-prose { color: rgba(255,255,255,0.8); }
+.forward-section .sit-prose strong { color: #fff; }
+
+.solution-steps { margin: 40px 0; }
+.sol-step { display: grid; grid-template-columns: 60px 1fr; gap: 20px; margin-bottom: 32px; position: relative; }
+.sol-step::after { content: ''; position: absolute; left: 30px; top: 60px; bottom: -32px; width: 2px; background: rgba(82,183,136,0.2); }
+.sol-step:last-child::after { display: none; }
+.sol-num { width: 60px; height: 60px; border-radius: 50%; background: rgba(82,183,136,0.15); border: 2px solid rgba(82,183,136,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: #52b788; flex-shrink: 0; }
+.sol-content h4 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.sol-content p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; }
+.sol-content strong { color: #52b788; }
+
+/* CTA */
+.cta-band { background: var(--gold); padding: 48px 24px; text-align: center; }
+.cta-band h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--deep); margin-bottom: 12px; }
+.cta-band p { font-size: 1rem; color: rgba(7,16,24,0.7); margin-bottom: 24px; }
+.cta-btn { display: inline-block; padding: 14px 36px; background: var(--deep); color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 6px; transition: all 0.3s; border: 2px solid var(--deep); }
+.cta-btn:hover { background: transparent; color: var(--deep); }
+
+/* FOOTER */
+footer { background: var(--deep); border-top: 2px solid var(--gold); padding: 32px 24px; text-align: center; }
+footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .crisis-stat-bar { gap: 12px; }
+  .crisis-stat { min-width: 110px; }
+  .emergency-rules { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 70px 1fr; }
+}
+@media (max-width: 480px) {
+  .source-grid { grid-template-columns: 1fr; }
+  .sol-step { grid-template-columns: 50px 1fr; }
+}
+
+/* FADE IN */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo">SaveKearnyAZ</a>
+  <ul class="nav-links">
+    <li><a href="index.html#situation">Home</a></li>
+    <li><a href="index.html#wells">Wells</a></li>
+    <li><a href="index.html#actions">What To Do</a></li>
+    <li><a href="mars-solution.html" style="color: var(--gold);">Project 88 / MARS</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="index.html#wells" onclick="closeMobile()">Wells</a>
+  <a href="index.html#actions" onclick="closeMobile()">What To Do</a>
+  <a href="mars-solution.html" onclick="closeMobile()" style="color: var(--gold);">Project 88 / MARS</a>
+  <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="chapter-tag">The Situation</div>
+    <h1>A Town Running Out of <em>Time</em></h1>
+    <p class="hero-lead">Kearny, Arizona is facing its worst water crisis in the town's 68-year history. Excessive heat, a draining reservoir, a 91-year-old legal decree, and junior water rights have converged into a single, urgent threat: the taps could go dry.</p>
+    <div class="crisis-stat-bar">
+      <div class="crisis-stat"><div class="cs-num">4,064</div><div class="cs-label">Acre-Feet in<br>San Carlos Reservoir</div></div>
+      <div class="crisis-stat"><div class="cs-num">&lt;0.3%</div><div class="cs-label">Of Reservoir<br>Capacity</div></div>
+      <div class="crisis-stat"><div class="cs-num">0.76</div><div class="cs-label">Acre-Feet Allotted<br>for All of 2026</div></div>
+      <div class="crisis-stat"><div class="cs-num">5WE</div><div class="cs-label">Emergency<br>Level Active</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 1: THE CAUSE — EXCESSIVE HEAT & DROUGHT
+     ═══════════════════════════════════════════════════ -->
+<section class="sit-section cause-section">
+  <div class="sit-inner">
+    <div class="sit-tag">Section 1</div>
+    <h2 class="sit-heading">The Cause — <em>Excessive Heat</em></h2>
+    <hr class="sit-divider">
+
+    <p class="sit-prose">Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Temperatures routinely exceed 115°F in the Kearny basin during summer months. That extreme heat doesn't just make life uncomfortable — it <strong>evaporates the water supply from the ground up</strong>.</p>
+
+    <!-- PHOTO: Parched earth -->
+    <div class="photo-slot">
+      <img src="parched-ground.webp" alt="Cracked, parched desert ground near Kearny AZ — water evaporating from the earth" loading="lazy" style="width: 100%; max-height: 500px; object-fit: cover;">
+      <div class="photo-caption">The ground beneath Kearny — parched, cracked, and losing water to evaporation daily</div>
+    </div>
+
+    <p class="sit-prose">Shallow alluvial aquifers — the sandy layers near the surface that Kearny's wells draw from — recharge through rainfall and river flow. But when temperatures run this hot for this long, <strong>evaporation outpaces recharge</strong>. The water table drops. Pumps spin in open air. And the taps go silent.</p>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin: 40px 0 20px;">Where Kearny's Water Comes From</h3>
+
+    <p class="sit-prose">Kearny depends on a fragile chain of water sources — all connected to the Gila River system, all governed by the same 1935 decree, and all failing under drought conditions.</p>
+
+    <div class="source-grid">
+      <div class="source-card primary">
+        <div class="source-type">Primary Source</div>
+        <h4>San Carlos Reservoir (Coolidge Dam)</h4>
+        <p>The sole reservoir supplying Kearny's allotment. Formed by Coolidge Dam on the Gila River. Maximum capacity: 875,000+ acre-feet. Has been nearly empty at least 20 times since 1928.</p>
+        <div class="source-stat">4,064 AF remaining</div>
+      </div>
+      <div class="source-card primary">
+        <div class="source-type">River Source</div>
+        <h4>Gila River</h4>
+        <p>A 649-mile tributary of the Colorado River carrying snowmelt from New Mexico's mountains. Snow totals in the basin peaked at 25% of normal this year. The river that once carried enough water for steamboats now barely trickles.</p>
+        <div class="source-stat">25% of normal snowpack</div>
+      </div>
+      <div class="source-card secondary">
+        <div class="source-type">Municipal Wells</div>
+        <h4>Town Well System</h4>
+        <p>Kearny pumps well water close to the Gila River. 21 wells within city limits, ranging from 54 to 1,250 feet deep. Most tap the alluvial (shallow) aquifer governed by the Globe Equity Decree.</p>
+      </div>
+      <div class="source-card tertiary">
+        <div class="source-type">Tributaries</div>
+        <h4>San Carlos River, Ash Creek, San Pedro River</h4>
+        <p>Tributaries feeding the Gila River system upstream of Coolidge Dam. All experiencing record-low flows due to drought conditions across the watershed.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin: 40px 0 20px;">San Carlos Reservoir — The Decline</h3>
+
+    <p class="sit-prose">The reservoir has been on a devastating trajectory. From over 500,000 acre-feet in 2023, it has plunged to barely 4,000 — less than one-third of one percent capacity.</p>
+
+    <div class="timeline-bar">
+      <div class="tl-row"><div class="tl-year">2023</div><div class="tl-bar-wrap"><div class="tl-bar good" style="width: 58%;">529,100 AF — 60% capacity</div></div></div>
+      <div class="tl-row"><div class="tl-year">2024</div><div class="tl-bar-wrap"><div class="tl-bar moderate" style="width: 28%;">~250,000 AF — declining</div></div></div>
+      <div class="tl-row"><div class="tl-year">Early 2025</div><div class="tl-bar-wrap"><div class="tl-bar low" style="width: 14%;">~120,000 AF — drought deepens</div></div></div>
+      <div class="tl-row"><div class="tl-year">Oct 2025</div><div class="tl-bar-wrap"><div class="tl-bar critical" style="width: 5%;">4,434 AF — below 1%</div></div></div>
+      <div class="tl-row"><div class="tl-year">May 2026</div><div class="tl-bar-wrap"><div class="tl-bar catastrophic" style="width: 3%;">4,064 AF — near dead pool</div></div></div>
+    </div>
+
+    <!-- PHOTO SLOT: Dam low levels -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0;">
+      <div class="photo-slot">
+        <img src="coolidge-dam-low.jpg" alt="Coolidge Dam with San Carlos Reservoir at low water levels — the bathtub ring tells the story" loading="lazy">
+        <div class="photo-caption">Coolidge Dam — Water line dropping, bathtub ring exposed</div>
+      </div>
+      <div class="photo-slot">
+        <img src="coolidge-dam.webp" alt="Coolidge Dam at critically low levels — San Carlos Reservoir nearly empty" loading="lazy">
+        <div class="photo-caption">Coolidge Dam — Near dead pool. Less than 0.3% capacity.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 2: THE POLITICS — GLOBE EQUITY DECREE
+     ═══════════════════════════════════════════════════ -->
+<section class="sit-section politics-section">
+  <div class="sit-inner">
+    <div class="sit-tag">Section 2</div>
+    <h2 class="sit-heading">The Politics — <em>A 1935 Decree</em></h2>
+    <hr class="sit-divider">
+
+    <p class="sit-prose">The drought alone would be manageable if Kearny had the legal right to pump what it needs. It doesn't. A 91-year-old federal consent decree — the <strong>Globe Equity Decree of 1935</strong> — dictates who gets Gila River water and in what order. And Kearny is last in line.</p>
+
+    <div class="key-fact">
+      <p>The Globe Equity Decree was entered on <strong>June 29, 1935</strong> in <em>United States v. Gila Valley Irrigation District</em>, Globe Equity No. 59. It identifies and quantifies every party's rights to Gila River mainstem water — listing priority dates, entitlement amounts, and associated lands. A court-appointed <strong>Gila Water Commissioner</strong> enforces it and can cut off noncompliant diversions.</p>
+    </div>
+
+    <p class="sit-prose">Under the doctrine of <strong>prior appropriation</strong> — "first in time, first in right" — the entities who used the water first get served first during shortages. Kearny was incorporated in 1958, decades after the Decree was written. Its rights are junior to nearly everyone.</p>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--navy); margin: 40px 0 20px;">The Priority Ladder — Who Drinks First</h3>
+
+    <div class="priority-ladder">
+      <div class="ladder-rung senior"><div class="ladder-rank">1</div><div class="ladder-body"><h4>Gila River Indian Community (GRIC)</h4><p>Sovereign tribal nation with the most senior water rights on the Gila. Their rights predate all others and are protected by both the Decree and federal trust obligations.</p></div></div>
+      <div class="ladder-rung senior"><div class="ladder-rank">2</div><div class="ladder-body"><h4>San Carlos Apache Tribe</h4><p>Granted intervention in 1990. The Decree allocates 6,000 acre-feet of prior right to the Tribe, with the U.S. acting in trust capacity.</p></div></div>
+      <div class="ladder-rung senior"><div class="ladder-rank">3</div><div class="ladder-body"><h4>San Carlos Irrigation & Drainage District</h4><p>Agricultural users in Pinal County. Even they received only 0.2 acre-feet per acre in 2026 — the lowest allotment in 47 years of farming.</p></div></div>
+      <div class="ladder-rung senior"><div class="ladder-rank">4</div><div class="ladder-body"><h4>ASARCO & Resolution Copper</h4><p>Mining operations with established water rights predating Kearny. Their industrial water needs are factored into the Decree's allocation framework.</p></div></div>
+      <div class="ladder-rung senior"><div class="ladder-rank">5</div><div class="ladder-body"><h4>Upper Valley Users (Safford, Duncan-Virden)</h4><p>Agricultural users upstream with rights established before Kearny existed. The Decree lists their priority dates and entitlement amounts individually.</p></div></div>
+      <div class="ladder-rung junior"><div class="ladder-rank">6</div><div class="ladder-body"><h4>Town of Kearny — Junior Rights</h4><p><strong>Last in line.</strong> When the dam runs dry, Kearny is the first to be cut off. In 2026, the allotment was slashed from 610 acre-feet to 0.76 — a 99.9% reduction.</p></div></div>
+    </div>
+
+    <div class="key-fact">
+      <p>The cruel irony: <strong>there will be water in the river this summer</strong> — flowing bank to bank past Kearny — but the town will have no legal right to touch it. As Mayor Stacy told KJZZ: "There will be water in the wells. We just won't have a legal right to use it."</p>
+    </div>
+
+    <!-- PHOTO SLOT: Gila River / legal docs -->
+    <div class="photo-slot" style="margin: 32px 0;">
+      <img src="gila-river.jpg" alt="The Gila River winding through the Arizona desert — water flowing that Kearny cannot legally touch" loading="lazy" style="width: 100%; max-height: 500px; object-fit: cover;">
+      <div class="photo-caption">The Gila River — Water will flow bank to bank this summer. Kearny won't have the legal right to touch it.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 3: THE EMERGENCY — MAYOR'S DECREE
+     ═══════════════════════════════════════════════════ -->
+<section class="sit-section emergency-section">
+  <div class="sit-inner">
+    <div class="sit-tag">Section 3</div>
+    <h2 class="sit-heading">The Emergency — <em>Level 5WE</em></h2>
+    <hr class="sit-divider">
+
+    <p class="sit-prose">On April 8, 2026, Mayor Curtis Stacy declared a <strong>Level 5 Water Emergency (5WE)</strong> under the authority of <strong>A.R.S. § 26-311</strong>. In his letter to residents, he wrote plainly: <strong>"We WILL run out of water on or about July 15, 2026."</strong></p>
+
+    <p class="sit-prose">That date has since been pushed back to late August — thanks entirely to the residents of Kearny cutting their usage by 33%. But the emergency remains active, and the mandatory restrictions remain in force.</p>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin: 32px 0 20px;">What Level 5WE Means for Kearny</h3>
+
+    <div class="emergency-rules">
+      <div class="e-rule"><div class="e-rule-icon">🚫</div><div><h4>No Lawn or Landscape Watering</h4><p>Strictly prohibited. Zero exceptions for ornamental plants, grass, gardens, or shrubs using Kearny municipal water.</p></div></div>
+      <div class="e-rule"><div class="e-rule-icon">🚫</div><div><h4>No Vehicle or Surface Washing</h4><p>No car washing, driveway hosing, or sidewalk cleaning. Exception only for public safety vehicles.</p></div></div>
+      <div class="e-rule"><div class="e-rule-icon">🚫</div><div><h4>No Pool Filling — Any Size</h4><p>Includes kiddie pools, spas, and wading pools. Water can only be hauled from outside vendors.</p></div></div>
+      <div class="e-rule"><div class="e-rule-icon">✅</div><div><h4>Essential Use Only</h4><p>Drinking, cooking, bathing, reduced laundry, sanitation. Short showers. Fix all leaks immediately.</p></div></div>
+    </div>
+
+    <div class="key-fact" style="background: rgba(255,255,255,0.1); border-color: var(--gold);">
+      <p style="color: #fff;">What does "Day Zero" look like? You turn on your faucet and <strong>nothing comes out</strong>. No drinking water. No bathing. No cooking. No sanitation. No fire suppression. The grocery store's refrigeration compressors — cooled by water — shut down. <strong>Tens of thousands of dollars of perishable food spoils overnight.</strong></p>
+    </div>
+
+    <!-- PHOTO SLOT: Emergency signage / empty infrastructure -->
+    <div class="photo-slot" style="margin: 32px 0; max-width: 600px;">
+      <img src="think-conserver-sign.jpg" alt="Think Conserve Water sign — the reality of Level 5WE water emergency in Kearny AZ" loading="lazy">
+      <div class="photo-caption">Every drop counts — Level 5WE means mandatory conservation, no exceptions</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION 4: THE PATH FORWARD — WELL REHABILITATION
+     ═══════════════════════════════════════════════════ -->
+<section class="sit-section forward-section">
+  <div class="sit-inner">
+    <div class="sit-tag">Section 4</div>
+    <h2 class="sit-heading">The Path Forward — <em>Deep Well Rehabilitation</em></h2>
+    <hr class="sit-divider">
+
+    <p class="sit-prose">Conservation buys time. But time isn't water. The long-term solution lies beneath Kearny's feet — in <strong>deep wells that already exist</strong> but have been sitting dormant, capped, or underutilized for decades.</p>
+
+    <p class="sit-prose">The strategy is two-pronged: <strong>rehabilitate existing deep wells</strong> by relining their casings and restoring flow, and <strong>recapture grey water</strong> by injecting treated effluent back into the ground through Managed Aquifer Recharge and Storage (MARS) — building a water bank the town owns outright.</p>
+
+    <div class="solution-steps">
+      <div class="sol-step">
+        <div class="sol-num">1</div>
+        <div class="sol-content"><h4>Rehabilitate Deep Wells</h4><p>Kearny has 21 wells within city limits. Two of them — <strong>Sites 23CCC (1,250 ft)</strong> and <strong>23CAA (1,150 ft)</strong> — punch through the shallow alluvial layer into <strong>fractured granite bedrock</strong>. These wells were built for high-volume production with 18-inch casing. Relining and reactivating them could restore thousands of gallons per minute of capacity.</p></div>
+      </div>
+      <div class="sol-step">
+        <div class="sol-num">2</div>
+        <div class="sol-content"><h4>Reline & Restore Casing</h4><p>Older wells degrade over time — casings corrode, screens clog, gravel packs compact. Well rehabilitation involves running a new liner inside the existing casing, cleaning screens, and restoring the well to original (or better) production capacity. <strong>The USDA has already funded rehabilitation of one well</strong>, expected online by July 2026 at 100+ GPM.</p></div>
+      </div>
+      <div class="sol-step">
+        <div class="sol-num">3</div>
+        <div class="sol-content"><h4>Recapture Grey Water — MARS</h4><p>Right now, Kearny sends treated effluent downstream — for free. Under a MARS program, that water would be <strong>injected back into the aquifer</strong> through the deep wells, earning ADWR Long-Term Storage Credits. It's a water bank the town owns outright, recoverable on demand under ARS Title 45.</p></div>
+      </div>
+      <div class="sol-step">
+        <div class="sol-num">4</div>
+        <div class="sol-content"><h4>Establish New Water Rights</h4><p>If the deep wells access <strong>percolating groundwater in fractured granite</strong> — water that sits below the alluvial layer the Globe Equity Decree governs — Kearny could establish <strong>new, independent water rights</strong> through prior appropriation. No senior claims. No allocation table. A completely separate legal water source.</p></div>
+      </div>
+    </div>
+
+    <!-- PHOTO SLOT: Well infrastructure -->
+    <div class="photo-slot" style="margin: 32px 0;">
+      <img src="well-drilling.webp" alt="Deep well drilling rig striking water — the kind of infrastructure that could save Kearny" loading="lazy" style="width: 100%; max-height: 550px; object-fit: cover;">
+      <div class="photo-caption">Deep well rehabilitation — striking water at depth. This is the path forward for Kearny.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h3>The Fight Isn't Over. It's Just Beginning.</h3>
+  <p>Learn about Project 88 and the MARS strategy that could secure Kearny's water future.</p>
+  <a href="mars-solution.html" class="cta-btn">Explore Project 88 →</a>
+</div>
+
+
+<footer>
+  <p>SaveKearnyAZ.org &nbsp;|&nbsp; Project 88 — Kearny Basin Water Initiative<br>&copy; 2026 — Built for the people of Kearny, Arizona</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileClose');
+  if (menuBtn) { menuBtn.addEventListener('click', function() { mobileMenu.classList.add('active'); }); }
+  if (mobileClose) { mobileClose.addEventListener('click', function() { mobileMenu.classList.remove('active'); }); }
+  // Fade in on scroll
+  var fadeObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.source-card, .ladder-rung, .e-rule, .sol-step, .photo-slot, .key-fact').forEach(function(el) {
+    el.classList.add('fade-in'); fadeObs.observe(el);
+  });
+});
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('active'); }
+</script>
+</body>
+</html>
