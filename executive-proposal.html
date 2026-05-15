@@ -8,21 +8,20 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #1B2A40;
+  --navy: #2c5282;
   --deep: #071018;
-  --gold: #C9A84C;
+  --gold: #d4af37;
   --gold-light: #E8D5A3;
-  --cream: #F5F0E8;
-  --text: #222;
-  --text-light: #4a4a4a;
+  --text: #2d3748;
+  --text-light: #718096;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   background: #bfbfbf;
-  font-family: 'EB Garamond', 'Georgia', serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,145 +81,131 @@ body {
   position: relative;
 }
 
-/* ── TOP GOLD RULE ── */
-.top-rule { height: 5px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); }
+/* ── TOP NAVY RULE ── */
+.top-rule { height: 4px; background: var(--navy); margin-bottom: 30px; }
 
 /* ── HEADER ── */
 .letter-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 44px 60px 28px;
-  border-bottom: 1px solid #e0dbd0;
+  padding: 14px 60px 0px;
+  margin-bottom: 35px;
 }
-.seal-img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  margin: 0 auto 18px;
-  display: block;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+.project88-seal {
+  height: 270px;
+  width: auto;
+  margin-bottom: 20px;
+}
+.header-text {
+  margin-bottom: 25px;
 }
 .site-name {
-  font-family: 'Cormorant', Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: bold;
   color: var(--navy);
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 .site-tagline {
-  font-family: 'Cormorant', Georgia, serif;
-  font-size: 0.9rem;
-  font-style: italic;
-  color: var(--gold);
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 14px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* ── REUSABLE TAPERED GOLD DIVIDER ── */
+.gold-divider {
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+  margin: 0 auto;
 }
 
 /* ── BODY ── */
 .letter-body {
-  padding: 40px 64px 52px;
-  font-size: 1.05rem;
-  line-height: 1.9;
+  padding: 10px 64px 52px;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--text);
 }
 .date-line {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.82rem;
-  color: var(--text-light);
-  letter-spacing: 0.04em;
-  margin-bottom: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 .recipient-block {
-  margin-bottom: 28px;
-  font-size: 0.98rem;
-  line-height: 1.65;
+  margin-bottom: 30px;
+  line-height: 1.4;
 }
 .recipient-block strong {
-  font-family: 'Cormorant', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--navy);
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text);
 }
 .salutation {
-  font-family: 'Cormorant', serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 22px;
-  color: var(--navy);
+  margin-bottom: 20px;
 }
 .body-text {
   margin-bottom: 16px;
   text-align: justify;
   hyphens: auto;
 }
-.body-text strong { color: var(--navy); }
+.body-text strong { color: var(--text); }
 .body-text a { color: var(--gold); font-weight: 600; text-decoration: none; }
 .body-text a:hover { text-decoration: underline; }
-.section-head {
-  font-family: 'Cormorant', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin: 30px 0 10px;
-  letter-spacing: 0.05em;
-}
-.gold-rule {
-  width: 50px;
-  height: 2px;
-  background: var(--gold);
-  margin: 30px 0 22px;
-  border: none;
-}
-.closing {
-  margin-top: 36px;
-  font-family: 'Cormorant', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text);
-}
-.sig-name {
-  font-family: 'Cormorant', serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-top: 30px;
-}
-.sig-details {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.78rem;
-  color: var(--text-light);
-  margin-top: 4px;
-  line-height: 1.7;
-}
-.sig-details a { color: var(--gold); text-decoration: none; }
 
-/* ── QUOTE ── */
+.section-head {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--navy);
+  margin: 30px 0 10px;
+  letter-spacing: -0.2px;
+}
+
+/* ── BOLDER/LARGER QUOTE BLOCK ── */
 .quote-block {
-  margin: 28px 0;
-  padding: 18px 28px;
-  border-left: 3px solid var(--gold);
-  background: rgba(201,168,76,0.04);
-  border-radius: 0 6px 6px 0;
+  margin: 25px 0;
+  padding: 15px 25px;
+  border-left: 4px solid var(--navy);
+  background: #f7fafc;
+  line-height: 1.5;
 }
 .quote-block p {
-  font-family: 'Cormorant', serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--text-light);
-  line-height: 1.75;
+  font-size: 17.33px; /* Exactly 1pt larger than 16px body text */
+  font-weight: 600;    /* Distinctly bolder than standard paragraph weight */
+  color: #1a202c;
   margin: 0;
 }
 .quote-block cite {
   font-family: 'Lato', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-style: normal;
   color: var(--gold);
   display: block;
   margin-top: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-weight: bold;
 }
+
+.closing {
+  margin-top: 36px;
+}
+.sig-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-top: 45px;
+}
+.sig-details {
+  font-size: 14px;
+  color: #4a5568;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+.sig-details a { color: var(--gold); text-decoration: none; }
 
 /* ── FOOTER ── */
 .letter-footer {
@@ -246,13 +231,12 @@ body {
   .letter-body { padding: 24px 20px 36px; }
   .letter-header { padding: 28px 20px 18px; }
   .letter-footer { padding: 16px 20px; flex-direction: column; gap: 8px; text-align: center; }
-  .seal-img { width: 100px; height: 100px; }
+  .project88-seal { height: 180px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <div class="letter-nav">
   <div class="nav-links">
     <a href="index.html">&larr; SaveKearnyAZ.org</a>
@@ -263,20 +247,18 @@ body {
   <button class="print-btn" onclick="window.print()">&#128424; Print / Save PDF</button>
 </div>
 
-<!-- PAGE -->
-<div class="page" style="font-family: 'Helvetica', 'Arial', sans-serif;">
-  <div class="top-rule" style="border-top: 4px solid #2c5282; margin-bottom: 30px;"></div>
+<div class="page">
+  <div class="top-rule"></div>
 
-  <div class="letter-header" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 40px;">
-    
-    <img src="project88-seal.webp" alt="Project 88 — Kearny Basin Water Initiative Seal" class="project88-seal" style="height: 270px; width: auto; margin-bottom: 20px;">
-    
+  <div class="letter-header">
+    <img src="project88-seal.webp" alt="Project 88 — Kearny Basin Water Initiative Seal" class="project88-seal">
     <div class="header-text">
-      <div class="site-name" style="font-size: 32px; font-weight: bold; color: #2c5282; letter-spacing: -0.5px; line-height: 1.2;">SaveKearnyAZ.org</div>
-      <div class="site-tagline" style="font-size: 14px; color: #718096; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 8px; font-weight: 600;">Project 88 &mdash; Kearny Basin Water Initiative</div>
+      <div class="site-name">SaveKearnyAZ.org</div>
+      <div class="site-tagline">Project 88 &mdash; Kearny Basin Water Initiative</div>
     </div>
+    <div class="gold-divider" style="width: 60%;"></div>
   </div>
-  <!-- BODY -->
+
   <div class="letter-body">
     <div class="date-line">May 15, 2026</div>
 
@@ -340,7 +322,7 @@ body {
       <em>Is the water there?</em>
     </p>
 
-    <p class="body-text">
+    <p class="body-text" style="margin-bottom: 35px;">
       Stabilizing Kearny&rsquo;s water resources benefits everyone in the basin &mdash; including 
       the corporations already operating here. I&rsquo;m actively exploring partnerships with 
       entities that have ESG mandates, water technology firms, and Arizona-based companies 
@@ -348,32 +330,19 @@ body {
       to bring resources <em>to</em> Kearny, not extract anything <em>from</em> it.
     </p>
 
-    <hr class="gold-rule">
-
-    <p class="body-text">
-      No rush on any of this, Mayor. I know you&rsquo;ve got a full plate and then some. Consider 
-      this a seed planted. When the timing is right, I&rsquo;d welcome a conversation &mdash; even a 
-      short one &mdash; about how we might work together to write the next chapter of 
-      Kearny&rsquo;s story.
-    </p>
-
-    <p class="body-text">
-      Thank you for everything you do for that community. It matters more than most people 
-      will ever know.
-    </p>
+    <div class="gold-divider" style="width: 100%; margin-bottom: 35px;"></div>
 
     <div class="closing">Respectfully,</div>
 
     <div class="sig-name">Powell Parker</div>
     <div class="sig-details">
-      Founder &mdash; SaveKearnyAZ.org &middot; Project 88<br>
+      SaveKearnyAZ.org &bull; Project 88<br>
       <a href="https://savekearnyaz.org">savekearnyaz.org</a> &nbsp;|&nbsp; 
       <a href="https://powparker.com">powparker.com</a><br>
       Phoenix, Arizona
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="letter-footer">
     <div class="footer-site">
       <a href="https://savekearnyaz.org">SaveKearnyAZ.org</a> &nbsp;|&nbsp; 
