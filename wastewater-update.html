@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wastewater Update — Save Kearny AZ</title>
+<meta name="description" content="Kearny AZ wastewater treatment plant update: what's causing the smell, what the Town is doing to fix it, and how $1.54M in federal funding is rebuilding the system.">
+<link rel="canonical" href="https://www.savekearnyaz.org/wastewater-update.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B2A40; --deep: #071018; --gold: #C9A84C; --gold-light: #E8D5A3;
+  --cream: #F5F0E8; --red-emergency: #B22222; --sky: #87CEEB;
+  --water-blue: #1a6b8a; --green-hope: #2d6a4f; --green-light: #52b788;
+  --text: #1a1a1a; --text-light: #555;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.main-nav { background: var(--deep); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99; border-bottom: 2px solid var(--gold); }
+.nav-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; color: var(--gold); }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { color: var(--cream); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 26px; height: 2px; background: var(--gold); transition: 0.3s; }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(7,16,24,0.97); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+.mobile-menu.active { display: flex; }
+.mobile-menu a { font-family: var(--font-display); font-size: 1.5rem; color: var(--cream); font-weight: 700; }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; transition: gap 0.3s; }
+.back-link:hover { gap: 12px; }
+
+/* HERO */
+.ww-hero { position: relative; min-height: 60vh; display: flex; align-items: center; overflow: hidden; background: var(--deep); }
+.ww-hero-bg { position: absolute; inset: 0; background: url('facility-aerial.webp') center/cover no-repeat; filter: brightness(0.5) saturate(1.1); }
+.ww-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,16,24,0.4) 0%, rgba(7,16,24,0.15) 50%, rgba(7,16,24,0.7) 100%); }
+.ww-hero-content { position: relative; z-index: 2; max-width: 900px; padding: 80px 24px 60px; margin: 0 auto; }
+.ww-hero-content .chapter-tag { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.ww-hero-content .chapter-tag::before { content: ''; width: 40px; height: 2px; background: var(--gold); }
+.ww-hero-content h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px; }
+.ww-hero-content h1 em { color: var(--gold); font-style: italic; }
+.ww-hero-content .hero-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 700px; }
+.safety-bar { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 32px; }
+.safety-stat { background: rgba(45,106,79,0.2); border: 1px solid rgba(82,183,136,0.3); border-radius: 8px; padding: 14px 20px; min-width: 140px; }
+.safety-stat .ss-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--green-light); }
+.safety-stat .ss-label { font-size: 0.7rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+
+/* SECTIONS */
+.ww-section { padding: 80px 24px; }
+.ww-inner { max-width: 960px; margin: 0 auto; }
+.ww-tag { font-family: var(--font-body); font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.ww-tag::before { content: ''; width: 30px; height: 2px; }
+.ww-heading { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+.ww-heading em { font-style: italic; }
+.ww-divider { width: 60px; height: 3px; border: none; margin: 20px 0; }
+.ww-prose { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.85; max-width: 780px; margin-bottom: 20px; }
+.ww-prose strong { font-weight: 700; }
+.photo-frame { border-radius: 12px; overflow: hidden; border: 2px solid rgba(201,168,76,0.2); margin: 32px 0; }
+.photo-frame img { width: 100%; display: block; min-height: 350px; object-fit: cover; }
+.photo-frame .caption { padding: 12px 20px; background: rgba(7,16,24,0.9); font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; text-align: center; }
+
+/* CH1: SKUNK SECTION */
+.skunk-section { position: relative; overflow: hidden; color: #fff; }
+.skunk-bg { position: absolute; inset: 0; background: url('skunk.webp') center/cover no-repeat; filter: brightness(0.3) saturate(0.8); }
+.skunk-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,30,15,0.7) 0%, rgba(42,30,15,0.5) 50%, rgba(42,30,15,0.8) 100%); }
+.skunk-section .ww-inner { position: relative; z-index: 2; }
+.skunk-section .ww-tag { color: #e74c3c; }
+.skunk-section .ww-tag::before { background: #e74c3c; }
+.skunk-section .ww-heading { color: #fff; }
+.skunk-section .ww-heading em { color: #e74c3c; }
+.skunk-section .ww-divider { background: #e74c3c; }
+.skunk-section .ww-prose { color: rgba(255,255,255,0.85); }
+.skunk-section .ww-prose strong { color: #fff; }
+
+/* CH2: WHAT WENT WRONG */
+.wrong-section { background: var(--cream); }
+.wrong-section .ww-tag { color: var(--navy); }
+.wrong-section .ww-tag::before { background: var(--navy); }
+.wrong-section .ww-heading { color: var(--navy); }
+.wrong-section .ww-heading em { color: var(--gold); }
+.wrong-section .ww-divider { background: var(--gold); }
+
+/* SAFETY CALLOUT */
+.safety-callout { background: rgba(45,106,79,0.08); border-left: 4px solid var(--green-hope); border-radius: 0 10px 10px 0; padding: 24px 28px; margin: 32px 0; }
+.safety-callout h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--green-hope); margin-bottom: 10px; }
+.safety-callout p { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
+.safety-callout strong { color: var(--text); }
+
+/* CH3: HEROES */
+.heroes-section { background: linear-gradient(170deg, var(--navy) 0%, var(--deep) 100%); color: #fff; }
+.heroes-section .ww-tag { color: var(--gold); }
+.heroes-section .ww-tag::before { background: var(--gold); }
+.heroes-section .ww-heading { color: #fff; }
+.heroes-section .ww-heading em { color: var(--gold); }
+.heroes-section .ww-divider { background: var(--gold); }
+.heroes-section .ww-prose { color: rgba(255,255,255,0.8); }
+.heroes-section .ww-prose strong { color: #fff; }
+.mayor-card { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; margin: 32px 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; padding: 28px; }
+.mayor-card img { width: 100%; border-radius: 8px; border: 2px solid var(--gold); }
+.mayor-card h4 { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); margin-bottom: 4px; }
+.mayor-card .title { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+.mayor-card p { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.75; }
+
+/* CH4: THE FIX */
+.fix-section { background: var(--cream); }
+.fix-section .ww-tag { color: var(--green-hope); }
+.fix-section .ww-tag::before { background: var(--green-hope); }
+.fix-section .ww-heading { color: var(--navy); }
+.fix-section .ww-heading em { color: var(--green-hope); }
+.fix-section .ww-divider { background: var(--green-hope); }
+.fix-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+.fix-step { background: #fff; border: 1px solid rgba(45,106,79,0.15); border-radius: 10px; padding: 28px 24px; position: relative; overflow: hidden; }
+.fix-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--green-hope), var(--green-light)); }
+.fix-step .step-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: var(--green-light); opacity: 0.3; margin-bottom: 8px; }
+.fix-step h4 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.fix-step p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; }
+
+/* USACE */
+.usace-section { background: var(--deep); color: #fff; }
+.usace-section .ww-tag { color: var(--sky); }
+.usace-section .ww-tag::before { background: var(--sky); }
+.usace-section .ww-heading { color: #fff; }
+.usace-section .ww-heading em { color: var(--sky); }
+.usace-section .ww-divider { background: var(--sky); }
+.usace-section .ww-prose { color: rgba(255,255,255,0.8); }
+.usace-section .ww-prose strong { color: #fff; }
+.funding-stat { display: inline-block; font-family: var(--font-display); font-size: 2.5rem; font-weight: 900; color: var(--gold); margin: 20px 0; }
+
+/* NEVER FLUSH */
+.flush-section { background: #fff; }
+.flush-section .ww-tag { color: var(--red-emergency); }
+.flush-section .ww-tag::before { background: var(--red-emergency); }
+.flush-section .ww-heading { color: var(--navy); }
+.flush-section .ww-heading em { color: var(--red-emergency); }
+.flush-section .ww-divider { background: var(--red-emergency); }
+.flush-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 32px 0; }
+.flush-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: rgba(178,34,34,0.04); border: 1px solid rgba(178,34,34,0.1); border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: var(--text); }
+.flush-item .no { color: var(--red-emergency); font-size: 1.2rem; }
+
+/* CTA */
+.ww-cta { background: var(--gold); padding: 48px 24px; text-align: center; }
+.ww-cta h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--deep); margin-bottom: 12px; }
+.ww-cta p { font-size: 1rem; color: rgba(7,16,24,0.7); margin-bottom: 24px; }
+.cta-btn { display: inline-block; padding: 14px 36px; background: var(--deep); color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 6px; border: 2px solid var(--deep); margin: 0 8px; transition: all 0.3s; }
+.cta-btn:hover { background: transparent; color: var(--deep); }
+footer { background: var(--deep); border-top: 2px solid var(--gold); padding: 32px 24px; text-align: center; }
+footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mayor-card { grid-template-columns: 1fr; text-align: center; }
+  .mayor-card img { max-width: 200px; margin: 0 auto; }
+  .safety-bar { gap: 12px; }
+}
+@media (max-width: 480px) {
+  .fix-steps { grid-template-columns: 1fr; }
+  .flush-grid { grid-template-columns: 1fr; }
+}
+
+/* FADE */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo">SaveKearnyAZ</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="situation.html">The Situation</a></li>
+    <li><a href="index.html#wells">Wells</a></li>
+    <li><a href="wastewater-update.html" style="color: var(--gold);">Wastewater Update</a></li>
+    <li><a href="mars-solution.html">Project 88 / MARS</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="situation.html" onclick="closeMobile()">The Situation</a>
+  <a href="index.html#wells" onclick="closeMobile()">Wells</a>
+  <a href="wastewater-update.html" onclick="closeMobile()" style="color: var(--gold);">Wastewater Update</a>
+  <a href="mars-solution.html" onclick="closeMobile()">Project 88 / MARS</a>
+  <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="ww-hero">
+  <div class="ww-hero-bg"></div>
+  <div class="ww-hero-overlay"></div>
+  <div class="ww-hero-content">
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <div class="chapter-tag">Community Update</div>
+    <h1>The Other Crisis — <em>What’s That Smell?</em></h1>
+    <p class="hero-lead">Kearny’s fighting for water. But there’s another battle happening quietly at the wastewater treatment plant — and if you’ve noticed the smell, you already know something’s wrong. Here’s what’s happening, why it’s safe, and what the Town is doing about it.</p>
+    <div class="safety-bar">
+      <div class="safety-stat"><div class="ss-num">SAFE</div><div class="ss-label">Air Quality<br>Confirmed</div></div>
+      <div class="safety-stat"><div class="ss-num">0.1 ppm</div><div class="ss-label">H₂S Level<br>(OSHA limit: 10 ppm)</div></div>
+      <div class="safety-stat"><div class="ss-num">$1.54M</div><div class="ss-label">Federal Funding<br>Secured (USACE)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH 1: THE SMELL — SKUNK BACKGROUND -->
+<section class="ww-section skunk-section">
+  <div class="skunk-bg"></div>
+  <div class="skunk-overlay"></div>
+  <div class="ww-inner">
+    <div class="ww-tag">Chapter I</div>
+    <h2 class="ww-heading">Something in the <em>Air</em></h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">You smell it before you see it. A thick, sulfurous odor that rolls through town on warm evenings — settling into yards, seeping through screen doors, and making you wonder if a family of skunks moved in next door.</p>
+    <p class="ww-prose">It’s not skunks. It’s <strong>hydrogen sulfide (H₂S)</strong> — a gas produced when the biological treatment process at Kearny’s wastewater plant breaks down. The bacteria that normally digest sewage have been disrupted, and without them, the system produces that unmistakable rotten-egg smell.</p>
+    <p class="ww-prose"><strong>The good news? It’s not dangerous at these levels.</strong> Current readings are 0.1 ppm — one hundred times below the OSHA workplace exposure limit. But “safe” doesn’t mean “acceptable.” The Town knows it, and they’re fixing it.</p>
+    <div class="photo-frame">
+      <img src="clarifier-basin.webp" alt="Kearny wastewater treatment plant clarifier basin" loading="lazy">
+      <div class="caption">The secondary clarifier — where biology meets engineering</div>
+    </div>
+  </div>
+</section>
+
+<!-- CH 2: WHAT WENT WRONG -->
+<section class="ww-section wrong-section">
+  <div class="ww-inner">
+    <div class="ww-tag">Chapter II</div>
+    <h2 class="ww-heading">What Went <em>Wrong</em></h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">Wastewater treatment is biological. Living bacteria break down waste, clean the water, and keep odors in check. When those bacteria die or get overwhelmed, the system fails — not catastrophically, but noticeably.</p>
+    <p class="ww-prose">Several factors converged: <strong>an unknown industrial pollutant</strong> entered the system and killed a significant portion of the beneficial bacteria. The extreme heat accelerated the problem. And with the town’s resources stretched thin fighting the water crisis, the wastewater plant couldn’t get the immediate attention it needed.</p>
+    <div class="photo-frame">
+      <img src="aeration-filter.webp" alt="Trickling filter aeration media at Kearny wastewater plant" loading="lazy">
+      <div class="caption">Trickling filter media — the biological backbone of wastewater treatment</div>
+    </div>
+    <div class="safety-callout">
+      <h3>✅ You’re Safe. Here’s the Science.</h3>
+      <p>Hydrogen sulfide (H₂S) is detectable by smell at concentrations as low as <strong>0.5 parts per billion</strong> — your nose is incredibly sensitive to it. Current levels in Kearny measure approximately <strong>0.1 ppm (100 ppb)</strong>, which is <strong>100 times below</strong> the OSHA 8-hour workplace exposure limit of 10 ppm. The smell is unpleasant, but it poses no health risk at these concentrations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CH 3: THE HEROES -->
+<section class="ww-section heroes-section">
+  <div class="ww-inner">
+    <div class="ww-tag">Chapter III</div>
+    <h2 class="ww-heading">The Heroes <em>Step Up</em></h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">Fighting a water crisis and a wastewater crisis at the same time? Most towns would crack under the pressure. Kearny’s leadership didn’t blink.</p>
+    <div class="mayor-card">
+      <img src="mayor-photo.webp" alt="Mayor Curtis Stacy — Town of Kearny, Arizona" loading="lazy">
+      <div>
+        <h4>Curtis Stacy</h4>
+        <div class="title">Mayor — Town of Kearny, AZ</div>
+        <p>Mayor Stacy mobilized the Town Council, engaged the Army Corps of Engineers, and secured $1.54 million in federal funding to rebuild the wastewater treatment system. The same leadership that declared a Level 5WE water emergency is now tackling the plant’s biological failure with the same urgency and transparency.</p>
+      </div>
+    </div>
+    <div class="photo-frame">
+      <img src="workers-repair.webp" alt="Kearny wastewater plant workers repairing equipment" loading="lazy">
+      <div class="caption">Boots on the ground — the crew rebuilding Kearny’s wastewater system</div>
+    </div>
+  </div>
+</section>
+
+<!-- CH 4: THE THREE-PART FIX -->
+<section class="ww-section fix-section">
+  <div class="ww-inner">
+    <div class="ww-tag">Chapter IV</div>
+    <h2 class="ww-heading">The <em>Three-Part Fix</em></h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">The repair strategy is straightforward: <strong>rebuild the biology, upgrade the hardware, and protect the system from future shocks.</strong></p>
+    <div class="fix-steps">
+      <div class="fix-step">
+        <div class="step-num">01</div>
+        <h4>Bacteria Inoculant</h4>
+        <p>Reintroducing industrial-grade beneficial bacteria to restart the biological treatment process. These microorganisms are the workhorses that break down waste and eliminate odor-causing compounds.</p>
+      </div>
+      <div class="fix-step">
+        <div class="step-num">02</div>
+        <h4>Blower Replacement</h4>
+        <p>Installing new aeration blowers to increase dissolved oxygen levels in the treatment basins. More oxygen means healthier bacteria, faster digestion, and dramatically reduced H₂S production.</p>
+      </div>
+      <div class="fix-step">
+        <div class="step-num">03</div>
+        <h4>Biological Donation</h4>
+        <p>Partnering with neighboring facilities to receive biological “seed” material — healthy, active bacterial colonies transplanted into Kearny’s system to jumpstart recovery.</p>
+      </div>
+    </div>
+    <div class="photo-frame">
+      <img src="pump-team.webp" alt="Kearny wastewater treatment team in the pump room" loading="lazy">
+      <div class="caption">The team inside the pump room — the people behind the operation</div>
+    </div>
+  </div>
+</section>
+
+<!-- USACE FEDERAL FUNDING -->
+<section class="ww-section usace-section">
+  <div class="ww-inner">
+    <div class="ww-tag">Federal Backing</div>
+    <h2 class="ww-heading">The Cavalry — <em>$1.54 Million</em></h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">The U.S. Army Corps of Engineers has committed <strong>$1.54 million</strong> to rebuild Kearny’s wastewater treatment infrastructure. This isn’t a band-aid — it’s a full system overhaul.</p>
+    <div class="funding-stat">$1,540,000</div>
+    <p class="ww-prose">The scope includes replacing the existing backwash tank, removing deteriorated detention tanks, installing a redundant filter vessel, and running new 8-inch sewer lines to the existing main. When complete, Kearny will have a modern, resilient wastewater system built to handle the town’s needs for decades.</p>
+    <div class="photo-frame">
+      <img src="team-clarifier.webp" alt="Kearny community and staff at the clarifier basin" loading="lazy">
+      <div class="caption">Community and crew at the clarifier — Kearny rebuilds together</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEVER FLUSH -->
+<section class="ww-section flush-section">
+  <div class="ww-inner">
+    <div class="ww-tag">Your Role</div>
+    <h2 class="ww-heading">What <em>Never</em> Goes Down the Drain</h2>
+    <hr class="ww-divider">
+    <p class="ww-prose">The fastest way to help the plant recover? <strong>Stop flushing things that kill the bacteria.</strong> Every item on this list disrupts the biological process and makes the smell worse.</p>
+    <div class="flush-grid">
+      <div class="flush-item"><span class="no">🚫</span> Cooking grease or oil</div>
+      <div class="flush-item"><span class="no">🚫</span> Baby wipes or “flushable” wipes</div>
+      <div class="flush-item"><span class="no">🚫</span> Paint, solvents, chemicals</div>
+      <div class="flush-item"><span class="no">🚫</span> Medications or pharmaceuticals</div>
+      <div class="flush-item"><span class="no">🚫</span> Feminine hygiene products</div>
+      <div class="flush-item"><span class="no">🚫</span> Paper towels or napkins</div>
+      <div class="flush-item"><span class="no">🚫</span> Cat litter</div>
+      <div class="flush-item"><span class="no">🚫</span> Industrial or shop chemicals</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="ww-cta">
+  <h3>Two Crises. One Town. Zero Quit.</h3>
+  <p>Kearny is fighting on two fronts — and winning on both.</p>
+  <a href="index.html" class="cta-btn">🏠 Back to Home</a>
+  <a href="mars-solution.html" class="cta-btn">💧 Project 88 / MARS</a>
+</div>
+
+<footer>
+  <p>SaveKearnyAZ.org &nbsp;|&nbsp; Project 88 — Kearny Basin Water Initiative<br>&copy; 2026 — Built for the people of Kearny, Arizona</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileClose');
+  if (menuBtn) { menuBtn.addEventListener('click', function() { mobileMenu.classList.add('active'); }); }
+  if (mobileClose) { mobileClose.addEventListener('click', function() { mobileMenu.classList.remove('active'); }); }
+  var fadeObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); fadeObs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.photo-frame, .fix-step, .mayor-card, .flush-item, .safety-callout').forEach(function(el) {
+    el.classList.add('fade-in'); fadeObs.observe(el);
+  });
+});
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('active'); }
+</script>
+</body>
+</html>
