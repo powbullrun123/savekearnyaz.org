@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Executive Briefing — Project 88</title>
+<title>Executive Briefing — Project 88 Initiative</title>
 <style>
     *, *::before, *::after {
         box-sizing: border-box;
@@ -13,8 +13,8 @@
         margin: 0;
         padding: 40px 20px;
         font-family: 'Times New Roman', Times, serif;
-        background-color: #fcfbfa; /* High-end warm off-white executive background */
-        color: #0c2340; /* Deep presidential navy text for clean, sharp legibility */
+        background-color: #f7f5f0; /* Classic linen paper off-white */
+        color: #1a1a1a;
         font-size: 12pt;
         line-height: 1.6;
         display: flex;
@@ -23,25 +23,26 @@
         min-height: 100vh;
     }
     
-    /* Document Canvas with Presidential Border Details */
+    /* Document page layout, squared up with clean gold border */
     .letter-container {
         position: relative;
         width: 100%;
         max-width: 800px;
-        background-color: #ffffff; /* Crisp premium white paper background */
-        padding: 60px 70px;
-        border: 4mm double #d4af37; /* Thick metallic gold double-rule border */
-        box-shadow: 0 10px 40px rgba(12, 35, 64, 0.08);
+        background-color: #ffffff; /* Page content area */
+        padding: 50px 70px;
+        border: 4mm double #d4af37; /* Double-rule gold border, perfectly balanced */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 8px; /* Clean, modern corners */
     }
 
-    /* Subtle internal vertical rules to suggest rope/wheat alignment boundaries */
+    /* Accent framing lines suggested by original image */
     .gold-accent-left {
         position: absolute;
         left: 15px;
         top: 40px;
         bottom: 40px;
         width: 1px;
-        border-left: 1px dashed rgba(212, 175, 55, 0.25);
+        border-left: 1px dashed rgba(212, 175, 55, 0.4);
     }
     .gold-accent-right {
         position: absolute;
@@ -49,72 +50,34 @@
         top: 40px;
         bottom: 40px;
         width: 1px;
-        border-right: 1px dashed rgba(212, 175, 55, 0.25);
-    }
-
-    /* Vector Presidential Seal Embellishment */
-    .seal-emblem {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 25px auto;
-        border: 3px double #d4af37;
-        border-radius: 50%;
-        background-color: #0b1a30; /* The seal core retains its classic dark leather navy */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .seal-ring-text {
-        font-size: 6.5pt;
-        color: #d4af37;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
-        margin-bottom: 2px;
-    }
-
-    .seal-center-num {
-        font-size: 24pt;
-        font-weight: bold;
-        color: #ffffff;
-        font-family: 'Times New Roman', Times, serif;
-        line-height: 1;
-    }
-
-    .seal-bottom-text {
-        font-size: 6pt;
-        color: #bfa36b;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
+        border-right: 1px dashed rgba(212, 175, 55, 0.4);
     }
     
-    /* Executive Letterhead Header */
+    /* Cleaned Letterhead Header */
     .header {
         text-align: center;
-        margin-bottom: 45px;
-        border-bottom: 2px solid #0c2340; /* Solid navy divider bar */
-        padding-bottom: 25px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        padding-bottom: 20px;
     }
     
-    .header h1 {
-        font-size: 28pt;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #0c2340;
-        margin: 0 0 5px 0;
-        font-weight: normal;
+    /* Un-clipped, Clean Master Seal Image */
+    .header .master-seal {
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 15px auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     
+    /* Structural text below the seal, cleaned up */
     .header .subtitle {
-        font-size: 10.5pt;
-        letter-spacing: 2.5px;
+        font-size: 10pt;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        color: #bfa36b; /* Polished muted gold for subheadings */
-        margin: 0 0 15px 0;
-        font-weight: bold;
+        color: #bfa36b;
+        margin: 0 0 10px 0;
     }
     
     .header .contact-info {
@@ -124,38 +87,37 @@
     }
     
     .header .contact-info span {
-        margin: 0 15px;
+        margin: 0 10px;
     }
     
-    /* Layout Details */
+    /* General Layout Details */
     .date-recipient {
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
     
     .date {
         margin-bottom: 15px;
         font-style: italic;
         color: #bfa36b;
-        font-weight: bold;
     }
     
     .recipient {
         font-weight: bold;
         line-height: 1.5;
-        color: #0c2340;
+        color: #0c2340; /* Authoritative Deep Navy */
     }
     
     .salutation {
         font-weight: bold;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
         color: #0c2340;
         font-size: 13pt;
     }
     
     p {
-        margin: 0 0 22px 0;
+        margin: 0 0 20px 0;
         text-align: justify;
-        text-indent: 35px;
+        text-indent: 35px; /* Formal indentation */
     }
     
     p.no-indent {
@@ -163,89 +125,74 @@
     }
     
     a {
-        color: #0c2340;
+        color: #d4af37;
         text-decoration: none;
-        font-weight: bold;
-        border-bottom: 2px solid #d4af37; /* Strong golden accent line under links */
-        transition: all 0.2s ease;
+        border-bottom: 1px dashed #d4af37;
+        transition: color 0.2s ease;
     }
     
     a:hover {
-        color: #bfa36b;
-        border-bottom-color: #0c2340;
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
     }
     
-    /* Premium Carnegie Quote Styling */
+    /* Dynamic Quote Block Callout, as requested by original design */
     .quote-container {
-        margin: 40px auto;
+        margin: 30px auto;
         width: 85%;
         text-align: center;
-        border-top: 1px solid #d4af37;
-        border-bottom: 1px solid #d4af37;
-        padding: 22px 0;
-        background-color: #fcfbfa; /* Slightly dynamic accent grounding for the quote block */
+        border-top: 1px solid rgba(212, 175, 55, 0.4);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+        padding: 15px 0;
     }
     
     .quote-text {
-        font-size: 14pt;
+        font-size: 13pt;
         font-style: italic;
         color: #0c2340;
-        margin: 0 0 8px 0;
+        margin: 0 0 5px 0;
         letter-spacing: 0.5px;
     }
     
     .quote-author {
-        font-size: 10pt;
+        font-size: 9.5pt;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #bfa36b;
-        font-weight: bold;
+        letter-spacing: 1.5px;
+        color: #d4af37;
     }
     
-    /* Executive Sign-off Block */
+    /* Cleanup Sign-off Block */
     .closing {
-        margin-top: 45px;
+        margin-top: 40px;
     }
     
     .signature-area {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
     
     .sender-name {
         font-weight: bold;
-        font-size: 14pt;
-        color: #0c2340;
+        font-size: 13pt;
+        color: #d4af37;
         margin-bottom: 2px;
     }
     
     .sender-email {
-        font-size: 11pt;
+        font-size: 10.5pt;
         color: #bfa36b;
         font-weight: bold;
     }
     
-    /* Footer Elements */
+    /* Simplified Page Footer */
     .footer {
         text-align: center;
-        font-size: 9.5pt;
+        font-size: 8.5pt;
         letter-spacing: 1.5px;
-        color: #718096;
+        color: rgba(113, 128, 150, 0.7);
         text-transform: uppercase;
         border-top: 1px solid rgba(12, 35, 64, 0.15);
-        padding-top: 20px;
-        margin-top: 55px;
-    }
-
-    /* Flawless Mobile Responsiveness */
-    @media (max-width: 600px) {
-        body { padding: 10px; }
-        .letter-container { padding: 35px 25px; border-width: 2mm; }
-        .header h1 { font-size: 22pt; }
-        .header .contact-info span { display: block; margin: 5px 0; }
-        .header .contact-info span:nth-child(2) { display: none; }
-        p { text-align: left; text-indent: 15px; }
-        .quote-container { width: 100%; }
-        .quote-text { font-size: 12pt; }
+        padding-top: 15px;
+        margin-top: 40px;
     }
 </style>
 </head>
@@ -255,15 +202,9 @@
     <div class="gold-accent-left"></div>
     <div class="gold-accent-right"></div>
 
-    <div class="seal-emblem">
-        <div class="seal-ring-text">Project</div>
-        <div class="seal-center-num">88</div>
-        <div class="seal-bottom-text">Initiative</div>
-    </div>
-
     <div class="header">
-        <h1>Powell Parker</h1>
-        <div class="subtitle">Kearny Basin Water Initiative &bull; Project 88</div>
+        <img src="project_88_seal.png" alt="PROJECT 88 INITIATIVE" class="master-seal">
+        <div class="subtitle">Kearny Basin Water Initiative</div>
         <div class="contact-info">
             <span>www.savekearnyaz.org</span>
             <span>&bull;</span>
@@ -283,9 +224,9 @@
 
     <div class="salutation">Dear Mayor Stacy,</div>
 
-    <p>First and foremost, thank you for your continued leadership and transparency during this dual infrastructure crisis. The community’s extraordinary response to your conservation orders — a 33% reduction achieved and held — is a direct reflection of the trust you have built with the people of Kearny. It proves, without question, that this town has the grit to fight through anything.</p>
+    <p>First and foremost, thank you for your continued leadership and transparency during this dual infrastructure crisis. The community’s extraordinary response to your conservation orders — <strong>a 33% reduction achieved and held</strong> — is a direct reflection of the trust you have built with the people of Kearny. It proves, without question, that this town has the grit to fight through anything.</p>
     
-    <p>As the developer of SaveKearnyAZ.org and the Project 88 water initiative, I have been working to bring outside visibility and resources to Kearny’s water fight. In that capacity, I would like to propose a specific avenue worth the Town’s consideration: a formal private-public partnership with ASARCO and Resolution Copper.</p>
+    <p>As the developer of <strong>SaveKearnyAZ.org</strong> and the Project 88 water initiative, I have been working to bring outside visibility and resources to Kearny’s water fight. In that capacity, I would like to propose a specific avenue worth the Town’s consideration: a formal private-public partnership with ASARCO and Resolution Copper.</p>
     
     <p>Both companies hold senior water rights in the Gila River system — but more importantly, a substantial portion of their essential workforce calls Kearny home. Their operational continuity is <strong>directly tied</strong> to the stability of this municipal grid. That alignment creates a genuine and compelling case for corporate investment — not as charity, but as a direct act of workforce preservation and operational self-interest.</p>
 
@@ -298,7 +239,7 @@
     
     <p>Should the Town be open to a collaborative dialogue with their executive leadership, I believe we can frame this as a unified, historic effort to pioneer innovative water solutions in the American Southwest. Project 88 is precisely the kind of initiative that resonates in a boardroom — verifiable geology, a defensible legal framework, federal backing, and a community already doing its part. I would welcome the opportunity to share specific ideas on how we can present this to their executive teams in a manner that reflects the Town’s values and vision.</p>
     
-    <p>In the meantime, I have built a dedicated community briefing page covering the wastewater plant situation and the $1.54M USACE Water Infiltration Improvements project at <a href="https://savekearnyaz.org/wastewater-update.html" target="_blank">savekearnyaz.org/wastewater-update.html</a>. I would welcome your feedback to ensure it perfectly mirrors the Town’s commitment to transparency as we fight these battles on both fronts.</p>
+    <p>In the meantime, I have built a dedicated community briefing page covering the wastewater plant situation and the $1.54M USACE Water Infiltration Improvements project at <a href="https://savekearnyaz.org/wastewater-update.html">savekearnyaz.org/wastewater-update.html</a>. I would welcome your feedback to ensure it perfectly mirrors the Town’s commitment to transparency as we fight these battles on both fronts.</p>
     
     <p class="no-indent">Thank you for your time, your leadership, and your unwavering dedication to the people of Kearny.</p>
 
@@ -311,7 +252,7 @@
     </div>
 
     <div class="footer">
-        SaveKearnyAZ.org &bull; Project 88 &bull; Kearny Basin Water Initiative &bull; 480-788-2320 (Arizona)
+        SaveKearnyAZ.org &bull; Project 88 &bull; 480-788-2320 (Arizona)
     </div>
 </div>
 
