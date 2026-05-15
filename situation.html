@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,8 +48,8 @@ a { color: inherit; text-decoration: none; }
 
 /* PAGE HERO */
 .page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; overflow: hidden; background: var(--deep); }
-.page-hero-bg { position: absolute; inset: 0; background: url('parched-earth.webp') center/cover no-repeat; filter: brightness(0.55) saturate(1.1); }
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,16,24,0.4) 0%, rgba(7,16,24,0.15) 50%, rgba(7,16,24,0.6) 100%); }
+.page-hero-bg { position: absolute; inset: 0; background: url('parched-ground.webp') center/cover no-repeat; filter: brightness(0.35) saturate(0.8); }
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,16,24,0.6) 0%, rgba(7,16,24,0.3) 50%, rgba(7,16,24,0.8) 100%); }
 .page-hero-content { position: relative; z-index: 2; max-width: 900px; padding: 80px 24px 60px; margin: 0 auto; }
 .page-hero-content .chapter-tag { font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--red-emergency); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
 .page-hero-content .chapter-tag::before { content: ''; width: 40px; height: 2px; background: var(--red-emergency); }
@@ -85,7 +84,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Photo slot */
 .photo-slot { border-radius: 12px; overflow: hidden; border: 2px solid rgba(201,168,76,0.2); margin: 32px 0; position: relative; background: rgba(255,255,255,0.03); }
-.photo-slot img { width: 100%; display: block; min-height: 400px; object-fit: cover; }
+.photo-slot img { width: 100%; display: block; }
 .photo-slot .photo-caption { padding: 12px 20px; background: rgba(7,16,24,0.9); font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; text-align: center; }
 .photo-placeholder { min-height: 300px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border: 2px dashed rgba(201,168,76,0.2); border-radius: 12px; margin: 32px 0; }
 .photo-placeholder span { font-size: 0.85rem; color: rgba(255,255,255,0.3); font-style: italic; }
@@ -219,7 +218,7 @@ footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
 <nav class="main-nav">
   <a href="index.html" class="nav-logo">SaveKearnyAZ</a>
   <ul class="nav-links">
-    <li><a href="index.html#situation">Home</a></li>
+    <li><a href="situation.html">The Situation</a></li>
     <li><a href="index.html#wells">Wells</a></li>
     <li><a href="index.html#actions">What To Do</a></li>
     <li><a href="mars-solution.html" style="color: var(--gold);">Project 88 / MARS</a></li>
@@ -229,7 +228,7 @@ footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&times;</button>
-  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="situation.html" onclick="closeMobile()">The Situation</a>
   <a href="index.html#wells" onclick="closeMobile()">Wells</a>
   <a href="index.html#actions" onclick="closeMobile()">What To Do</a>
   <a href="mars-solution.html" onclick="closeMobile()" style="color: var(--gold);">Project 88 / MARS</a>
@@ -244,8 +243,7 @@ footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
     <a href="index.html" class="back-link">← Back to Home</a>
     <div class="chapter-tag">The Situation</div>
     <h1>A Town Running Out of <em>Time</em></h1>
-    <p class="hero-lead">Kearny, They said a town of 2,000 people couldn't fight a federal decree, a mega-drought, and a dying reservoir all at once. They were wrong. What's happening in Kearny right now isn't just a water crisis — it's the most unlikely survival story in the American Southwest. And it starts with one question: what do you do when the law says you can't drink the water flowing past your front door?.</p>
-    <div class="crisis-stat-bar">
+    <p class="hero-lead">They said a town of 2,000 people couldn't fight a federal decree, a mega-drought, and a dying reservoir all at once. They were wrong. What's happening in Kearny right now isn't just a water crisis — it's the most unlikely survival story in the American Southwest. And it starts with one question: what do you do when the law says you can't drink the water flowing past your front door?</p>
       <div class="crisis-stat"><div class="cs-num">4,064</div><div class="cs-label">Acre-Feet in<br>San Carlos Reservoir</div></div>
       <div class="crisis-stat"><div class="cs-num">&lt;0.3%</div><div class="cs-label">Of Reservoir<br>Capacity</div></div>
       <div class="crisis-stat"><div class="cs-num">0.76</div><div class="cs-label">Acre-Feet Allotted<br>for All of 2026</div></div>
@@ -268,7 +266,7 @@ footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
 
     <!-- PHOTO: Parched earth -->
     <div class="photo-slot">
-      <img src="parched-earth.webp" alt="Cracked, parched desert ground near Kearny AZ — water evaporating from the earth" loading="lazy" style="width: 100%; max-height: 500px; object-fit: cover;">
+      <img src="parched-ground.webp" alt="Cracked, parched desert ground near Kearny AZ — water evaporating from the earth" loading="lazy" style="width: 100%; max-height: 500px; object-fit: cover;">
       <div class="photo-caption">The ground beneath Kearny — parched, cracked, and losing water to evaporation daily</div>
     </div>
 
@@ -316,7 +314,7 @@ footer p { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
     </div>
 
     <!-- PHOTO SLOT: Dam low levels -->
-    <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin: 32px 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0;">
       <div class="photo-slot">
         <img src="coolidge-dam-low.jpg" alt="Coolidge Dam with San Carlos Reservoir at low water levels — the bathtub ring tells the story" loading="lazy">
         <div class="photo-caption">Coolidge Dam — Water line dropping, bathtub ring exposed</div>
