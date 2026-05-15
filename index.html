@@ -96,7 +96,7 @@ a { color: inherit; text-decoration: none; }
 .quote-author { color: #C9A84C; font-family: 'Lato', sans-serif; font-size: clamp(18px, 4vw, 24px); font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
 /* STORM */
 .storm { background: #AED6F1; position: relative; overflow: hidden; padding: 100px 0; }
-.storm-bg { position: absolute; inset: 0; background: url('parched-earth.webp') center/cover no-repeat; opacity: 0.1; filter: saturate(0.2); }
+.storm-bg { position: absolute; inset: 0; background: url('parched-ground.webp') center/cover no-repeat; opacity: 0.1; filter: saturate(0.2); }
 .storm .section-inner { position: relative; z-index: 2; }
 .storm .section-title { color: #1a1a1a; }
 .storm .section-title em { color: #B22222; }
@@ -352,7 +352,7 @@ footer a { color: var(--gold-light); }
 <nav class="main-nav" id="mainNav">
   <a href="#" class="nav-logo">SaveKearnyAZ</a>
   <ul class="nav-links">
-    <li><a href="situation.html">The Situation</a></li>
+    <li><a href="#situation">The Situation</a></li>
     <li><a href="#wells">Wells</a></li>
     <li><a href="#actions">What To Do</a></li>
     <li><a href="mars-solution.html" style="color: var(--gold);">Project 88 / MARS</a></li>
@@ -365,7 +365,7 @@ footer a { color: var(--gold-light); }
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&times;</button>
-  <a href="situation.html" onclick="closeMobile()">The Situation</a>
+  <a href="#situation" onclick="closeMobile()">The Situation</a>
   <a href="#wells" onclick="closeMobile()">Wells</a>
   <a href="#actions" onclick="closeMobile()">What To Do</a>
   <a href="mars-solution.html" onclick="closeMobile()" style="color: var(--gold);">Project 88 / MARS</a>
@@ -382,7 +382,7 @@ footer a { color: var(--gold-light); }
     <p class="hero-sub">Nestled along the Gila River in Pinal County, Arizona, Kearny has been home to copper miners, ranchers, and families for over a century. It's the kind of place where neighbors wave, kids swim in the town pool, and the lake shimmers at sunset. But today — this little town is fighting for its life.</p>
     <div class="hero-stats">
       <div class="stat-card"><div class="stat-num">0.76</div><div class="stat-label">Acre-Feet Allotted<br>for All of 2026</div></div>
-      <div class="stat-card"><div class="stat-num">2%</div><div class="stat-label">Coolidge Dam<br>Capacity</div></div>
+      <div class="stat-card"><div class="stat-num">&lt;0.5%</div><div class="stat-label">Coolidge Dam<br>Capacity</div></div>
       <div class="stat-card"><div class="stat-num">33%</div><div class="stat-label">Reduction Achieved<br>by Residents</div></div>
       <div class="stat-card"><div class="stat-num">Aug</div><div class="stat-label">Current Water<br>Runway</div></div>
     </div>
@@ -410,7 +410,7 @@ footer a { color: var(--gold-light); }
     <hr class="divider" style="background: var(--red-emergency);">
     <p class="section-lead">Two antagonists are conspiring against Kearny. The first is an unprecedented drought that has emptied Coolidge Dam to less than 2% of its capacity. The second is a 91-year-old federal court decree that puts Kearny last in line for every remaining drop.</p>
     <div class="threat-grid">
-      <div class="threat-card"><div class="threat-icon">🔥</div><h3>Antagonist #1 — The Drought</h3><p>Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Coolidge Dam — the sole source of Kearny's water allocation — has drained to barely 19,765 acre-feet out of a 910,000 acre-foot capacity. No snowpack. No monsoons in sight. The taps are running on borrowed time.</p><span class="threat-stat">Dam at 2% Capacity</span></div>
+      <div class="threat-card"><div class="threat-icon">🔥</div><h3>Antagonist #1 — The Drought</h3><p>Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Coolidge Dam — the sole source of Kearny's water allocation — has drained to barely 4,064 acre-feet out of a 875,000 acre-foot capacity. No snowpack. No monsoons in sight. The taps are running on borrowed time.</p><span class="threat-stat">Dam Below 0.5%</span></div>
       <div class="threat-card"><div class="threat-icon">⚖️</div><h3>Antagonist #2 — The Globe Equity Decree of 1935</h3><p>A federal court decree that divides Gila River water among competing users. Kearny's rights are "junior" — established later than neighboring communities and tribal nations. Under the prior appropriation doctrine, senior rights drink first. When the dam runs dry, Kearny is the first to be cut off. In 2026, that cut was devastating: from 610 acre-feet down to 0.76.</p><span class="threat-stat">610 → 0.76 Acre-Feet</span></div>
       <div class="threat-card"><div class="threat-icon">📜</div><h3>Antagonist #3 — The Competing Claims</h3><p>Water rights attorneys representing senior appropriators and tribal nations could challenge any loose or unexercised groundwater claim along the Gila River corridor. Without clear legal standing on Kearny's deep wells, the town risks losing access to the very infrastructure sitting beneath its feet.</p><span class="threat-stat">Legal Battle Looming</span></div>
       <div class="threat-card"><div class="threat-icon">⏳</div><h3>The Math — Zero Day</h3><p>Before conservation efforts began, Kearny was on track to hit "zero water day" by July 15, 2026. You turn on your faucet and nothing comes out — for any purpose. Drinking, bathing, cooking, sanitation — all gone. That's not a hypothetical. That's the trajectory Mayor Stacy communicated in the April 8 emergency letter.</p><span class="threat-stat">Originally: July 15, 2026</span></div>
@@ -428,7 +428,7 @@ footer a { color: var(--gold-light); }
     <div class="tragedy-grid">
       <div class="tragedy-img"><img src="pool-kids.webp" alt="Kids swimming in the Kearny town pool — before the crisis" loading="lazy"><div class="img-label label-before">✦ Before — Summer Days at the Town Pool</div></div>
       <div class="tragedy-img"><img src="pool-ai-crisis.webp" alt="Empty Kearny town pool — no water, no kids, no laughter" loading="lazy"><div class="img-label label-after">✦ After — Not a Drop. Not a Sound.</div></div>
-      <div class="tragedy-quote"><blockquote>"When you drain the pool, you don't just lose water.<br>You lose the <em>heart</em> of a community." <img src="pool-empty.webp"></blockquote><cite>— A Kearny Resident</cite></div>
+      <div class="tragedy-quote"><blockquote>"When you drain the pool, you don't just lose water.<br>You lose the <em>heart</em> of a community."</blockquote><cite>— A Kearny Resident</cite></div>
     </div>
     <div class="ghost-town-section">
       <div class="ghost-img"><img src="ghost-town.webp" alt="Abandoned buildings — what could happen if water runs out" loading="lazy"></div>
@@ -877,7 +877,7 @@ footer a { color: var(--gold-light); }
     <h2 class="section-title" style="color: #1B2A40;">More Resources <em>Coming Soon</em></h2>
     <hr class="divider">
     <div class="pages-grid">
-      <a href="situation.html" class="page-link-card"><div class="page-icon">📊</div><h4>The Situation</h4><p>Full data breakdown, dam levels, allotment history, and timeline</p><span class="coming-soon">Coming Soon</span></a>
+      <a href="mars-solution.html" class="page-link-card"><div class="page-icon">📊</div><h4>The Situation</h4><p>Full data breakdown, dam levels, allotment history, and timeline</p></a>
       <a href="mars-solution.html" class="page-link-card"><div class="page-icon">📈</div><h4>Progress</h4><p>Weekly conservation tracking, reclaim rates, and community wins</p><span class="coming-soon">Coming Soon</span></a>
       <a href="#wells" class="page-link-card"><div class="page-icon">🔧</div><h4>Wells</h4><p>All 21 wells — depth, casing, water levels, and status</p></a>
       <a href="mars-solution.html" class="page-link-card"><div class="page-icon">📋</div><h4>What To Do</h4><p>Conservation tips, vendor list, grey water guides, and leak detection</p><span class="coming-soon">Coming Soon</span></a>
@@ -886,6 +886,15 @@ footer a { color: var(--gold-light); }
     </div>
   </div>
 </section>
+
+
+<!-- CTA BAND -->
+<div style="background: var(--gold); padding: 48px 24px; text-align: center;">
+  <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--deep); margin-bottom: 12px;">Kearny Has a Plan. Now It Needs Partners.</h3>
+  <p style="font-size: 1rem; color: rgba(7,16,24,0.7); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">The mines, the tribes, and the state have a seat at the table. If you want to help — or if your organization can contribute — reach out to Town Hall.</p>
+  <a href="tel:5203635547" style="display: inline-block; padding: 14px 36px; background: var(--deep); color: var(--gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 6px; transition: all 0.3s; border: 2px solid var(--deep); margin: 0 8px;">📞 Call Town Hall</a>
+  <a href="situation.html" style="display: inline-block; padding: 14px 36px; background: transparent; color: var(--deep); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 6px; transition: all 0.3s; border: 2px solid var(--deep); margin: 0 8px;">📊 Read The Situation</a>
+</div>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
