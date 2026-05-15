@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Briefing — Project 88</title>
+<style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #050d1a; /* Extra deep outer background */
+        color: #f7f5f0;
+        font-size: 12pt;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    /* Double-rule golden border simulating the formal seal framing */
+    .letter-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        background-color: #0b1a30; /* Deep presidential navy blue */
+        padding: 50px 60px;
+        border: 4mm double #d4af37; /* Metallic Gold */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Accent framing lines for executive seal aesthetic */
+    .gold-accent-left {
+        position: absolute;
+        left: 15px;
+        top: 40px;
+        bottom: 40px;
+        width: 1px;
+        border-left: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+    .gold-accent-right {
+        position: absolute;
+        right: 15px;
+        top: 40px;
+        bottom: 40px;
+        width: 1px;
+        border-right: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+    
+    /* Letterhead Header */
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        padding-bottom: 20px;
+    }
+    
+    .header h1 {
+        font-size: 28pt;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #d4af37;
+        margin: 0 0 5px 0;
+        font-weight: normal;
+    }
+    
+    .header .subtitle {
+        font-size: 10pt;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #bfa36b;
+        margin: 0 0 15px 0;
+    }
+    
+    .header .contact-info {
+        font-size: 10.5pt;
+        letter-spacing: 0.5px;
+        color: #e0dbcd;
+    }
+    
+    .header .contact-info span {
+        margin: 0 15px;
+    }
+    
+    /* Content Layout */
+    .date-recipient {
+        margin-bottom: 30px;
+    }
+    
+    .date {
+        margin-bottom: 15px;
+        font-style: italic;
+        color: #bfa36b;
+    }
+    
+    .recipient {
+        font-weight: bold;
+        line-height: 1.5;
+        color: #ffffff;
+    }
+    
+    .salutation {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffffff;
+        font-size: 13pt;
+    }
+    
+    p {
+        margin: 0 0 20px 0;
+        text-align: justify;
+        text-indent: 30px;
+    }
+    
+    p.no-indent {
+        text-indent: 0;
+    }
+    
+    a {
+        color: #d4af37;
+        text-decoration: none;
+        border-bottom: 1px dashed #d4af37;
+        transition: color 0.2s ease;
+    }
+    
+    a:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+    }
+    
+    /* Quote Block inside the seal aesthetic */
+    .quote-container {
+        margin: 35px auto;
+        width: 85%;
+        text-align: center;
+        border-top: 1px solid rgba(212, 175, 55, 0.4);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+        padding: 20px 0;
+    }
+    
+    .quote-text {
+        font-size: 14pt;
+        font-style: italic;
+        color: #ffffff;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.5px;
+    }
+    
+    .quote-author {
+        font-size: 10pt;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #d4af37;
+    }
+    
+    /* Sign-off Block */
+    .closing {
+        margin-top: 40px;
+    }
+    
+    .signature-area {
+        margin-bottom: 35px;
+    }
+    
+    .sender-name {
+        font-weight: bold;
+        font-size: 14pt;
+        color: #d4af37;
+        margin-bottom: 2px;
+    }
+    
+    .sender-email {
+        font-size: 11pt;
+        color: #bfa36b;
+    }
+    
+    /* Footer */
+    .footer {
+        text-align: center;
+        font-size: 9pt;
+        letter-spacing: 1.5px;
+        color: rgba(224, 219, 205, 0.4);
+        text-transform: uppercase;
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+        padding-top: 15px;
+        margin-top: 50px;
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 600px) {
+        body { padding: 10px; }
+        .letter-container { padding: 30px 20px; border-width: 2mm; }
+        .header h1 { font-size: 20pt; }
+        .header .contact-info span { display: block; margin: 5px 0; }
+        .header .contact-info span:nth-child(2) { display: none; }
+        p { text-align: left; text-indent: 15px; }
+        .quote-container { width: 100%; }
+        .quote-text { font-size: 12pt; }
+    }
+</style>
+</head>
+<body>
+
+<div class="letter-container">
+    <div class="gold-accent-left"></div>
+    <div class="gold-accent-right"></div>
+
+    <div class="header">
+        <h1>Powell Parker</h1>
+        <div class="subtitle">Kearny Basin Water Initiative &bull; Project 88</div>
+        <div class="contact-info">
+            <span>www.savekearnyaz.org</span>
+            <span>&bull;</span>
+            <span>480-788-2320</span>
+        </div>
+    </div>
+
+    <div class="date-recipient">
+        <div class="date">May 15, 2026</div>
+        <div class="recipient">
+            Mayor Curtis Stacy<br>
+            Town of Kearny, Arizona<br>
+            912-C Tilbury Drive &bull; P.O. Box 639<br>
+            Kearny, Arizona 85137
+        </div>
+    </div>
+
+    <div class="salutation">Dear Mayor Stacy,</div>
+
+    <p>First and foremost, thank you for your continued leadership and transparency during this dual infrastructure crisis. The community’s extraordinary response to your conservation orders — a 33% reduction achieved and held — is a direct reflection of the trust you have built with the people of Kearny. It proves, without question, that this town has the grit to fight through anything.</p>
+    
+    <p>As the developer of SaveKearnyAZ.org and the Project 88 water initiative, I have been working to bring outside visibility and resources to Kearny’s water fight. In that capacity, I would like to propose a specific avenue worth the Town’s consideration: a formal private-public partnership with ASARCO and Resolution Copper.</p>
+    
+    <p>Both companies hold senior water rights in the Gila River system — but more importantly, a substantial portion of their essential workforce calls Kearny home. Their operational continuity is <strong>directly tied</strong> to the stability of this municipal grid. That alignment creates a genuine and compelling case for corporate investment — not as charity, but as a direct act of workforce preservation and operational self-interest.</p>
+
+    <div class="quote-container">
+        <div class="quote-text">“Teamwork is the fuel that allows common people to attain uncommon results.”</div>
+        <div class="quote-author">&mdash; Andrew Carnegie &mdash;</div>
+    </div>
+
+    <p>If we want uncommon results for Kearny, it is time to remind our industrial partners that a town cannot be treated as a one-way resource. True corporate responsibility means investing in the foundation that sustains the enterprise. By inviting these higher powers to pull on the same rope as our residents, we are not asking for a favor — we are asking them to protect the very ecosystem that makes their business possible.</p>
+    
+    <p>Should the Town be open to a collaborative dialogue with their executive leadership, I believe we can frame this as a unified, historic effort to pioneer innovative water solutions in the American Southwest. Project 88 is precisely the kind of initiative that resonates in a boardroom — verifiable geology, a defensible legal framework, federal backing, and a community already doing its part. I would welcome the opportunity to share specific ideas on how we can present this to their executive teams in a manner that reflects the Town’s values and vision.</p>
+    
+    <p>In the meantime, I have built a dedicated community briefing page covering the wastewater plant situation and the $1.54M USACE Water Infiltration Improvements project at <a href="https://savekearnyaz.org/wastewater-update.html" target="_blank">savekearnyaz.org/wastewater-update.html</a>. I would welcome your feedback to ensure it perfectly mirrors the Town’s commitment to transparency as we fight these battles on both fronts.</p>
+    
+    <p class="no-indent">Thank you for your time, your leadership, and your unwavering dedication to the people of Kearny.</p>
+
+    <div class="closing">
+        <div class="signature-area">
+            <em>Respectfully submitted,</em>
+        </div>
+        <div class="sender-name">Powell Parker</div>
+        <div class="sender-email">powell@powparker.com</div>
+    </div>
+
+    <div class="footer">
+        SaveKearnyAZ.org &bull; Project 88 &bull; Kearny Basin Water Initiative &bull; 480-788-2320 (Arizona)
+    </div>
+</div>
+
+</body>
+</html>
