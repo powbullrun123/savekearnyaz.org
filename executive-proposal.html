@@ -11,10 +11,10 @@
     
     body {
         margin: 0;
-        padding: 20px;
+        padding: 40px 20px;
         font-family: 'Times New Roman', Times, serif;
-        background-color: #050d1a; /* Extra deep outer background */
-        color: #f7f5f0;
+        background-color: #fcfbfa; /* High-end warm off-white executive background */
+        color: #0c2340; /* Deep presidential navy text for clean, sharp legibility */
         font-size: 12pt;
         line-height: 1.6;
         display: flex;
@@ -23,25 +23,25 @@
         min-height: 100vh;
     }
     
-    /* Double-rule golden border simulating the formal seal framing */
+    /* Document Canvas with Presidential Border Details */
     .letter-container {
         position: relative;
         width: 100%;
         max-width: 800px;
-        background-color: #0b1a30; /* Deep presidential navy blue */
-        padding: 50px 60px;
-        border: 4mm double #d4af37; /* Metallic Gold */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        background-color: #ffffff; /* Crisp premium white paper background */
+        padding: 60px 70px;
+        border: 4mm double #d4af37; /* Thick metallic gold double-rule border */
+        box-shadow: 0 10px 40px rgba(12, 35, 64, 0.08);
     }
 
-    /* Accent framing lines for executive seal aesthetic */
+    /* Subtle internal vertical rules to suggest rope/wheat alignment boundaries */
     .gold-accent-left {
         position: absolute;
         left: 15px;
         top: 40px;
         bottom: 40px;
         width: 1px;
-        border-left: 1px dashed rgba(212, 175, 55, 0.3);
+        border-left: 1px dashed rgba(212, 175, 55, 0.25);
     }
     .gold-accent-right {
         position: absolute;
@@ -49,72 +49,113 @@
         top: 40px;
         bottom: 40px;
         width: 1px;
-        border-right: 1px dashed rgba(212, 175, 55, 0.3);
+        border-right: 1px dashed rgba(212, 175, 55, 0.25);
+    }
+
+    /* Vector Presidential Seal Embellishment */
+    .seal-emblem {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 25px auto;
+        border: 3px double #d4af37;
+        border-radius: 50%;
+        background-color: #0b1a30; /* The seal core retains its classic dark leather navy */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .seal-ring-text {
+        font-size: 6.5pt;
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    .seal-center-num {
+        font-size: 24pt;
+        font-weight: bold;
+        color: #ffffff;
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1;
+    }
+
+    .seal-bottom-text {
+        font-size: 6pt;
+        color: #bfa36b;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
     
-    /* Letterhead Header */
+    /* Executive Letterhead Header */
     .header {
         text-align: center;
-        margin-bottom: 40px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-        padding-bottom: 20px;
+        margin-bottom: 45px;
+        border-bottom: 2px solid #0c2340; /* Solid navy divider bar */
+        padding-bottom: 25px;
     }
     
     .header h1 {
         font-size: 28pt;
         text-transform: uppercase;
-        letter-spacing: 3px;
-        color: #d4af37;
+        letter-spacing: 4px;
+        color: #0c2340;
         margin: 0 0 5px 0;
         font-weight: normal;
     }
     
     .header .subtitle {
-        font-size: 10pt;
-        letter-spacing: 2px;
+        font-size: 10.5pt;
+        letter-spacing: 2.5px;
         text-transform: uppercase;
-        color: #bfa36b;
+        color: #bfa36b; /* Polished muted gold for subheadings */
         margin: 0 0 15px 0;
+        font-weight: bold;
     }
     
     .header .contact-info {
         font-size: 10.5pt;
         letter-spacing: 0.5px;
-        color: #e0dbcd;
+        color: #4a5568;
     }
     
     .header .contact-info span {
         margin: 0 15px;
     }
     
-    /* Content Layout */
+    /* Layout Details */
     .date-recipient {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
     
     .date {
         margin-bottom: 15px;
         font-style: italic;
         color: #bfa36b;
+        font-weight: bold;
     }
     
     .recipient {
         font-weight: bold;
         line-height: 1.5;
-        color: #ffffff;
+        color: #0c2340;
     }
     
     .salutation {
         font-weight: bold;
-        margin-bottom: 20px;
-        color: #ffffff;
+        margin-bottom: 22px;
+        color: #0c2340;
         font-size: 13pt;
     }
     
     p {
-        margin: 0 0 20px 0;
+        margin: 0 0 22px 0;
         text-align: justify;
-        text-indent: 30px;
+        text-indent: 35px;
     }
     
     p.no-indent {
@@ -122,31 +163,33 @@
     }
     
     a {
-        color: #d4af37;
+        color: #0c2340;
         text-decoration: none;
-        border-bottom: 1px dashed #d4af37;
-        transition: color 0.2s ease;
+        font-weight: bold;
+        border-bottom: 2px solid #d4af37; /* Strong golden accent line under links */
+        transition: all 0.2s ease;
     }
     
     a:hover {
-        color: #ffffff;
-        border-bottom: 1px solid #ffffff;
+        color: #bfa36b;
+        border-bottom-color: #0c2340;
     }
     
-    /* Quote Block inside the seal aesthetic */
+    /* Premium Carnegie Quote Styling */
     .quote-container {
-        margin: 35px auto;
+        margin: 40px auto;
         width: 85%;
         text-align: center;
-        border-top: 1px solid rgba(212, 175, 55, 0.4);
-        border-bottom: 1px solid rgba(212, 175, 55, 0.4);
-        padding: 20px 0;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        padding: 22px 0;
+        background-color: #fcfbfa; /* Slightly dynamic accent grounding for the quote block */
     }
     
     .quote-text {
         font-size: 14pt;
         font-style: italic;
-        color: #ffffff;
+        color: #0c2340;
         margin: 0 0 8px 0;
         letter-spacing: 0.5px;
     }
@@ -155,47 +198,49 @@
         font-size: 10pt;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #d4af37;
+        color: #bfa36b;
+        font-weight: bold;
     }
     
-    /* Sign-off Block */
+    /* Executive Sign-off Block */
     .closing {
-        margin-top: 40px;
+        margin-top: 45px;
     }
     
     .signature-area {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
     }
     
     .sender-name {
         font-weight: bold;
         font-size: 14pt;
-        color: #d4af37;
+        color: #0c2340;
         margin-bottom: 2px;
     }
     
     .sender-email {
         font-size: 11pt;
         color: #bfa36b;
+        font-weight: bold;
     }
     
-    /* Footer */
+    /* Footer Elements */
     .footer {
         text-align: center;
-        font-size: 9pt;
+        font-size: 9.5pt;
         letter-spacing: 1.5px;
-        color: rgba(224, 219, 205, 0.4);
+        color: #718096;
         text-transform: uppercase;
-        border-top: 1px solid rgba(212, 175, 55, 0.15);
-        padding-top: 15px;
-        margin-top: 50px;
+        border-top: 1px solid rgba(12, 35, 64, 0.15);
+        padding-top: 20px;
+        margin-top: 55px;
     }
 
-    /* Mobile Adaptations */
+    /* Flawless Mobile Responsiveness */
     @media (max-width: 600px) {
         body { padding: 10px; }
-        .letter-container { padding: 30px 20px; border-width: 2mm; }
-        .header h1 { font-size: 20pt; }
+        .letter-container { padding: 35px 25px; border-width: 2mm; }
+        .header h1 { font-size: 22pt; }
         .header .contact-info span { display: block; margin: 5px 0; }
         .header .contact-info span:nth-child(2) { display: none; }
         p { text-align: left; text-indent: 15px; }
@@ -209,6 +254,12 @@
 <div class="letter-container">
     <div class="gold-accent-left"></div>
     <div class="gold-accent-right"></div>
+
+    <div class="seal-emblem">
+        <div class="seal-ring-text">Project</div>
+        <div class="seal-center-num">88</div>
+        <div class="seal-bottom-text">Initiative</div>
+    </div>
 
     <div class="header">
         <h1>Powell Parker</h1>
