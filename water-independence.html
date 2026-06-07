@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Colorado River Crisis &amp; Kearny's Shield | SaveKearnyAZ.org</title>
+  <meta name="description" content="As the federal government forces historic cuts on Colorado River water rights, Kearny is moving to lock in its independence. Learn about the 800-foot deep aquifer and the MARS solution." />
+  <meta property="og:title" content="The Colorado River Crisis & Kearny's Shield" />
+  <meta property="og:description" content="Kearny's deep granite-vault aquifer holds the key to permanent water independence before the 2026 federal deadline." />
+  <meta property="og:url" content="https://savekearnyaz.org/water-independence.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:   #0d1f2d;
+      --deep:   #071018;
+      --gold:   #C9A84C;
+      --gold-l: #e8d5a3;
+      --rust:   #8B3A2A;
+      --sky:    #4a9eca;
+      --white:  #fdfaf5;
+      --text:   #1a2e3f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.78;
+      overflow-x: hidden;
+    }
+
+    /* ── STICKY NAV ── */
+    .site-header {
+      background: var(--navy);
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 2px solid var(--gold);
+    }
+    .site-header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--gold);
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .site-header nav a {
+      color: var(--gold-l);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      margin-left: 26px;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .site-header nav a:hover { color: var(--gold); }
+
+    /* ── SEAL HERO ── */
+    .seal-hero {
+      background: var(--deep);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 52px 32px 64px;
+    }
+    .seal-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, rgba(74,158,202,.14) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 15% 0%,   rgba(201,168,76,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .seal-wrap {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 26px;
+    }
+    .seal-wrap img {
+      width: 152px;
+      height: 152px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 3px rgba(201,168,76,.4),
+        0 0 0 8px rgba(201,168,76,.10),
+        0 14px 44px rgba(0,0,0,.6);
+      display: inline-block;
+    }
+    .urgency-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--rust);
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: .75rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 2px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .urgency-tag .dot {
+      width: 8px; height: 8px;
+      background: #fff;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: blink 1.4s infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.3; transform:scale(.65); }
+    }
+    .seal-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.13;
+      max-width: 820px;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .seal-hero h1 em { color: var(--gold); font-style: italic; }
+    .seal-hero .sub {
+      color: var(--gold-l);
+      font-size: 1.06rem;
+      max-width: 640px;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .stat {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(201,168,76,.28);
+      border-radius: 4px;
+      padding: 14px 24px;
+      text-align: center;
+      min-width: 135px;
+    }
+    .stat .n {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat .l {
+      font-family: 'Oswald', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+      margin-top: 5px;
+      display: block;
+    }
+
+    /* ── CONTENT WRAP ── */
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 68px 32px;
+    }
+
+    .sec-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 9px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    p { font-size: 1.03rem; margin-bottom: 17px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--navy); }
+
+    /* ── SECTION DIVIDERS ── */
+    .light-section { border-top: 1px solid rgba(0,0,0,.09); }
+
+    /* ── DARK BAND ── */
+    .dark { background: var(--navy); color: var(--white); }
+    .dark .sec-label { color: var(--sky); }
+    .dark h2  { color: var(--gold-l); }
+    .dark p   { color: rgba(255,255,255,.82); }
+    .dark strong { color: var(--gold); }
+    .dark h3  { color: var(--gold-l); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+      margin: 26px 0;
+      background: #fff3d0;
+    }
+    .callout .cl {
+      font-family: 'Oswald', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--rust);
+      display: block;
+      margin-bottom: 7px;
+    }
+    .callout p { margin: 0; font-size: .99rem; color: #1a2e3f; }
+    .callout.sky { border-left-color: var(--sky); background: rgba(255,255,255,.06); }
+    .callout.sky .cl { color: var(--sky); }
+    .callout.sky p { color: rgba(255,255,255,.85); }
+
+    /* ── HIGH-CONTRAST LEGAL QUOTE ── */
+    .legal-quote {
+      background: var(--navy);
+      border-left: 5px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .legal-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-l);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .legal-quote cite {
+      font-family: 'Oswald', sans-serif;
+      font-style: normal;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sky);
+    }
+
+    /* ── DIAGRAM IMAGE BLOCKS ── */
+    .diagram-block {
+      margin: 36px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,.2);
+      background: var(--deep);
+    }
+    .diagram-block .db-header {
+      background: var(--navy);
+      padding: 11px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: .72rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--sky);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .diagram-block .db-header span.badge {
+      background: var(--gold);
+      color: var(--navy);
+      font-size: .62rem;
+      letter-spacing: .1em;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+    .diagram-block img {
+      width: 100%;
+      display: block;
+    }
+    .diagram-block .db-caption {
+      background: rgba(255,255,255,.04);
+      padding: 10px 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .07em;
+      color: rgba(255,255,255,.44);
+      line-height: 1.55;
+    }
+
+    /* ── DEPTH ZONE DIAGRAM (CSS) ── */
+    .depth-diagram {
+      margin: 36px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: 'Oswald', sans-serif;
+      border: 1px solid rgba(255,255,255,.07);
+    }
+    .dd-surface {
+      background: #2a4828;
+      padding: 13px 22px;
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #8ecf82;
+    }
+    .dd-arrow {
+      background: var(--deep);
+      padding: 7px 22px;
+      font-size: .68rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dd-arrow::before { content: '↓'; font-size: 1rem; color: var(--gold); }
+    .dd-zone-danger {
+      background: #1a2f44;
+      padding: 20px 22px;
+      border-top: 2px dashed rgba(232,122,90,.3);
+      border-bottom: 2px dashed rgba(232,122,90,.3);
+    }
+    .dd-zone-label { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 7px; }
+    .dd-zone-label.danger { color: #e87a5a; }
+    .dd-zone-label.safe   { color: #7ec86a; }
+    .dd-desc {
+      font-family: 'Source Serif 4', serif;
+      font-size: .93rem;
+      color: rgba(255,255,255,.78);
+      line-height: 1.58;
+    }
+    .dd-decree {
+      background: rgba(139,58,42,.22);
+      border: 1px solid rgba(232,122,90,.4);
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: .84rem;
+      color: #f0a080;
+    }
+    .dd-decree strong { color: #f0a080; }
+    .dd-shield {
+      background: #5c2418;
+      padding: 11px 22px;
+      text-align: center;
+      font-size: .78rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #ffc8a8;
+      border-top: 2px solid #e87a5a;
+      border-bottom: 2px solid #e87a5a;
+    }
+    .dd-zone-safe {
+      background: #061320;
+      padding: 20px 22px;
+    }
+    .dd-vault-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .vbadge {
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 3px;
+      padding: 5px 12px;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-l);
+    }
+    .vbadge.coming { border-color: rgba(232,122,90,.5); color: #f0a080; background: rgba(139,58,42,.15); }
+
+    /* ── TWO-COL COMPARE ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 30px 0;
+    }
+    .col-risk { background: #1e0a08; padding: 26px 22px; }
+    .col-safe { background: #071a10; padding: 26px 22px; }
+    .col-head {
+      font-family: 'Oswald', sans-serif;
+      font-size: .74rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .col-risk .col-head { color: #e87a5a; }
+    .col-safe .col-head { color: #7ec86a; }
+    .col-risk ul, .col-safe ul { list-style: none; padding: 0; }
+    .col-risk li, .col-safe li {
+      font-size: .9rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      color: rgba(255,255,255,.8);
+      font-family: 'Source Serif 4', serif;
+      line-height: 1.45;
+    }
+    .col-risk li:last-child, .col-safe li:last-child { border-bottom: none; }
+    .col-risk li::before { content: '✗ '; color: #e87a5a; font-weight: 700; }
+    .col-safe li::before { content: '✓ '; color: #7ec86a; font-weight: 700; }
+
+    /* ── 4-PHASE GRID ── */
+    .phases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin: 30px 0;
+    }
+    .phase {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(201,168,76,.18);
+      border-radius: 6px;
+      padding: 22px 20px;
+      position: relative;
+    }
+    .phase-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: rgba(201,168,76,.18);
+      position: absolute;
+      top: 10px; right: 14px;
+      line-height: 1;
+    }
+    .phase-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: .67rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 5px;
+    }
+    .phase h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.03rem;
+      color: var(--gold-l);
+      margin-bottom: 9px;
+    }
+    .phase p { font-size: .88rem; color: rgba(255,255,255,.74); margin: 0; line-height: 1.56; }
+
+    /* ── ACTION STEPS ── */
+    .steps { margin-top: 34px; }
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 25px; top: 48px; bottom: -14px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,.05));
+    }
+    .step-n {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 5px rgba(201,168,76,.12);
+      z-index: 1;
+    }
+    .step-body { padding-bottom: 34px; }
+    .step-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+      padding-top: 10px;
+    }
+    .step-body p { font-size: .95rem; margin: 0; }
+
+    /* ── CTA ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #153047 100%);
+      text-align: center;
+      padding: 80px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 55% at 50% 100%, rgba(74,158,202,.10) 0%, transparent 70%);
+    }
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.65rem, 4vw, 2.6rem);
+      color: var(--white);
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .cta-band h2 em { color: var(--gold); font-style: italic; }
+    .cta-band p {
+      color: var(--gold-l);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      font-size: 1.03rem;
+      position: relative; z-index: 1;
+    }
+    .btns {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+      position: relative; z-index: 1;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-family: 'Oswald', sans-serif;
+      font-size: .84rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.28); }
+    .btn-gold    { background: var(--gold); color: var(--navy); font-weight: 600; }
+    .btn-outline { border: 2px solid var(--gold-l); color: var(--gold-l); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep);
+      text-align: center;
+      padding: 26px 32px;
+      font-family: 'Oswald', sans-serif;
+      font-size: .71rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+    }
+    footer a { color: rgba(201,168,76,.5); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .site-header nav { display: none; }
+      .two-col  { grid-template-columns: 1fr; }
+      .phases   { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 40px 1fr; gap: 0 12px; }
+      .step-n { width: 36px; height: 36px; font-size: .9rem; }
+      .step:not(:last-child)::after { left: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ STICKY NAV ══ -->
+<header class="site-header">
+  <a class="logo" href="https://savekearnyaz.org">SaveKearnyAZ.org</a>
+  <nav>
+    <a href="https://savekearnyaz.org">Home</a>
+    <a href="https://savekearnyaz.org/project88.html">Project 88</a>
+    <a href="#action">Take Action</a>
+  </nav>
+</header>
+
+
+<!-- ══ HERO — SEAL + HEADLINE ══ -->
+<section class="seal-hero">
+  <div class="seal-wrap">
+    <img src="project88-seal.webp" alt="Town of Kearny Arizona — Project 88 Official Seal" />
+  </div>
+  <div class="urgency-tag">
+    <span class="dot"></span>
+    Colorado River Compact Expiring — Federal Deadline 2026
+  </div>
+  <h1>The Colorado River Crisis<br>&amp; <em>Kearny's Shield</em></h1>
+  <p class="sub">
+    As the federal government forces historic cuts on Colorado River water rights,
+    Kearny is moving to lock in its independence. Here is what is in play —
+    and how our deep granite-vault aquifer holds the key.
+  </p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="n">7</span>
+      <span class="l">States in Deadlock</span>
+    </div>
+    <div class="stat">
+      <span class="n">27<small style="font-size:.9rem">%</small></span>
+      <span class="l">Arizona's Proposed Cut</span>
+    </div>
+    <div class="stat">
+      <span class="n">800<small style="font-size:.85rem">ft</small></span>
+      <span class="l">The Shield Depth</span>
+    </div>
+    <div class="stat">
+      <span class="n">1935</span>
+      <span class="l">Globe Decree Boundary</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION 1: THE CRISIS ══ -->
+<div class="light-section">
+<div class="wrap">
+  <p class="sec-label">Section 1 — The Crisis</p>
+  <h2>What's Happening Across the West?</h2>
+
+  <p>
+    The operating guidelines for the Colorado River expire in <strong>2026</strong>. Because the seven
+    basin states — Arizona, California, Colorado, Nevada, New Mexico, Utah, and Wyoming — cannot agree
+    on a deal, the Bureau of Reclamation has stepped in to prevent the total collapse of Lake Mead and
+    Lake Powell with a strict long-term management strategy.
+  </p>
+
+  <div class="callout">
+    <span class="cl">⚠ Bypassing "First in Time, First in Right" — Seniority Under Attack</span>
+    <p>
+      The federal government is floating alternatives that would replace the old prior appropriation
+      doctrine with <strong>pro-rata (equal percentage) cuts</strong> across all users — regardless
+      of how senior their water rights are. This would upend decades of established Arizona water law
+      and erase the seniority protection communities have held for generations.
+    </p>
+  </div>
+
+  <div class="callout">
+    <span class="cl">⚠ Arizona Faces the Earliest and Deepest Cuts</span>
+    <p>
+      Under nearly every federal scenario, <strong>Arizona faces the steepest reductions</strong>.
+      Governor Hobbs has already offered to cut the state's Colorado River allocation by
+      <strong>27 percent</strong>. That cut hits every community dependent on surface river flow —
+      unless they have already secured an independent underground source.
+    </p>
+  </div>
+
+  <p>
+    For Kearny, a defensive posture is not enough. <strong>Kearny needs an offensive water strategy</strong> —
+    one that makes the Colorado River negotiations irrelevant to the Town's water future.
+  </p>
+</div>
+</div>
+
+
+<!-- ══ SECTION 2: BEST CASE ══ -->
+<div class="dark">
+<div class="wrap">
+  <p class="sec-label">Section 2 — The Goal</p>
+  <h2>The Best-Case Scenario for Kearny</h2>
+  <p>
+    In a world of tightening surface water restrictions, the absolute best-case scenario
+    for our town looks like this:
+  </p>
+  <div class="callout sky">
+    <span class="cl">★ Total Water Independence</span>
+    <p>
+      We legally and physically isolate Kearny's water supply from the volatility of sub-river
+      flow restrictions and surface water cutbacks. We achieve this by proving we are tapping
+      a <strong>secure, isolated underground resource</strong> — not surface-dependent river flows.
+      No river compact can reassign it. No federal guideline can reduce it.
+      It belongs to Kearny under Arizona state law.
+    </p>
+  </div>
+  <p>
+    Kearny already has the foundation most Arizona municipalities would spend millions to acquire:
+    <strong>confirmed deep granite-vault aquifer wells, camera-inspected, water present,
+    sitting below 800 feet</strong>. The question is whether the Town files to own that water —
+    before someone else does.
+  </p>
+</div>
+</div>
+
+
+<!-- ══ SECTION 3: WHY SHALLOW WELLS FAIL — DIAGRAM 1 ══ -->
+<div class="light-section">
+<div class="wrap">
+  <p class="sec-label">Section 3 — Why Shallow Wells Are Failing</p>
+  <h2>Bedrock Drawdown: What's Already Happening to Kearny's Surface Water</h2>
+
+  <p>
+    Before understanding the solution, it is important to understand the problem at ground level.
+    As drought intensifies and surface aquifers drop, shallow alluvial wells across the region
+    are experiencing a dangerous phenomenon called <strong>bedrock drawdown</strong> — where the
+    surface water table collapses and water migrates deeper into fractured bedrock formations,
+    leaving shallow pumps running in air.
+  </p>
+
+  <!-- DIAGRAM 1: well-diagram.webp -->
+  <div class="diagram-block">
+    <div class="db-header">
+      <span class="badge">Diagram 1</span>
+      Hydrological Diagram — Shallow Well Failure Due to Bedrock Drawdown
+    </div>
+    <img
+      src="well-diagram.webp"
+      alt="Hydrological diagram comparing original shallow aquifer condition versus current dried-up bedrock drawdown condition. Shows shallow well failure, alluvial aquifer drying up, drawdown path into fractured bedrock, and the emergence of a separate secure bedrock aquifer source below."
+    />
+    <div class="db-caption">
+      Left: Original condition — shallow alluvial aquifer with high evaporation risk, wells functioning at surface water table.
+      Right: Current condition — alluvial aquifer dried up, shallow well failing, water migrating via drawdown path into
+      Percolating (Fractured) Bedrock Aquifer — now a <strong style="color:var(--gold);">separate, secure source</strong> protected from evaporation.
+      This is the hydrological process that makes Kearny's deep Vault wells a permanent asset.
+    </div>
+  </div>
+
+  <p>
+    The diagram above shows precisely what is happening in Kearny's basin right now.
+    Shallow surface-connected water is evaporating and declining. But deeper, beneath the
+    fractured bedrock layer, a <strong>separate and protected water source</strong> is forming —
+    fed by percolating water that has moved below the evaporation zone entirely.
+    This is not a liability. It is an opportunity — if the Town files to own it.
+  </p>
+</div>
+</div>
+
+
+<!-- ══ SECTION 4: THE 800-FT SHIELD + GLOBE DECREE ══ -->
+<div class="dark">
+<div class="wrap">
+  <p class="sec-label">Section 4 — The Legal &amp; Geological Shield</p>
+  <h2>The 800-Foot Mark &amp; the 1935 Globe Decree:<br>Why Depth Is Everything</h2>
+
+  <p>
+    To secure long-term water rights and shield Kearny from federal or state cutbacks, we have to
+    look <em>down</em> — specifically, beneath the <strong>800-foot mark</strong> in the Kearny Basin.
+    Understanding why requires understanding the most powerful competing legal mandate Kearny faces:
+    the <strong>1935 Globe Equity Decree</strong>.
+  </p>
+
+  <div class="callout sky">
+    <span class="cl">⚖ The 1935 Globe Equity Decree — The Primary Competing Mandate</span>
+    <p>
+      The Globe Equity Decree of 1935 is a federal court adjudication governing water rights
+      along the Gila River system in Arizona — including alluvial groundwater directly connected
+      to Gila River subflow. Any well drawing from shallow water hydrologically connected to
+      subflow is operating under the Globe Decree's shadow — subject to curtailment, tribal senior
+      claims, and federal reallocation. <strong>This is the primary competing mandate Kearny must
+      defeat to achieve water independence.</strong> The solution: go deeper than the Decree can reach.
+    </p>
+  </div>
+
+  <!-- CSS depth zone diagram -->
+  <div class="depth-diagram">
+    <div class="dd-surface">⬛ Surface Level — Town of Kearny / Kearny Basin, AZ</div>
+    <div class="dd-arrow">Drilling down — entering Gila River subflow zone</div>
+    <div class="dd-zone-danger">
+      <div class="dd-zone-label danger">0 – 800 ft &nbsp;|&nbsp; Gila River Subflow / Alluvial Zone — GLOBE DECREE TERRITORY</div>
+      <div class="dd-desc">
+        Water at this depth is alluvial groundwater hydrologically connected to Gila River subflow.
+        It is adjudicated under the 1935 Globe Equity Decree and is legally considered part of the
+        Gila River system. Tribal nations hold senior priority rights under federal law.
+        State and federal regulators can restrict pumping from this zone to protect downstream river
+        commitments. Colorado River allocation cuts apply here.
+      </div>
+      <div class="dd-decree">
+        <strong>⚖ Globe Equity Decree (1935):</strong> Wells in this zone are subject to Gila River
+        adjudication. Tribal senior rights holders can seek curtailment. Federal pro-rata Colorado
+        River cut frameworks can reduce this supply. This is the zone Kearny must move beyond.
+      </div>
+    </div>
+    <div class="dd-shield">
+      ████ &nbsp; THE SHIELD — Impermeable Granite / Confining Rock Layer — ~800 ft &nbsp; ████<br/>
+      <span style="font-size:.67rem; letter-spacing:.08em;">Below this point: Geologically isolated from Gila River subflow — Globe Decree jurisdiction ends</span>
+    </div>
+    <div class="dd-arrow">Crossing the threshold — entering deep percolated granite-vault zone</div>
+    <div class="dd-zone-safe">
+      <div class="dd-zone-label safe">800+ ft &nbsp;|&nbsp; Deep Granite-Vault Aquifer — PROJECT 88 TARGET ZONE</div>
+      <div class="dd-desc">
+        Water at this depth has filtered through thousands of feet of granite rock over millennia.
+        It is geologically isolated from Gila River alluvial flows — <strong>not subflow</strong>.
+        It is deep percolated groundwater in confined granite-vault formations.
+        By establishing prior appropriation here, Kearny steps entirely outside the Globe Decree's
+        reach into a water supply that belongs exclusively to the Town under Arizona state law.
+      </div>
+      <div class="dd-vault-badges">
+        <span class="vbadge">✓ Vault Well 1 — Confirmed</span>
+        <span class="vbadge">✓ Vault Well 2 — Confirmed</span>
+        <span class="vbadge coming">↑ Well 3 — Coming Online</span>
+        <span class="vbadge">★ MARS Recharge Zone</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIAGRAM 2: aquifer-well.webp -->
+  <div class="diagram-block">
+    <div class="db-header">
+      <span class="badge">Diagram 2</span>
+      Deep-Seated Granite Aquifer Model — Project 88 &nbsp;|&nbsp; Kearny Basin, AZ
+    </div>
+    <img
+      src="aquifer-well.webp"
+      alt="Deep-Seated Granite Aquifer Model showing Gila River Subflow Alluvium (GEC Adjudicated) in upper layers, Deep Geological Containment zone (Unregulated Subflow) as transition, and Project 88 target Granite-Vault Aquifer Formations at depth with MARS Recharge Well drilling down to the protected zone."
+    />
+    <div class="db-caption">
+      Upper layers: Gila River Subflow Alluvium — adjudicated under the 1935 Globe Equity Decree (GEC). Subject to tribal senior rights and federal curtailment.
+      Middle zone: Deep Geological Containment — Unregulated Subflow transition layer.
+      Deep zone: Project 88 Target — Granite-Vault Aquifer Formations. Below Globe Decree jurisdiction.
+      MARS Recharge Well penetrates all layers to bank water directly into the protected deep zone.
+    </div>
+  </div>
+
+  <!-- HIGH-CONTRAST LEGAL QUOTE -->
+  <div class="legal-quote">
+    <blockquote>
+      "Any person, the state of Arizona or a political subdivision thereof may appropriate
+      unappropriated water for domestic, municipal, irrigation, stock watering, water power,
+      recreation, wildlife… The person, the state of Arizona or a political subdivision thereof
+      first appropriating the water shall have the better right."
+    </blockquote>
+    <cite>— A.R.S. § 45-151 &nbsp;|&nbsp; Arizona Revised Statutes, Title 45 (Waters)</cite>
+  </div>
+
+  <p>
+    The Town of Kearny is a political subdivision of the State of Arizona — it has full legal
+    standing to file this appropriation right now. A prior appropriation filing establishes
+    Kearny's <strong>seniority date</strong>. Every competing claim filed after that date is junior.
+    Permanently. And because the Vault wells tap water <em>below</em> the Globe Decree's reach,
+    the filing is not subject to Gila River adjudication at all.
+  </p>
+
+  <!-- TWO-COL COMPARE -->
+  <div class="two-col">
+    <div class="col-risk">
+      <div class="col-head">⚠ Surface Risk (0–800 ft)</div>
+      <ul>
+        <li>Gila River alluvial subflow — Globe Decree territory</li>
+        <li>Tribal nations hold senior federal priority rights</li>
+        <li>Subject to pro-rata Colorado River cuts</li>
+        <li>Arizona offering 27% reduction — hits this zone</li>
+        <li>Alluvial aquifer drying up via bedrock drawdown</li>
+        <li>Mine dewatering competes in same formation</li>
+      </ul>
+    </div>
+    <div class="col-safe">
+      <div class="col-head">✓ Deep Granite-Vault (800+ ft)</div>
+      <ul>
+        <li>Below Globe Decree adjudication — legally distinct</li>
+        <li>Not Gila River subflow — independent source</li>
+        <li>Prior appropriation locks Kearny's seniority date</li>
+        <li>No federal river compact can reassign it</li>
+        <li>Confined granite aquifer immune to surface drought</li>
+        <li>First filing = senior right over all later claims</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ SECTION 5: MARS ══ -->
+<div class="light-section">
+<div class="wrap">
+  <p class="sec-label">Section 5 — The Long-Term Play</p>
+  <h2>Transitioning to MARS: Managed Aquifer Recharge &amp; Storage</h2>
+
+  <p>
+    Securing the deep water rights allows Kearny to transition from a reactionary setup to a
+    permanent, sustainable <strong>MARS (Managed Aquifer Recharge and Storage)</strong> framework.
+    Instead of simply mining the aquifer, MARS allows the Town to actively manage, store, and
+    recycle water assets underground — building a self-replenishing hydrological bank
+    owned entirely by Kearny.
+  </p>
+
+  <div class="phases" style="/* override dark styles since this is a light section */">
+    <!-- Inline style overrides for light section -->
+    <style scoped>
+      .light-section .phase { background: rgba(13,31,45,.05); border-color: rgba(201,168,76,.25); }
+      .light-section .phase-num { color: rgba(201,168,76,.22); }
+      .light-section .phase-tag { color: var(--sky); }
+      .light-section .phase h3 { color: var(--navy); }
+      .light-section .phase p  { color: var(--text); }
+    </style>
+    <div class="phase">
+      <div class="phase-num">1</div>
+      <div class="phase-tag">Phase 1 — Security</div>
+      <h3>Deep Well Capture</h3>
+      <p>
+        Draw exclusively from the protected granite-vault formations below 800 feet —
+        below the Globe Decree's reach. Guarantees baseline municipal supply independent
+        of any surface water restrictions or federal river management decisions.
+      </p>
+    </div>
+    <div class="phase">
+      <div class="phase-num">2</div>
+      <div class="phase-tag">Phase 2 — Collection</div>
+      <h3>Capture Effluent &amp; Surpluses</h3>
+      <p>
+        Direct treated municipal effluent and seasonal stormwater runoff into dedicated,
+        permitted containment areas rather than letting it evaporate or escape downstream.
+        This water becomes the feedstock for the MARS recharge cycle.
+      </p>
+    </div>
+    <div class="phase">
+      <div class="phase-num">3</div>
+      <div class="phase-tag">Phase 3 — Recharge</div>
+      <h3>Controlled Percolation</h3>
+      <p>
+        Using engineered spreading basins or shallow injection fields, allow collected
+        water to filter down through the soil profile — purifying it as it recharges
+        the upper water table and the deep containment zone. Water banked under Kearny's name.
+      </p>
+    </div>
+    <div class="phase">
+      <div class="phase-num">4</div>
+      <div class="phase-tag">Phase 4 — Sustainability</div>
+      <h3>The Hydrological Bank</h3>
+      <p>
+        The recharged water forms Kearny's underground water bank. By putting water back in,
+        the Town offsets deep pumping, stabilizes the local water table, and
+        <strong>completely insulates itself from regional river restrictions</strong> — now and for
+        future generations.
+      </p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ SECTION 6: ACTION STEPS ══ -->
+<div class="dark">
+<div class="wrap">
+  <p class="sec-label">Section 6 — The Action Plan</p>
+  <h2>What Mayor Stacy Needs to Do — Now</h2>
+
+  <p>
+    The legal path is open. The Vault wells are confirmed. The urgency is real — mine dewatering
+    operations and tribal water right adjudications are active in the region.
+    <strong>Every day without a prior appropriation filing is a day a competitor can establish
+    seniority over Kearny in the deep granite-vault zone.</strong>
+  </p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <h3>File Prior Appropriation Under A.R.S. § 45-151</h3>
+        <p>
+          Mayor Stacy files an application to appropriate the deep groundwater of the Vault wells
+          for municipal beneficial use with ADWR. This establishes Kearny's
+          <strong>priority date</strong> — the legal timestamp that makes the Town senior to all
+          future filers in the deep granite-vault zone.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <h3>Commission Hydrological Study — Distinguish Wells from Globe Decree Subflow</h3>
+        <p>
+          Document that the Vault wells tap water below the 800-foot confining layer —
+          geologically isolated from Gila River alluvial subflow. This is the legal firewall
+          that places Kearny's appropriation entirely outside Globe Decree jurisdiction and
+          beyond the reach of tribal senior rights.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-body">
+        <h3>Designate All Vault Wells Below 800 ft as Exclusive Municipal Infrastructure</h3>
+        <p>
+          Formally classify the entire Vault well system as exclusive municipal water
+          infrastructure under Arizona groundwater law — shielding it from agricultural
+          conversion, third-party industrial use, or mine dewatering claims in the same formation.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">4</div>
+      <div class="step-body">
+        <h3>Initiate MARS Phase 1 — Establish Documented Beneficial Use</h3>
+        <p>
+          Launch deep well capture under the MARS framework to create a documented, legally
+          defensible record of ongoing municipal beneficial use — the requirement that cements
+          an Arizona prior appropriation and prevents abandonment challenges under A.R.S. § 45-189.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-n">5</div>
+      <div class="step-body">
+        <h3>Bring Well 3 Online &amp; Register ADWR Underground Storage Facility</h3>
+        <p>
+          Extend the appropriation filing to cover Well 3 as it comes online. Apply for ADWR
+          Underground Water Storage Facility designation under A.R.S. Title 45 Chapter 3.1 —
+          converting MARS recharge activity into legally accrued water storage credits
+          owned exclusively by the Town of Kearny.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout sky" style="margin-top:44px;">
+    <span class="cl">★ The Bottom Line</span>
+    <p>
+      The 1935 Globe Decree, the Colorado River compact expiration, mine dewatering activity,
+      and tribal water adjudications are all converging on the same window: <strong>2026</strong>.
+      Communities that file prior appropriation now — establishing seniority in the deep,
+      Globe Decree-exempt granite-vault zone — will enter the post-2026 water era as
+      independent, water-secure towns. Kearny has the geology, the confirmed wells, and the
+      legal standing. The decision belongs to Mayor Stacy. The window is measured in months.
+    </p>
+  </div>
+
+</div>
+</div>
+
+
+<!-- ══ CTA ══ -->
+<div class="cta-band" id="action">
+  <h2>Support Project 88.<br><em>Protect Our Aquifer.</em></h2>
+  <p>
+    Securing Kearny's deep wells and building a permanent recharge solution requires
+    proactive local governance and community backing. Let's build the infrastructure
+    that ensures Kearny never runs dry.
+  </p>
+  <div class="btns">
+    <a class="btn btn-gold" href="https://savekearnyaz.org">← Back to SaveKearnyAZ.org</a>
+    <a class="btn btn-outline" href="https://savekearnyaz.org/project88.html">View Project 88 →</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 SaveKearnyAZ.org &nbsp;|&nbsp; A community water rights initiative &nbsp;|&nbsp;
+  <a href="https://savekearnyaz.org">savekearnyaz.org</a>
+</footer>
+
+</body>
+</html>
