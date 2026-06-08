@@ -62,9 +62,32 @@ a { color: inherit; text-decoration: none; }
 .btn-gold { display: inline-block; background: var(--gold); color: var(--deep); padding: 16px 40px; border-radius: 6px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; transition: 0.3s; }
 .btn-gold:hover { background: #fff; transform: translateY(-3px); }
 
+/* Hamburger + mobile menu */
+.ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.ham-btn span { width: 26px; height: 3px; background: var(--gold); border-radius: 2px; transition: 0.3s; }
+.menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 150; }
+.menu-overlay.open { display: block; }
+.mobile-menu { position: fixed; top: 0; right: 0; width: 82%; max-width: 330px; height: 100vh; background: var(--deep); border-left: 2px solid var(--gold); z-index: 200; padding: 76px 28px 28px; display: flex; flex-direction: column; gap: 2px; transform: translateX(100%); transition: transform 0.3s ease; box-shadow: -12px 0 40px rgba(0,0,0,0.45); overflow-y: auto; }
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a { color: var(--cream); font-family: var(--font-body); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 15px 0; border-bottom: 1px solid rgba(201,168,76,0.15); }
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
+.mobile-close { position: absolute; top: 18px; right: 24px; background: none; border: none; color: var(--gold); font-size: 2.2rem; cursor: pointer; line-height: 1; }
+
+/* Footer */
+.site-footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 56px 24px 44px; }
+.footer-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.footer-col h4 { font-family: var(--font-display); color: var(--gold); font-size: 1rem; margin-bottom: 14px; }
+.footer-col a { display: block; color: var(--cream); font-size: 0.9rem; padding: 7px 0; opacity: 0.85; transition: 0.2s; }
+.footer-col a:hover { color: var(--gold); opacity: 1; }
+.footer-logo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 900; color: var(--gold) !important; display: block; margin-bottom: 10px; }
+.footer-brand p { color: var(--cream); font-size: 0.82rem; line-height: 1.6; margin-top: 6px; opacity: 0.8; }
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
+  .ham-btn { display: flex; }
   .data-table { display: block; overflow-x: auto; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 26px; }
+  .footer-brand { grid-column: 1 / -1; }
 }
 </style>
 </head>
@@ -75,9 +98,28 @@ a { color: inherit; text-decoration: none; }
   <ul class="nav-links">
     <li><a href="index.html#situation">The Situation</a></li>
     <li><a href="index.html#wells">Wells</a></li>
+    <li><a href="index.html#actions">What To Do</a></li>
+    <li><a href="wastewater-update.html">Wastewater</a></li>
     <li><a href="mars-solution.html" class="active">Project 88 / MARS</a></li>
+    <li><a href="water-independence.html">Water Rights</a></li>
+    <li><a href="community.html">Your Voice</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
+  <button class="ham-btn" id="hamBtn" onclick="toggleMenu()" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <button class="mobile-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+  <a href="index.html#situation">The Situation</a>
+  <a href="index.html#wells">The 21 Wells</a>
+  <a href="index.html#actions">What To Do</a>
+  <a href="wastewater-update.html">Wastewater Update</a>
+  <a href="mars-solution.html" class="active">Project 88 / MARS</a>
+  <a href="water-independence.html">Water Rights Now</a>
+  <a href="community.html">Your Voice / Community</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tel:5203635547">&#128222; Town Hall — (520) 363-5547</a>
 </nav>
 
 <section class="hero-mini">
@@ -152,6 +194,45 @@ a { color: inherit; text-decoration: none; }
     </p>
   </div>
 </div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="index.html#situation">The Situation</a>
+      <a href="index.html#wells">The 21 Wells</a>
+      <a href="index.html#actions">What To Do</a>
+      <a href="index.html#progress">Progress</a>
+    </div>
+    <div class="footer-col">
+      <h4>The Plan</h4>
+      <a href="mars-solution.html">Project 88 / MARS</a>
+      <a href="water-independence.html">Water Rights Now</a>
+      <a href="wastewater-update.html">Wastewater Update</a>
+    </div>
+    <div class="footer-col">
+      <h4>Get Involved</h4>
+      <a href="community.html">Your Voice / Community</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="tel:5203635547">Town Hall &mdash; (520) 363-5547</a>
+    </div>
+    <div class="footer-col footer-brand">
+      <a href="index.html" class="footer-logo">SaveKearnyAZ</a>
+      <p>Project 88 &mdash; Kearny Basin Water Initiative</p>
+      <p>&copy; 2026 &mdash; Built for the people of Kearny, Arizona</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var o=document.getElementById('menuOverlay');
+  var open=m.classList.toggle('open');
+  o.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+</script>
 
 </body>
 </html>
