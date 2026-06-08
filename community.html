@@ -142,11 +142,23 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
 .footer-copy a { color: var(--gold-dark); text-decoration: none; }
 .footer-copy a:hover { color: var(--gold); }
 
+/* ── HAMBURGER + MOBILE MENU ── */
+.ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.ham-btn span { width: 25px; height: 3px; background: var(--gold); border-radius: 2px; }
+.menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 250; }
+.menu-overlay.open { display: block; }
+.mobile-menu { position: fixed; top: 0; right: 0; width: 82%; max-width: 330px; height: 100vh; background: var(--deep); border-left: 2px solid var(--gold); z-index: 300; padding: 74px 28px 28px; display: flex; flex-direction: column; gap: 2px; transform: translateX(100%); transition: transform .3s ease; box-shadow: -12px 0 40px rgba(0,0,0,.45); overflow-y: auto; }
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a { color: var(--cream); font-family: 'Lato', sans-serif; font-size: 0.92rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 15px 0; border-bottom: 1px solid rgba(201,168,76,.15); text-decoration: none; }
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--gold); }
+.mobile-close { position: absolute; top: 16px; right: 22px; background: none; border: none; color: var(--gold); font-size: 2.2rem; cursor: pointer; line-height: 1; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   html { font-size: 16px; }
   .nav { padding: 0 16px; height: 56px; }
-  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links { display: none; }
+  .ham-btn { display: flex; }
   .hero { padding: 100px 18px 50px; min-height: 60vh; }
   .hero h1 { font-size: 2.4rem; }
   .hero-cry { font-size: 0.88rem; }
@@ -167,11 +179,29 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
 <nav class="nav">
   <a href="/" class="nav-brand">SaveKearnyAZ</a>
   <div class="nav-links">
-    <a href="/">Home</a>
+    <a href="/index.html#situation">Situation</a>
+    <a href="/index.html#wells">Wells</a>
+    <a href="/index.html#actions">What To Do</a>
+    <a href="/wastewater-update.html">Wastewater</a>
+    <a href="/mars-solution.html">Project 88 / MARS</a>
     <a href="/water-independence.html">Water Rights</a>
-    <a href="/mars-solution.html">Project 88</a>
     <a href="#contact" class="nav-cta">Share Your Voice</a>
   </div>
+  <button class="ham-btn" onclick="toggleMenu()" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <button class="mobile-close" onclick="toggleMenu()" aria-label="Close menu">&times;</button>
+  <a href="/index.html#situation">The Situation</a>
+  <a href="/index.html#wells">The 21 Wells</a>
+  <a href="/index.html#actions">What To Do</a>
+  <a href="/wastewater-update.html">Wastewater Update</a>
+  <a href="/mars-solution.html">Project 88 / MARS</a>
+  <a href="/water-independence.html">Water Rights Now</a>
+  <a href="/community.html" class="active">Your Voice / Community</a>
+  <a href="#contact">Share Your Voice</a>
+  <a href="tel:5203635547">&#128222; Town Hall — (520) 363-5547</a>
 </nav>
 
 <!-- HERO -->
@@ -180,7 +210,7 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
   <div class="hero-inner">
     <div class="hero-badge">&#9733; The Kearnian Community</div>
     <h1>Calling All <em>Super Heroes</em></h1>
-    <p class="hero-sub">Every town has its heroes. In Kearny, they don't just wear capes at Christmas parties — they show up at council meetings, cut their water usage by 33%, and refuse to let this town become another Arizona ghost story.</p>
+    <p class="hero-sub">Every town has its heroes. In Kearny, they don't just wear capes at Christmas parties — they show up at council meetings, cut their water usage by nearly a third, and refuse to let this town become another Arizona ghost story.</p>
     <div class="hero-cry">Our Water. Our Town. Our Fight. &#9876;</div>
     <a href="#contact" class="hero-btn">Join the Mission</a>
   </div>
@@ -207,7 +237,7 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
       <p class="greeting">Dear Neighbors,</p>
       <p>If you live in Kearny, you already know the water situation is serious. You've felt it. You've cut back. You've watched the town pool sit empty and wondered what comes next.</p>
       <p>I want you to know — <span class="emphasis">there are masked super heroes in this town working on this every single day.</span> Mayor Curtis Stacy. The Town Council. The residents who slashed their water usage by a third without being asked twice. The volunteers who show up for each other at every holiday, every crisis, every ordinary Tuesday. That's what makes Kearny different. That's what makes Kearny worth saving.</p>
-      <p>Here's the good news: <span class="emphasis">there is plenty of water under Kearny.</span> It's just hard to get to. Two deep granite-vault wells — confirmed, camera-inspected, water-bearing — sit beneath this town, exempt from the very decree that cut our surface water to 77 acre-feet. The water is there. The challenge is bringing it up efficiently and making it last.</p>
+      <p>Here's the good news: <span class="emphasis">there is water beneath Kearny.</span> It's just hard to get to. Two deep granite-vault wells — camera-inspected and water-bearing — sit beneath this town, and they're believed to lie beyond the reach of the very decree that cut our surface water to 77 acre-feet. That's exactly what the Town's hydrological study is now testing. The challenge is confirming it, then bringing that water up efficiently and making it last.</p>
       <p>That's why we're researching every possibility. A framework called <span class="emphasis">MARS</span> (Managed Aquifer Recharge and Storage) would take Kearny's own treated wastewater and direct it back into the aquifer, recharging every connected well in the system. A rising tide lifts every well in the network. The Town has engaged a professional hydrological firm. The USDA has funded well rehabilitation. The wheels are turning.</p>
       <p>We are going to claim our water, protect it, and share it with this community — because that's what communities do.</p>
     </div>
@@ -237,7 +267,7 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
     <div class="hero-card">
       <div class="hero-card-name">&#9733; Mayor Curtis Stacy</div>
       <div class="hero-card-title">Mayor — Town of Kearny, AZ</div>
-      <div class="hero-card-desc">When the allotment was cut to 77 acre-feet, Mayor Stacy didn't panic — he acted. He commissioned a professional hydrological study, secured USDA grant funding for well rehabilitation, and led the community to a 33% voluntary water reduction. Leadership under fire.</div>
+      <div class="hero-card-desc">When the allotment was cut to 77 acre-feet, Mayor Stacy didn't panic — he acted. He commissioned a professional hydrological study, secured USDA grant funding for well rehabilitation, and led the community to a 32.7% voluntary water reduction. Leadership under fire.</div>
     </div>
     <p class="heroes-more">Know a Kearnian Super Hero? <em><a href="#contact" style="color:var(--gold);text-decoration:none;">Tell us about them below.</a></em></p>
   </div>
@@ -304,10 +334,15 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
   <div class="footer-inner">
     <div class="footer-links">
       <a href="/">Home</a>
+      <a href="/index.html#situation">The Situation</a>
+      <a href="/index.html#wells">The 21 Wells</a>
+      <a href="/index.html#actions">What To Do</a>
       <a href="/water-independence.html">Water Independence</a>
       <a href="/mars-solution.html">Project 88 / MARS</a>
       <a href="/wastewater-update.html">Wastewater Update</a>
       <a href="/community.html">Community</a>
+      <a href="/index.html#contact">Contact</a>
+      <a href="tel:5203635547">Town Hall</a>
     </div>
     <div class="footer-copy">
       &copy; 2026 SaveKearnyAZ.org &mdash; A <a href="https://powparker.com">Powell Parker</a> initiative.<br>
@@ -345,6 +380,14 @@ body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--deep
     });
   }
 })();
+
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  var o=document.getElementById('menuOverlay');
+  var open=m.classList.toggle('open');
+  o.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
 </script>
 </body>
 </html>
