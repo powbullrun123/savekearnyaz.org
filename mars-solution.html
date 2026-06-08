@@ -1,252 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The MARS Solution | Save Kearny Water</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #02060d; /* Deepest Midnight */
-            --card-bg: #0a192f; /* Navy Blue */
-            --accent-teal: #00f2ff; /* Electric Teal */
-            --accent-gold: #ffcc33; /* Industrial Gold */
-            --text-main: #f0f0f0; 
-            --text-muted: #b0c4de;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The MARS Solution — Project 88 | Save Kearny AZ</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* Core Styles Inherited from Index */
+:root {
+  --navy: #1B2A40; --deep: #071018; --gold: #C9A84C; --gold-light: #E8D5A3;
+  --cream: #F5F0E8; --red-emergency: #B22222; --water-blue: #1a6b8a;
+  --green-hope: #2d6a4f; --text: #1a1a1a; --text-light: #555;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-body); color: var(--text); background: var(--cream); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+a { color: inherit; text-decoration: none; }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.8;
-            font-size: 22px; /* 2pt larger than standard for high readability */
-        }
+/* Utility */
+.section-inner { max-width: 1000px; margin: 0 auto; padding: 80px 24px; }
+.chapter-label { font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--water-blue); margin-bottom: 8px; font-weight: 600; }
+.section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: var(--navy); }
+.section-title em { font-style: italic; color: var(--gold); }
+.divider { width: 60px; height: 3px; background: var(--water-blue); margin: 24px 0; border: none; }
+.text-body { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 24px; }
+.text-body strong { color: var(--navy); }
 
-        /* Hero Styling - Balanced Header */
-        header {
-            padding: 80px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, #050b14 0%, var(--bg-dark) 100%);
-            border-bottom: 6px solid var(--accent-gold);
-        }
+/* Nav */
+.main-nav { background: var(--deep); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99; border-bottom: 2px solid var(--gold); }
+.nav-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; color: var(--gold); }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { color: var(--cream); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-        .project-tag {
-            color: var(--accent-teal);
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            font-size: 16px;
-            margin-bottom: 10px;
-            display: block;
-        }
+/* Hero Mini */
+.hero-mini { background: linear-gradient(170deg, var(--deep) 0%, var(--navy) 100%); padding: 80px 24px 60px; text-align: center; border-bottom: 4px solid var(--gold); }
+.hero-mini h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+.hero-mini p { font-family: var(--font-accent); font-size: 1.4rem; color: var(--gold-light); font-style: italic; }
 
-        header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: clamp(2rem, 5vw, 3.2rem); /* Scaled down to prevent "dwarfing" */
-            margin: 10px 0;
-            text-transform: uppercase;
-            color: #fff;
-            letter-spacing: -1px;
-        }
+/* Diagram & Content */
+.diagram-box { background: #fff; border: 2px solid rgba(26,107,138,0.2); border-radius: 12px; padding: 24px; margin: 40px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+.diagram-caption { font-family: var(--font-accent); font-size: 1rem; color: var(--text-light); font-style: italic; margin-top: 16px; text-align: center; }
 
-        .gold-divider {
-            width: 120px;
-            height: 4px;
-            background: var(--accent-gold);
-            margin: 25px auto;
-        }
+/* Comparison Table */
+.data-table { width: 100%; border-collapse: collapse; margin: 40px 0; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.data-table th { background: var(--navy); color: #fff; padding: 18px; text-align: left; font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; }
+.data-table td { padding: 18px; border-bottom: 1px solid #e0ddd5; color: var(--text-light); }
+.data-table tr:last-child td { border-bottom: none; }
+.highlight-row { background: rgba(201,168,76,0.1); font-weight: 700; color: var(--navy) !important; }
+.highlight-row td { border-bottom: 2px solid var(--gold); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+/* Donation CTA */
+.donate-box { background: var(--deep); color: #fff; padding: 60px 40px; border-radius: 16px; text-align: center; position: relative; overflow: hidden; margin-top: 60px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+.donate-box::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--gold); }
+.donate-box h2 { font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 16px; }
+.donate-box p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+.btn-gold { display: inline-block; background: var(--gold); color: var(--deep); padding: 16px 40px; border-radius: 6px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; transition: 0.3s; }
+.btn-gold:hover { background: #fff; transform: translateY(-3px); }
 
-        /* Content Sections */
-        .feature-box {
-            background: var(--card-bg);
-            border-left: 6px solid var(--accent-teal);
-            padding: 45px;
-            margin-bottom: 60px;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            color: var(--accent-teal);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        p { margin-bottom: 25px; }
-
-        /* The MARS Cycle Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
-        }
-
-        .step {
-            background: rgba(255,255,255,0.03);
-            padding: 30px;
-            border: 1px solid rgba(0,242,255,0.2);
-            border-top: 5px solid var(--accent-gold);
-            text-align: center;
-        }
-
-        .step h3 { color: var(--accent-gold); margin-bottom: 15px; font-size: 1.4rem; }
-
-        /* Diagram Integration */
-        .diagram-container {
-            background: #000;
-            padding: 20px;
-            border: 2px solid #1a3a5a;
-            border-radius: 12px;
-            margin: 60px 0;
-        }
-
-        .diagram-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-
-        /* Chandler Section */
-        .case-study {
-            border: 2px solid var(--accent-gold);
-            padding: 40px;
-            background: linear-gradient(135deg, #0a192f 0%, #102a43 100%);
-            margin-top: 60px;
-        }
-
-        .case-study h2 { color: var(--accent-gold); }
-
-        /* Video Section */
-        .video-box {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 40px 0;
-            border: 5px solid #0d1f33;
-        }
-
-        .video-box iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        }
-
-        .quote {
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: var(--accent-gold);
-            padding: 80px 40px;
-            font-style: italic;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-action {
-            text-align: center;
-            background: var(--accent-gold);
-            color: #000;
-            padding: 50px;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .btn {
-            background: #000;
-            color: var(--accent-gold);
-            padding: 15px 40px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-
-    </style>
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .data-table { display: block; overflow-x: auto; }
+}
+</style>
 </head>
 <body>
 
-<header>
-    <span class="project-tag">The Science Behind Project 88</span>
-    <h1>The MARS Solution</h1>
-    <div class="gold-divider"></div>
-    <p style="font-size: 26px; color: var(--accent-teal);">Kearny's Path to Water Sovereignty</p>
-</header>
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo">SaveKearnyAZ</a>
+  <ul class="nav-links">
+    <li><a href="index.html#situation">The Situation</a></li>
+    <li><a href="index.html#wells">Wells</a></li>
+    <li><a href="mars-solution.html" class="active">Project 88 / MARS</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<div class="container">
+<section class="hero-mini">
+  <h1>The MARS Solution</h1>
+  <p>Rehabilitate. Sleeve. Recover. The engineering path to water independence.</p>
+</section>
 
-    <section class="feature-box">
-        <h2>What is <span>MARS?</span></h2>
-        <p>Managed Aquifer Recharge (MAR) is the standard for the 21st century. By capturing high-quality reclaimed water (effluent) and injecting it directly into deep geological "vaults," we stop the theft of our water by evaporation and industrial drawdown. This isn't just conservation—it's <strong>active water banking.</strong></p>
-        
-        <div class="grid">
-            <div class="step">
-                <h3>1. CAPTURE</h3>
-                <p>Municipal effluent is harvested from the treatment plant.</p>
-            </div>
-            <div class="step">
-                <h3>2. TREAT</h3>
-                <p>Water is polished to Class A+ standards (cleaner than many rivers).</p>
-            </div>
-            <div class="step">
-                <h3>3. INJECT</h3>
-                <p>Water is "Sleeved" and pumped past the shallow alluvial layer.</p>
-            </div>
-            <div class="step">
-                <h3>4. PROTECT</h3>
-                <p>Stored below 800ft, protected from mining and the sun.</p>
-            </div>
-        </div>
-    </section>
+<div class="section-inner">
+  <div class="chapter-label">The Strategy</div>
+  <h2 class="section-title">Why Rehab is Smarter<br>Than <em>Drilling New</em></h2>
+  <hr class="divider">
+  
+  <p class="text-body">
+    The common reaction to a dry well is to panic and drill a new one. In Kearny, that is a <strong>$1.5M+ mistake</strong>. We do not need new holes; we need to reach the "Vault" through the massive infrastructure we already own.
+  </p>
+  
+  <p class="text-body">
+    Kearny's historic deep wells (Sites 23CCC and 23CAA) were built with massive 18-inch casings during the copper boom. By applying <strong>Managed Aquifer Recharge and Storage (MARS)</strong> principles, we can bypass the failing shallow water tables completely.
+  </p>
 
-    <div class="diagram-container">
-        <h3 style="text-align: center; color: var(--accent-gold); margin-top:0;">HYDROLOGICAL DIAGRAM: THE KEARNY VAULT</h3>
-        <img src="well-diagram.webp" alt="Detailed Hydrological Well Diagram showing Bedrock Drawdown">
-        <p style="font-size: 18px; text-align: center; margin-top: 15px; color: var(--text-muted);">
-            Existing Infrastructure: Wells at 1,150–1,250 ft with 18-inch casings are ready for rehabilitation.
-        </p>
-    </div>
+  <div class="diagram-box">
+    <img src="well-diagram.webp" alt="Hydrological Diagram: Shallow Well Failure Due to Bedrock Drawdown">
+    <p class="diagram-caption">Figure 1.0: Shallow alluvial failure vs. Deep Bedrock Aquifer stability. Sleeving allows us to reach the protected lower zones.</p>
+  </div>
 
-    <section class="feature-box case-study">
-        <h2>The <span>Chandler</span> Standard</h2>
-        <p>The City of Chandler, Arizona, leads the world in this technology. At the <strong>32-acre Veterans Oasis Park</strong>, the city operates five specialized recharge basins. Every drop of water used indoors is recycled.</p>
-        <p>Using this method, Chandler has banked between <strong>440,000 and 500,000 acre-feet</strong> of water underground—creating a "water-savings account" that can be recovered via a network of more than 30 wells during severe surface water shortages.</p>
-    </section>
+  <h2 class="section-title" style="margin-top: 60px;">The <em>Sleeving</em> Advantage</h2>
+  <hr class="divider">
+  <p class="text-body">
+    By inserting high-tensile steel sleeves down the center of our existing 18-inch deep wells, we achieve three critical victories for the town:
+  </p>
+  
+  <ul style="margin-bottom: 40px; padding-left: 20px; font-family: var(--font-body); font-size: 1.1rem; line-height: 1.8; color: var(--text-light);">
+    <li style="margin-bottom: 12px;"><strong>Seal Out the Decree:</strong> By isolating the well from shallow river-water (alluvial subflow), sleeving is intended to help place the well outside the 1935 Globe Equity Decree's jurisdiction &#8212; a separation the hydrological study underway is meant to confirm.</li>
+    <li style="margin-bottom: 12px;"><strong>Cleaner, Protected Water:</strong> Deep fractured granite aquifers are shielded from surface evaporation and contamination, and are often under natural pressure that can help water rise. Actual water quality and pressure at Kearny's wells remain to be verified by testing.</li>
+    <li><strong>Unmatched Cost Efficiency:</strong> Cleaning, video-logging, and sleeving an existing 18-inch hole costs a fraction of the price and time of mobilizing a rig to drill a new 1,200-foot bore.</li>
+  </ul>
 
-    <section class="feature-box">
-        <h2>Proven Success: <span>Beeville, Texas</span></h2>
-        <p>Kearny isn't alone. Communities like Beeville, Texas, have faced similar drought threats and turned to rehabilitating deep groundwater wells as their primary backup supply. By protecting their deep-well infrastructure, they've secured a future for their residents that surface water alone could never provide.</p>
-        
-        <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/RTpsxW6Sgzg" allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; font-size: 18px; color: var(--text-muted);">Watch how Arizona communities use "The Purple Pipe" to drought-proof their future.</p>
-    </section>
-<div style="max-width: 960px; margin: 0 auto 3rem; border-radius: 12px; overflow: hidden; border: 2px solid rgba(201,168,76,0.3); box-shadow: 0 8px 40px rgba(0,0,0,0.5);">
-  <img src="well-drilling.webp" alt="Deep well drilling rig striking water — rehabilitating dormant wells to restore Kearny's water supply" style="width: 100%; display: block;" loading="lazy">
-  <div style="background: rgba(7,16,24,0.95); padding: 12px 20px; text-align: center; font-family: 'Lato', sans-serif; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: #C9A84C; font-weight: 700; border-top: 1px solid rgba(201,168,76,0.2);">Striking water at depth — this is what well rehabilitation looks like</div>
+  <table class="data-table">
+    <tr>
+      <th>Recovery Method</th>
+      <th>Estimated Cost</th>
+      <th>Water Quality</th>
+      <th>Timeline to Active</th>
+    </tr>
+    <tr>
+      <td>Drill New Deep Well</td>
+      <td>$1.2M - $1.8M</td>
+      <td>High</td>
+      <td>12-18 Months</td>
+    </tr>
+    <tr class="highlight-row">
+      <td>Project 88 Sleeving Rehab</td>
+      <td>$250k - $400k</td>
+      <td>Expected high (pending testing)</td>
+      <td>3-5 Months</td>
+    </tr>
+  </table>
+
+  <div class="donate-box" id="donate">
+    <h2>Want to Help?</h2>
+    <p>The most powerful thing residents can do is stay engaged and use water wisely. For questions about <strong>how to help, how to donate, or how to conserve</strong>, contact the Town of Kearny directly &#8212; they coordinate the official response.</p>
+
+    <a href="tel:5203635547" class="btn-gold">&#128222; Call Town Hall — (520) 363-5547</a>
+
+    <p style="font-size: 0.85rem; margin-top: 24px; color: rgba(255,255,255,0.6); font-family: var(--font-accent); font-style: italic;">
+      SaveKearnyAZ.org and Project 88 do not accept or handle donations. All donations and official water-emergency matters are managed by the Town Hall of Kearny, Arizona.
+    </p>
+  </div>
 </div>
-    <div class="quote">
-        "We do not inherit the earth from our ancestors, we borrow it from our children."
-    </div>
-
-    <section class="footer-action">
-        <h2>Sovereignty Below 800 Feet</h2>
-        <p>It is time for Kearny to write the law: All water below the 800-foot mark belongs to the Town and its People—Not the mines, and not the decree.</p>
-        <a href="index.html" class="btn">Return to Project 88</a>
-    </section>
-
-</div>
-
-<footer style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 16px;">
-    &copy; 2024 SAVE KEARNY AZ | WWW.SAVEKEARNYAZ.ORG
-</footer>
 
 </body>
 </html>
