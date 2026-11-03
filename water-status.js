@@ -13,6 +13,10 @@
   var MAY_AF = 389;                              // NASA Earth Observatory, May 22, 2026
   var OCT17_AF = 38540;                          // USGS, Oct 17, 2026
   var SOURCES = [
+    { // Save Kearny AZ Cloudflare Worker (reads USGS on Cloudflare's side)
+      url: '/api/reservoir',
+      read: function (d) { return d && d.af >= 0 ? { af: d.af, time: d.time } : null; }
+    },
     { // USGS Water Data API (current)
       url: 'https://api.waterdata.usgs.gov/ogcapi/v0/collections/latest-continuous/items?f=json&monitoring_location_id=USGS-09469000&parameter_code=00054',
       read: function (d) {
