@@ -142,7 +142,21 @@
       : 'At or above the spillway crest. Follow official dam and National Weather Service updates.');
   }
   window.skCapacity = capacity;
+  function records(r) {
+    var box = $('trkRecords'); if (!box || !r || !r.gain) return;
+    set('trkRecGain', signed(r.gain.af) + ' AF');
+    set('trkRecGainS', '\u2248 ' + gallons(r.gain.af) + ' gallons ' + word(r.gain.af) + ' in the 24 hours ending ' + fmtWhen(r.gain.to));
+    if (r.loss && r.loss.af < 0) {
+      set('trkRecLoss', signed(r.loss.af) + ' AF');
+      set('trkRecLossS', '\u2248 ' + gallons(r.loss.af) + ' gallons released or lost in the 24 hours ending ' + fmtWhen(r.loss.to));
+    } else {
+      set('trkRecLoss', 'None yet');
+      set('trkRecLossS', 'The lake hasn\u2019t had a net 24-hour loss since tracking began.');
+    }
+    box.hidden = false;
+  }
   function tiles(h) {
+    records(h.records);
     var c = h.change;
     capacity(h.latest.af);
     if (window.skWaterUpdate) window.skWaterUpdate(h.latest.af, h.latest.time);

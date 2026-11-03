@@ -449,6 +449,12 @@ footer a { color: var(--gold-light); }
 .trk-capfill { height: 100%; min-width: 4px; border-radius: 6px; background: #2f9fd6; transition: width 1.2s ease; }
 .trk-asof { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 8px; }
 @media (max-width: 860px) { .trk-extra { grid-template-columns: 1fr; } }
+
+.trk-records { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: -8px 0 20px; }
+.trk-records[hidden] { display: none; }
+.trk-rec-gain { border-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.07); }
+.trk-rec-note { grid-column: 1 / -1; font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: -4px; }
+@media (max-width: 860px) { .trk-records { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -542,6 +548,19 @@ footer a { color: var(--gold-light); }
         <div class="trk-tile"><div class="trk-label">Last 7 days</div><div class="trk-num" id="trk7">&#8212;</div><div class="trk-sub" id="trk7s"></div></div>
         <div class="trk-tile"><div class="trk-label">Last 30 days</div><div class="trk-num" id="trk30">&#8212;</div><div class="trk-sub" id="trk30s"></div></div>
         <div class="trk-tile trk-tile-rate"><div class="trk-label">Current pace</div><div class="trk-num" id="trkRate">&#8212;</div><div class="trk-sub" id="trkRates"></div></div>
+      </div>
+      <div class="trk-records" id="trkRecords" hidden>
+        <div class="trk-card trk-rec trk-rec-gain">
+          <div class="trk-label">&#127942; Biggest 24-hour gain &middot; since Nov 3, 2026</div>
+          <div class="trk-num" id="trkRecGain">&#8212;</div>
+          <div class="trk-sub" id="trkRecGainS"></div>
+        </div>
+        <div class="trk-card trk-rec trk-rec-loss">
+          <div class="trk-label">Biggest 24-hour loss &middot; since Nov 3, 2026</div>
+          <div class="trk-num" id="trkRecLoss">&#8212;</div>
+          <div class="trk-sub" id="trkRecLossS"></div>
+        </div>
+        <div class="trk-rec-note" id="trkRecNote">Rolling 24-hour windows of USGS readings, counted from Nov 3, 2026, when Save Kearny AZ began tracking.</div>
       </div>
       <div class="trk-extra">
         <div class="trk-card">
