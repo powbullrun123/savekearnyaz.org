@@ -69,9 +69,11 @@ a { color: inherit; text-decoration: none; }
 .mobile-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
 .chapter-label { font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--deep); }
-.hero-bg { position: absolute; inset: 0; background: url('kearny-lake.webp') center/cover no-repeat; filter: brightness(0.45) saturate(1.1); transform: scale(1.05); animation: heroBreath 20s ease-in-out infinite alternate; }
+.hero-bg { position: absolute; inset: 0; background: url('kearny-lake.webp') center/cover no-repeat; filter: brightness(0.78) saturate(1.15); transform: scale(1.05); animation: heroBreath 20s ease-in-out infinite alternate; }
 @keyframes heroBreath { 0% { transform: scale(1.05); } 100% { transform: scale(1.12); } }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,16,24,0.5) 0%, rgba(7,16,24,0.2) 40%, rgba(7,16,24,0.7) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(7,16,24,0.42) 0%, rgba(7,16,24,0.12) 70%), linear-gradient(180deg, rgba(7,16,24,0.35) 0%, rgba(7,16,24,0.02) 45%, rgba(7,16,24,0.5) 100%); }
+.hero-title, .hero-tagline, .hero-chapter { text-shadow: 0 2px 18px rgba(0,0,0,0.55); }
+.hero-sub { text-shadow: 0 1px 10px rgba(0,0,0,0.7); }
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 40px 24px; max-width: 900px; }
 .hero-chapter { font-family: var(--font-accent); font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; opacity: 0; animation: fadeUp 1s 0.3s forwards; }
 .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s 0.6s forwards; }
@@ -148,7 +150,9 @@ a { color: inherit; text-decoration: none; }
 .storm .section-inner { position: relative; z-index: 2; }
 .storm .section-title { color: #1a1a1a; }
 .storm .section-title em { color: #B22222; }
-.storm .section-lead, .threat-card p { color: #B8860B !important; font-weight: 600; }
+.storm .section-lead { color: #1B2A40 !important; font-weight: 600; }
+.threat-card p { color: #2b2b2b !important; font-weight: 500; }
+.storm .chapter-label { color: #7a5a0a; }
 .threat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 48px; }
 .threat-card { background: rgba(255,255,255,0.5); border: 1px solid rgba(184,134,11,0.3); border-radius: 12px; padding: 32px 28px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
 .threat-card:hover { transform: translateY(-4px); border-color: #B8860B; }
@@ -388,7 +392,7 @@ footer a { color: var(--gold-light); }
 <nav class="main-nav" id="mainNav">
   <a href="#" class="nav-logo">SaveKearnyAZ</a>
   <ul class="nav-links">
-    <li><a href="#situation">The Situation</a></li>
+    <li><a href="situation.html">The Situation</a></li>
     <li><a href="#wells">Wells</a></li>
     <li><a href="#actions">What To Do</a></li>
     <li><a href="wastewater-update.html">Wastewater Update</a></li>
@@ -404,7 +408,7 @@ footer a { color: var(--gold-light); }
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&times;</button>
-  <a href="#situation" onclick="closeMobile()">The Situation</a>
+  <a href="situation.html" onclick="closeMobile()">The Situation</a>
   <a href="#wells" onclick="closeMobile()">Wells</a>
   <a href="#actions" onclick="closeMobile()">What To Do</a>
   <a href="wastewater-update.html" onclick="closeMobile()">Wastewater Update</a>
@@ -563,10 +567,10 @@ footer a { color: var(--gold-light); }
 <section class="storm" id="situation">
   <div class="storm-bg"></div>
   <div class="section-inner">
-    <div class="chapter-label">The Three Core Threats</div>
-    <h2 class="section-title">The Three Legal &amp; <em>Environmental Threats</em><br>Facing Kearny&#39;s Water Supply.</h2>
+    <div class="chapter-label">The Three Core Threats &#8212; Still Here After the Rain</div>
+    <h2 class="section-title">The Rain Bought Time.<br><em>The Threats Remain.</em></h2>
     <hr class="divider" style="background: var(--red-emergency);">
-    <p class="section-lead">Three forces are converging on Kearny&#39;s water supply. The first is a severe, prolonged drought that drained Coolidge Dam to less than 0.05% of its capacity by June 2026 &#8212; and will return. The second is a 91-year-old federal court decree that places Kearny last in line for every remaining drop. The third is a set of competing legal claims that could challenge any unguarded groundwater right.</p>
+    <p class="section-lead">The storms refilled San Carlos Reservoir, and we give thanks for every drop. But rain doesn&#39;t change who holds the water rights. Three forces still stand between Kearny and a secure water supply. The first is drought: it drained Coolidge Dam to less than 0.05% of its capacity by June 2026, and it will return. The second is a 91-year-old federal court decree that places Kearny last in line for every remaining drop. The third is a set of competing legal claims that could challenge any unguarded groundwater right.</p>
     <div class="threat-grid">
       <div class="threat-card"><div class="threat-icon">&#128293;</div><h3>Threat #1 &#8212; The Drought</h3><p>Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Coolidge Dam &#8212; the sole source of Kearny&#39;s water allocation &#8212; drained to roughly 377 acre-feet out of its ~910,000 acre-foot capacity (USGS, June 7 2026) &#8212; its surface down more than 13 feet since January 1. Snowpack ran at just ~25% of normal. The fall 2026 storms have refilled it to more than 100,000 acre-feet, but one wet season doesn&#39;t end a mega-drought. The next dry year is the threat.</p><span class="threat-stat">377 AF (Jun) &#8594; 100,000+ AF (Nov)</span></div>
       <div class="threat-card"><div class="threat-icon">&#9878;&#65039;</div><h3>Threat #2 &#8212; The Globe Equity Decree of 1935</h3><p>A federal court decree that divides Gila River water among competing users. Kearny&#39;s rights are "junior" &#8212; established later than neighboring communities and tribal nations. Under the prior appropriation doctrine, senior rights drink first. When the dam runs dry, Kearny is the first to be cut off. In 2026, that cut was devastating: from about 610 acre-feet down to 77.</p><span class="threat-stat">610 &#8594; 77 Acre-Feet</span></div>
@@ -928,26 +932,6 @@ function closeMobile() { document.getElementById('mobileMenu').classList.remove(
 function toggleFaq(el) { var item = el.parentElement; document.querySelectorAll('.faq-item').forEach(function(i) { if (i !== item) i.classList.remove('open'); }); item.classList.toggle('open'); }
 function filterWells(cat) { var cards = document.querySelectorAll('.well-card-new'); var btns = document.querySelectorAll('.wells-filter button'); btns.forEach(function(b) { b.classList.remove('active'); }); event.target.classList.add('active'); cards.forEach(function(card) { if (cat === 'all' || card.getAttribute('data-cat') === cat) { card.style.display = 'flex'; } else { card.style.display = 'none'; } }); document.getElementById('wellsTrack').scrollLeft = 0; }
 </script>
-<script>
-/* Live San Carlos Reservoir storage from USGS gage 09469000 (falls back to the last posted value) */
-(function () {
-  var URL = 'https://waterservices.usgs.gov/nwis/iv/?format=json&sites=09469000&parameterCd=00054&siteStatus=all';
-  var OCT17 = 38540;
-  fetch(URL).then(function (r) { return r.json(); }).then(function (d) {
-    var vals = d.value.timeSeries[0].values[0].value;
-    var last = vals[vals.length - 1];
-    var af = Math.round(parseFloat(last.value));
-    if (!af || af < 0) return;
-    var when = new Date(last.dateTime);
-    var label = '(USGS, ' + when.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/Phoenix' }) + ')';
-    var txt = af.toLocaleString('en-US');
-    document.querySelectorAll('.sk-live-af, .sk-live-ticker').forEach(function (el) { el.textContent = txt; });
-    document.querySelectorAll('.sk-live-date').forEach(function (el) { el.textContent = ' ' + label; });
-    var maxAF = Math.max(af, OCT17);
-    document.querySelectorAll('.btr-mid').forEach(function (el) { el.style.width = (OCT17 / maxAF * 100) + '%'; });
-    document.querySelectorAll('.sk-live-bar').forEach(function (el) { el.style.width = (af / maxAF * 100) + '%'; });
-  }).catch(function () { /* keep the posted values */ });
-})();
-</script>
+<script src="water-status.js" data-banner="off"></script>
 </body>
 </html>
