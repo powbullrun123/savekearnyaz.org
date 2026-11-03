@@ -382,6 +382,33 @@ footer a { color: var(--gold-light); }
 .btr-cta { text-align: center; margin-top: 44px; }
 .btr-cta p { font-family: var(--font-accent); font-style: italic; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 18px; }
 @media (max-width: 480px) { .btr-row { grid-template-columns: 52px 1fr 86px; gap: 10px; } .btr-val { font-size: 0.9rem; } }
+
+/* PROJECT 88 — Nov 2026 */
+.p88-questions { display: grid; gap: 20px; margin: 8px 0 56px; }
+.p88-q { background: #fff; border-radius: 14px; padding: 28px 30px 24px 96px; border: 1px solid rgba(26,107,138,0.22); position: relative; box-shadow: 0 6px 24px rgba(26,107,138,0.06); }
+.p88-q-num { position: absolute; left: 26px; top: 22px; font-family: var(--font-display); font-size: 2.4rem; font-weight: 900; color: rgba(26,107,138,0.25); line-height: 1; }
+.p88-q h3 { font-family: var(--font-display); font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 900; color: var(--navy); line-height: 1.25; margin-bottom: 10px; }
+.p88-q p { font-size: 1.02rem; line-height: 1.75; color: #34495e; margin-bottom: 10px; }
+.p88-q p strong { color: #0e4d6b; }
+.p88-how { font-size: 0.85rem !important; font-weight: 700; letter-spacing: 0.02em; color: var(--water-blue) !important; margin-bottom: 0 !important; }
+.p88-look { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; background: linear-gradient(160deg, #0c2a3d, #071018); border-radius: 18px; padding: 44px 40px; color: #fff; }
+.p88-look-title { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; color: #9fdcf5; line-height: 1; margin: 4px 0 18px; }
+.p88-look p { font-family: var(--font-accent); font-size: 1.18rem; line-height: 1.75; color: rgba(255,255,255,0.85); margin-bottom: 14px; }
+.p88-look p strong { color: #fff; }
+.p88-depth { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(135,206,235,0.25); }
+.p88-layer { position: relative; padding: 14px 16px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; }
+.p88-layer em { font-style: normal; font-weight: 400; text-transform: none; letter-spacing: 0; opacity: 0.8; font-size: 0.8rem; }
+.p88-surface { background: #6b8f4e; padding: 8px 16px; }
+.p88-alluvium { background: linear-gradient(180deg, #b08a5a, #8c6a43); height: 70px; }
+.p88-granite { height: 250px; background: repeating-linear-gradient(115deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 22px), linear-gradient(180deg, #4a4e57, #2c2f36); }
+.p88-mark { position: absolute; left: 0; right: 0; border-top: 2px dashed rgba(159,220,245,0.75); font-size: 0.7rem; padding: 3px 12px 0; text-align: right; color: #9fdcf5; text-transform: none; letter-spacing: 0.02em; }
+.p88-mark-scan { border-top-color: var(--gold); color: var(--gold-light); }
+.p88-depth-note { background: #071018; color: rgba(255,255,255,0.55); font-size: 0.72rem; padding: 10px 14px; line-height: 1.5; }
+.p88-tagline { text-align: center; font-family: var(--font-display); font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 900; color: var(--navy); margin-top: 56px; }
+.p88-tagline em { color: var(--water-blue); }
+.p88-fine { text-align: center; font-size: 0.78rem; color: #6b7a89; margin-top: 10px; }
+@media (max-width: 860px) { .p88-look { grid-template-columns: 1fr; padding: 32px 22px; } }
+@media (max-width: 560px) { .p88-q { padding: 70px 20px 20px; } .p88-q-num { top: 18px; left: 20px; } }
 </style>
 </head>
 <body>
@@ -696,26 +723,69 @@ footer a { color: var(--gold-light); }
   </div>
 </section>
 
-<!-- CHAPTER 5: QUEST — original unchanged -->
+<!-- CHAPTER 5: PROJECT 88 — rewritten Nov 2026 -->
 <section class="quest" id="p88">
   <div class="section-inner">
-    <div class="chapter-label" style="color: var(--water-blue);">The Path to Water Independence</div>
-    <h2 class="section-title">Project 88 &#8212; <em>Finding Water</em><br>Where No One Thought to Look</h2>
+    <div class="chapter-label" style="color: var(--water-blue);">Project 88 &#8212; The Path to Water Independence</div>
+    <h2 class="section-title">What&#39;s Hiding <em>1,100 Feet</em><br>Beneath Kearny?</h2>
     <hr class="divider" style="background: var(--water-blue);">
     <div class="quest-narrative">
-      Kearny&#39;s most promising long-term option is <strong>MARS</strong>: <strong>Managed Aquifer Recharge and Storage</strong> &#8212; a proven hydrological approach already deployed in Phoenix, Tucson, and across the American Southwest.<br><br>
-      Project 88 asks one simple question: <strong>Does Kearny already own the solution to its own water crisis?</strong><br><br>
-      Our research of ADWR public records has identified two deep-bore wells &#8212; <strong>Sites 23CCC</strong> (1,250 ft) and <strong>23CAA</strong> (1,150 ft) &#8212; that show as "Data Gaps" in current records. At that depth, these wells punch through the alluvial layer the Globe Equity Decree governs and into <strong>fractured granite</strong> &#8212; a formation that produces cleaner, drought-resistant water from a completely separate legal classification called <strong>percolating groundwater</strong>.<br><br>
-      The Decree&#39;s handcuffs have a geological floor. Project 88 is here to find it &#8212; and if the geology confirms what the data suggests, to help Kearny develop a water supply that <strong>no drought and no 1935 decree can touch</strong>.
+      Two deep wells sit inside Kearny&#39;s town limits &#8212; <strong>Sites 23CCC</strong> (1,250 ft) and <strong>23CAA</strong> (1,150 ft). They punch through the shallow, river-fed sand that the 1935 Globe Equity Decree governs and down into <strong>fractured granite</strong>. State records list them as data gaps. In nearly a century, no one has looked closely at what they reach.
     </div>
+
+    <div class="p88-questions">
+      <div class="p88-q">
+        <div class="p88-q-num">01</div>
+        <h3>Could the water at 1,100 feet be free from the Globe Decree?</h3>
+        <p>The Decree governs river water and the shallow sediment around it. Water held deep in fractured granite may be a different kind of water &#8212; <strong>percolating groundwater</strong> &#8212; with a different legal standing. If it&#39;s truly separate from the river, Kearny may be standing on a supply of its own.</p>
+        <p class="p88-how">How we find out: map whether the deep water connects to the river &#8212; then let the Town&#39;s water attorneys weigh in.</p>
+      </div>
+      <div class="p88-q">
+        <div class="p88-q-num">02</div>
+        <h3>What could an 18-inch well really deliver?</h3>
+        <p>These wells were built with <strong>18-inch casings</strong> &#8212; the size used for high-volume production. Rehabilitated, and pumping from the right fracture zone, a well like that could change Kearny&#39;s water outlook. Its real yield has never been measured.</p>
+        <p class="p88-how">How we find out: locate the most productive zones first &#8212; then a pump test tells the rest.</p>
+      </div>
+      <div class="p88-q">
+        <div class="p88-q-num">03</div>
+        <h3>How much water is down there?</h3>
+        <p>No one knows &#8212; because no one has ever mapped it. Where the water-bearing fractures run, how far they reach, how deep they go. The answers have been sitting in the dark for decades.</p>
+        <p class="p88-how">How we find out: image the ground around both wells, deeper than either well goes.</p>
+      </div>
+    </div>
+
+    <div class="p88-look">
+      <div class="p88-look-text">
+        <div class="chapter-label" style="color: var(--water-blue);">There&#39;s Only One Way to Find Out</div>
+        <h3 class="p88-look-title">Look.</h3>
+        <p>Advanced geophysical imaging can see what a drill can&#39;t &#8212; without drilling a single hole. By reading how electrical current and the Earth&#39;s own natural electrical field move through rock, it builds a picture of the ground <strong>more than 1,000 feet deep</strong>: where the granite is fractured and holding water, how far that water reaches, and whether it&#39;s tied to the river or sealed away beneath it.</p>
+        <p>No digging. No damage. Just answers to questions Kearny has never been able to ask.</p>
+      </div>
+      <div class="p88-depth" aria-label="Cross-section of the ground beneath Kearny">
+        <div class="p88-layer p88-surface"><span>Surface &#8212; Kearny</span></div>
+        <div class="p88-layer p88-alluvium"><span>River-fed sand &amp; gravel<br><em>Governed by the 1935 Decree</em></span></div>
+        <div class="p88-layer p88-granite"><span>Fractured granite<br><em>Water here may be legally separate</em></span>
+          <div class="p88-mark" style="top:52%"><b></b>Well 23CAA &#8212; 1,150 ft</div>
+          <div class="p88-mark" style="top:64%"><b></b>Well 23CCC &#8212; 1,250 ft</div>
+          <div class="p88-mark p88-mark-scan" style="top:90%"><b></b>Imaging reach &#8212; ~1,600 ft</div>
+        </div>
+        <div class="p88-depth-note">Not to scale. How deep the granite begins is unknown &#8212; it&#39;s one of the first things imaging measures.</div>
+      </div>
+    </div>
+
+    <div class="chapter-label" style="color: var(--water-blue); margin-top: 56px;">If the Answer Is Yes</div>
     <div class="pillar-grid">
-      <div class="pillar"><div class="pillar-icon">&#128269;</div><h3>The Vault Wells</h3><p>Two dormant wells at 1,150&#8211;1,250 ft depth with 18-inch casings &#8212; capable of 2,000+ GPM if rehabilitated. Infrastructure worth $500K&#8211;$1M to replicate, already sitting inside city limits, waiting to be verified.</p></div>
-      <div class="pillar"><div class="pillar-icon">&#9878;&#65039;</div><h3>Below the Decree</h3><p>The Globe Equity Decree governs alluvial subflow &#8212; saturated Holocene sediment near the river surface. At 1,250 feet in fractured granite, these wells may access legally separate percolating groundwater outside the Decree&#39;s reach.</p></div>
-      <div class="pillar"><div class="pillar-icon">&#128167;</div><h3>The Effluent Strategy</h3><p>Stop sending treated effluent downstream for free. Inject it back into the Vault wells and earn ADWR Long-Term Storage Credits &#8212; a water bank Kearny owns outright, recoverable on demand under ARS Title 45.</p></div>
-      <div class="pillar"><div class="pillar-icon">&#129309;</div><h3>No Upfront Cost</h3><p>Project 88 operates on a verify-first model. Phase 1 is a site inspection &#8212; nearly free. No capital commitment until the data confirms the opportunity is real. The Town risks nothing.</p></div>
+      <div class="pillar"><div class="pillar-icon">&#128167;</div><h3>A Supply of Its Own</h3><p>If the deep water is separate from the river, Kearny could develop it as an independent source &#8212; one that doesn&#39;t rise and fall with San Carlos Lake.</p></div>
+      <div class="pillar"><div class="pillar-icon">&#127974;</div><h3>A Water Bank Underground</h3><p>Instead of sending treated wastewater downstream for free, Kearny could store it deep underground &#8212; where the desert sun can&#39;t steal it &#8212; and earn ADWR Long-Term Storage Credits.</p></div>
+      <div class="pillar"><div class="pillar-icon">&#127919;</div><h3>Every Well Dollar Aimed</h3><p>Whatever the answer, a map tells the Town where to rehab, test or drill &#8212; and where not to. That makes every grant dollar go further.</p></div>
+      <div class="pillar"><div class="pillar-icon">&#129309;</div><h3>Look First, Decide Later</h3><p>The imaging can be done with no upfront cost to the Town. No capital commitment until the data shows the opportunity is real.</p></div>
     </div>
+
+    <p class="p88-tagline">Water seeks stability. <em>We help find it.</em></p>
+    <p class="p88-fine">Project 88 is an independent citizen initiative, not an official program of the Town of Kearny. The questions on this page are ideas to be tested, not conclusions.</p>
   </div>
 </section>
+
 
 <!-- INDEPENDENT REVIEW — Mackenzie & Associates -->
 <section style="background: var(--navy); padding: 64px 24px; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold);">
