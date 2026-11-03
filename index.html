@@ -52,7 +52,7 @@ a { color: inherit; text-decoration: none; }
 .section-title em { font-style: italic; color: var(--gold); }
 .section-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2.5vw, 1.4rem); line-height: 1.7; max-width: 800px; color: #071018 !important; font-weight: 600; }
 .divider { width: 60px; height: 3px; background: var(--gold); margin: 24px 0; border: none; }
-.ticker { background: var(--red-emergency); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 20px; text-align: center; position: relative; z-index: 100; overflow: hidden; }
+.ticker { background: linear-gradient(90deg,#0e4d6b,#1a6b8a,#0e4d6b); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 20px; text-align: center; position: relative; z-index: 100; overflow: hidden; }
 .ticker::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); animation: tickerSweep 4s infinite; }
 @keyframes tickerSweep { to { left: 200%; } }
 .main-nav { background: var(--deep); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 99; border-bottom: 2px solid var(--gold); }
@@ -347,12 +347,41 @@ footer a { color: var(--gold-light); }
 @media (max-width: 700px) { .hydro-takeaways { grid-template-columns: 1fr; } .hydro-section { padding: 3rem 1rem 2.5rem; } .hydro-proof { flex-direction: column; align-items: center; text-align: center; } .hydro-prose { padding: 1.2rem 1.3rem; } }
 @media (max-width: 640px) { .wells-section { padding: 50px 12px 60px; } .well-card-new { flex: 0 0 270px; min-height: 360px; padding: 20px; } .wells-track { gap: 14px; } .wells-filter { gap: 6px; } .wells-filter button { font-size: 11px; padding: 6px 12px; } }
 @media (max-width: 480px) { .section-inner { padding: 0 16px; } .hero-title { font-size: 2.2rem; } .threat-grid { grid-template-columns: 1fr; } .pillar-grid { grid-template-columns: 1fr; } .pages-grid { grid-template-columns: 1fr 1fr; } .rules-grid { grid-template-columns: 1fr; } }
+
+/* BLESS THE RAIN — Nov 2026 */
+.hero-tagline { font-family: var(--font-accent); font-style: italic; font-size: clamp(1.4rem, 3.5vw, 2rem); color: var(--gold-light); margin: -8px 0 18px; opacity: 0; animation: fadeUp 1s 0.8s forwards; }
+.stat-card-live { border-color: rgba(135,206,235,0.6); box-shadow: 0 0 24px rgba(135,206,235,0.18); }
+.stat-card-live .stat-num { color: #9fdcf5; }
+.btr-section { padding: 100px 0; background: linear-gradient(170deg, #0c2a3d 0%, #0a1d2b 55%, var(--deep) 100%); color: #fff; }
+.btr-section .section-title { color: #fff; }
+.btr-section .section-title em { color: #9fdcf5; }
+.btr-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2.5vw, 1.35rem); line-height: 1.7; max-width: 800px; color: rgba(255,255,255,0.85); }
+.btr-chart { margin: 40px 0; background: rgba(255,255,255,0.04); border: 1px solid rgba(135,206,235,0.2); border-radius: 12px; padding: 28px 24px 18px; }
+.btr-row { display: grid; grid-template-columns: 70px 1fr 110px; gap: 16px; align-items: center; margin-bottom: 16px; }
+.btr-when { font-family: var(--font-display); font-weight: 700; color: var(--gold); text-align: right; }
+.btr-track { background: rgba(255,255,255,0.06); border-radius: 6px; height: 26px; overflow: hidden; }
+.btr-bar { height: 100%; min-width: 4px; border-radius: 6px; transition: width 1.5s ease; }
+.btr-low { background: linear-gradient(90deg,#8B1A1A,#B22222); }
+.btr-mid { background: linear-gradient(90deg,#1a6b8a,#2d8ab8); }
+.btr-high { background: linear-gradient(90deg,#1a6b8a,#87CEEB); }
+.btr-val { font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.05rem; }
+.btr-source { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 8px; }
+.btr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.btr-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(135,206,235,0.2); border-radius: 10px; padding: 24px; }
+.btr-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 10px; color: #fff; }
+.btr-card p { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.75); }
+.btr-card strong { color: #fff; }
+.btr-card-gold { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.08); }
+.btr-card-gold strong { color: var(--gold); }
+.btr-cta { text-align: center; margin-top: 44px; }
+.btr-cta p { font-family: var(--font-accent); font-style: italic; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 18px; }
+@media (max-width: 480px) { .btr-row { grid-template-columns: 52px 1fr 86px; gap: 10px; } .btr-val { font-size: 0.9rem; } }
 </style>
 </head>
 <body>
 <!-- TICKER — original unchanged -->
 <div class="ticker">
-  &#128167; WATER WATCH — Level 1WE (Voluntary Conservation) &nbsp;|&nbsp; Temporary Priority Water Now Flowing &nbsp;|&nbsp; Relief Ends the Moment a Senior User Calls for Water &nbsp;|&nbsp; Conserve — Every Drop Still Counts
+  &#127783;&#65039; BLESS THE RAIN — San Carlos Reservoir Is Refilling &nbsp;|&nbsp; <span class="sk-live-ticker">102,800</span> Acre-Feet Behind Coolidge Dam (USGS) &nbsp;|&nbsp; Up From 389 Acre-Feet in May &nbsp;|&nbsp; Kearny&#39;s 2027 Water Is Still Undecided &nbsp;|&nbsp; Conserve — Bank Every Drop
 </div>
 
 <!-- NAV — Water Rights Now link added -->
@@ -391,17 +420,55 @@ footer a { color: var(--gold-light); }
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-chapter">Kearny, Arizona &#8212; Live Water Status</div>
-    <h1 class="hero-title">Our Town. Our Water. <em>Our Fight.</em></h1>
-    <p class="hero-sub">Kearny sits along the Gila River in Pinal County, Arizona &#8212; a century-old copper and ranching town of about 2,000 people. In 2026 its surface-water allotment was cut to 77 acre-feet, triggering a declared water emergency. This page tracks the facts, the response, and the path forward &#8212; updated as the situation changes.</p>
+    <h1 class="hero-title">Bless the <em>Rain.</em></h1>
+    <p class="hero-tagline">Now let&#39;s bank it.</p>
+    <p class="hero-sub">Six months ago, the reservoir that feeds Kearny&#39;s allotment was down to a puddle. Then the storms came. San Carlos Reservoir behind Coolidge Dam is refilling fast &#8212; and this is the moment to make sure Kearny never runs this close to empty again.</p>
     <div class="hero-stats">
-      <div class="stat-card"><div class="stat-num">77</div><div class="stat-label">Acre-Feet Allotted<br>for All of 2026</div></div>
-      <div class="stat-card"><div class="stat-num">&lt;0.05%</div><div class="stat-label">Coolidge Dam<br>Capacity (Jun 2026)</div></div>
+      <div class="stat-card stat-card-live"><div class="stat-num"><span class="sk-live-af">102,800</span></div><div class="stat-label">Acre-Feet in San Carlos<br>Reservoir <span class="sk-live-date">(USGS, Nov 3)</span></div></div>
+      <div class="stat-card"><div class="stat-num">389</div><div class="stat-label">Acre-Feet Left<br>in May 2026</div></div>
+      <div class="stat-card"><div class="stat-num">77</div><div class="stat-label">Acre-Feet Kearny<br>Was Allotted for 2026</div></div>
       <div class="stat-card"><div class="stat-num">32.7%</div><div class="stat-label">Reduction Achieved<br>by Residents</div></div>
-      <div class="stat-card"><div class="stat-num">1WE</div><div class="stat-label">Current Restriction<br>Level (Voluntary)</div></div>
     </div>
     <div class="hero-buttons">
-      <a href="#situation" class="btn btn-gold">See the Facts &#8595;</a>
+      <a href="#bless-the-rain" class="btn btn-gold">What the Rain Means &#8595;</a>
       <a href="#p88" class="btn btn-outline">The Solution &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLESS THE RAIN — November 2026 update -->
+<section class="btr-section" id="bless-the-rain">
+  <div class="section-inner">
+    <div class="chapter-label">November 2026 &#8212; The Rains Return</div>
+    <h2 class="section-title">From a Puddle to a <em>Lake Again.</em></h2>
+    <hr class="divider">
+    <p class="btr-lead">The late-October and early-November storms sent the Gila and San Carlos rivers surging &#8212; some gauges set records not seen in decades &#8212; and that water is now pouring into San Carlos Reservoir.</p>
+
+    <div class="btr-chart" aria-label="San Carlos Reservoir storage, 2026">
+      <div class="btr-row"><div class="btr-when">May 22</div><div class="btr-track"><div class="btr-bar btr-low" style="width:1.2%"></div></div><div class="btr-val">389 AF</div></div>
+      <div class="btr-row"><div class="btr-when">Oct 17</div><div class="btr-track"><div class="btr-bar btr-mid" style="width:37%"></div></div><div class="btr-val">38,540 AF</div></div>
+      <div class="btr-row"><div class="btr-when">Now</div><div class="btr-track"><div class="btr-bar btr-high sk-live-bar" style="width:100%"></div></div><div class="btr-val"><span class="sk-live-af">102,800</span> AF</div></div>
+      <p class="btr-source">Reservoir storage at Coolidge Dam, in acre-feet. Source: USGS gage 09469000 and NASA Earth Observatory. &#8220;Now&#8221; updates automatically from USGS<span class="sk-live-date"> (Nov 3, 2026)</span>.</p>
+    </div>
+
+    <div class="btr-grid">
+      <div class="btr-card">
+        <h3>&#127783;&#65039; What the rain did</h3>
+        <p>Refilled the reservoir from less than 1% full to more than <strong>100,000 acre-feet</strong> in a matter of weeks. Every acre-foot is about 326,000 gallons.</p>
+      </div>
+      <div class="btr-card">
+        <h3>&#9878;&#65039; What the rain didn&#39;t change</h3>
+        <p>That reservoir water is divided under the <strong>1935 Globe Equity Decree</strong>, and Kearny still holds a junior right. A fuller lake doesn&#39;t automatically mean a bigger allotment &#8212; Kearny&#39;s <strong>2027 water is still being decided.</strong></p>
+      </div>
+      <div class="btr-card btr-card-gold">
+        <h3>&#127974; Why we bank it</h3>
+        <p>An open lake loses water to the desert sky and drains again in the next dry year. Water stored deep underground can&#39;t evaporate. That&#39;s the idea behind <strong>Project 88</strong>: find and protect Kearny&#39;s own water below ground, so the next drought finds us ready.</p>
+      </div>
+    </div>
+
+    <div class="btr-cta">
+      <p>The rain is a blessing. Banking it is a choice.</p>
+      <a href="mars-solution.html" class="btn btn-gold">See How We Bank It &#8594;</a>
     </div>
   </div>
 </section>
@@ -499,9 +566,9 @@ footer a { color: var(--gold-light); }
     <div class="chapter-label">The Three Core Threats</div>
     <h2 class="section-title">The Three Legal &amp; <em>Environmental Threats</em><br>Facing Kearny&#39;s Water Supply.</h2>
     <hr class="divider" style="background: var(--red-emergency);">
-    <p class="section-lead">Three forces are converging on Kearny&#39;s water supply. The first is a severe, prolonged drought that has drained Coolidge Dam to less than 0.05% of its capacity. The second is a 91-year-old federal court decree that places Kearny last in line for every remaining drop. The third is a set of competing legal claims that could challenge any unguarded groundwater right.</p>
+    <p class="section-lead">Three forces are converging on Kearny&#39;s water supply. The first is a severe, prolonged drought that drained Coolidge Dam to less than 0.05% of its capacity by June 2026 &#8212; and will return. The second is a 91-year-old federal court decree that places Kearny last in line for every remaining drop. The third is a set of competing legal claims that could challenge any unguarded groundwater right.</p>
     <div class="threat-grid">
-      <div class="threat-card"><div class="threat-icon">&#128293;</div><h3>Threat #1 &#8212; The Drought</h3><p>Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Coolidge Dam &#8212; the sole source of Kearny&#39;s water allocation &#8212; has drained to roughly 377 acre-feet out of its ~910,000 acre-foot capacity (USGS, June 7 2026) &#8212; its surface down more than 13 feet since January 1 and falling every month since March. Snowpack ran at just ~25% of normal. No monsoon relief in sight. The taps are running on borrowed time.</p><span class="threat-stat">~377 AF &#8212; &lt;0.05% (Jun &#39;26)</span></div>
+      <div class="threat-card"><div class="threat-icon">&#128293;</div><h3>Threat #1 &#8212; The Drought</h3><p>Arizona is in the grip of a mega-drought unprecedented in modern recordkeeping. Coolidge Dam &#8212; the sole source of Kearny&#39;s water allocation &#8212; drained to roughly 377 acre-feet out of its ~910,000 acre-foot capacity (USGS, June 7 2026) &#8212; its surface down more than 13 feet since January 1. Snowpack ran at just ~25% of normal. The fall 2026 storms have refilled it to more than 100,000 acre-feet, but one wet season doesn&#39;t end a mega-drought. The next dry year is the threat.</p><span class="threat-stat">377 AF (Jun) &#8594; 100,000+ AF (Nov)</span></div>
       <div class="threat-card"><div class="threat-icon">&#9878;&#65039;</div><h3>Threat #2 &#8212; The Globe Equity Decree of 1935</h3><p>A federal court decree that divides Gila River water among competing users. Kearny&#39;s rights are "junior" &#8212; established later than neighboring communities and tribal nations. Under the prior appropriation doctrine, senior rights drink first. When the dam runs dry, Kearny is the first to be cut off. In 2026, that cut was devastating: from about 610 acre-feet down to 77.</p><span class="threat-stat">610 &#8594; 77 Acre-Feet</span></div>
       <div class="threat-card"><div class="threat-icon">&#128220;</div><h3>Threat #3 &#8212; The Competing Legal Claims</h3><p>Water rights attorneys representing senior appropriators and tribal nations could challenge any loose or unexercised groundwater claim along the Gila River corridor. Without clear legal standing on Kearny&#39;s deep wells, the town risks losing access to the very infrastructure sitting beneath its feet.</p><span class="threat-stat">Legal Battle Looming</span></div>
       <div class="threat-card"><div class="threat-icon">&#9203;</div><h3>The Math &#8212; Zero Day</h3><p>Before conservation efforts began, Kearny was on track to hit "zero water day" by July 15, 2026. You turn on your faucet and nothing comes out &#8212; for any purpose. Drinking, bathing, cooking, sanitation &#8212; all gone. That&#39;s not a hypothetical. That&#39;s the trajectory Mayor Stacy communicated in the April 8 emergency letter.</p><span class="threat-stat">Originally: July 15, 2026</span></div>
@@ -860,6 +927,27 @@ document.addEventListener('DOMContentLoaded', function() {
 function closeMobile() { document.getElementById('mobileMenu').classList.remove('active'); }
 function toggleFaq(el) { var item = el.parentElement; document.querySelectorAll('.faq-item').forEach(function(i) { if (i !== item) i.classList.remove('open'); }); item.classList.toggle('open'); }
 function filterWells(cat) { var cards = document.querySelectorAll('.well-card-new'); var btns = document.querySelectorAll('.wells-filter button'); btns.forEach(function(b) { b.classList.remove('active'); }); event.target.classList.add('active'); cards.forEach(function(card) { if (cat === 'all' || card.getAttribute('data-cat') === cat) { card.style.display = 'flex'; } else { card.style.display = 'none'; } }); document.getElementById('wellsTrack').scrollLeft = 0; }
+</script>
+<script>
+/* Live San Carlos Reservoir storage from USGS gage 09469000 (falls back to the last posted value) */
+(function () {
+  var URL = 'https://waterservices.usgs.gov/nwis/iv/?format=json&sites=09469000&parameterCd=00054&siteStatus=all';
+  var OCT17 = 38540;
+  fetch(URL).then(function (r) { return r.json(); }).then(function (d) {
+    var vals = d.value.timeSeries[0].values[0].value;
+    var last = vals[vals.length - 1];
+    var af = Math.round(parseFloat(last.value));
+    if (!af || af < 0) return;
+    var when = new Date(last.dateTime);
+    var label = '(USGS, ' + when.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/Phoenix' }) + ')';
+    var txt = af.toLocaleString('en-US');
+    document.querySelectorAll('.sk-live-af, .sk-live-ticker').forEach(function (el) { el.textContent = txt; });
+    document.querySelectorAll('.sk-live-date').forEach(function (el) { el.textContent = ' ' + label; });
+    var maxAF = Math.max(af, OCT17);
+    document.querySelectorAll('.btr-mid').forEach(function (el) { el.style.width = (OCT17 / maxAF * 100) + '%'; });
+    document.querySelectorAll('.sk-live-bar').forEach(function (el) { el.style.width = (af / maxAF * 100) + '%'; });
+  }).catch(function () { /* keep the posted values */ });
+})();
 </script>
 </body>
 </html>
