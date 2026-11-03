@@ -126,8 +126,19 @@
   }
   function set(id, txt) { var el = $(id); if (el) el.textContent = txt; }
 
+  var SPILLWAY_AF = 912400; // capacity at spillway crest, El. 2,511 ft (ASDSO / dam safety review)
+  function capacity(af) {
+    var pct = af / SPILLWAY_AF * 100;
+    set('trkCap', pct.toFixed(1) + '%');
+    var bar = $('trkCapBar'); if (bar) bar.style.width = Math.min(pct, 100).toFixed(1) + '%';
+    var room = SPILLWAY_AF - af;
+    set('trkCapRoom', room > 0
+      ? 'About ' + n(Math.round(room / 100) * 100) + ' more acre-feet before the spillways come into play. The last time they were needed was 1993.'
+      : 'At or above the spillway crest. Follow official dam and National Weather Service updates.');
+  }
   function tiles(h) {
     var c = h.change;
+    capacity(h.latest.af);
     set('trkLatest', n(h.latest.af) + ' acre-feet (' + fmtWhen(h.latest.time) + ')');
     if (c.h24) { set('trk24', signed(c.h24.af) + ' AF'); set('trk24s', '≈ ' + gallons(c.h24.af) + ' gallons ' + word(c.h24.af)); }
     else set('trk24s', 'Not enough data yet');

@@ -440,6 +440,15 @@ footer a { color: var(--gold-light); }
 .trk-note { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 14px 0 0; }
 @media (max-width: 860px) { .trk-tiles { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .trk { padding: 20px 16px; } .trk-num { font-size: 1.3rem; } }
+
+.trk-extra { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: -8px 0 22px; }
+.trk-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; }
+.trk-card-fish { border-color: rgba(82,183,136,0.4); }
+.trk-cap-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.trk-capbar { height: 12px; border-radius: 6px; background: rgba(255,255,255,0.08); overflow: hidden; margin: 10px 0 8px; }
+.trk-capfill { height: 100%; min-width: 4px; border-radius: 6px; background: #2f9fd6; transition: width 1.2s ease; }
+.trk-asof { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin-top: 8px; }
+@media (max-width: 860px) { .trk-extra { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -533,6 +542,20 @@ footer a { color: var(--gold-light); }
         <div class="trk-tile"><div class="trk-label">Last 7 days</div><div class="trk-num" id="trk7">&#8212;</div><div class="trk-sub" id="trk7s"></div></div>
         <div class="trk-tile"><div class="trk-label">Last 30 days</div><div class="trk-num" id="trk30">&#8212;</div><div class="trk-sub" id="trk30s"></div></div>
         <div class="trk-tile trk-tile-rate"><div class="trk-label">Current pace</div><div class="trk-num" id="trkRate">&#8212;</div><div class="trk-sub" id="trkRates"></div></div>
+      </div>
+      <div class="trk-extra">
+        <div class="trk-card">
+          <div class="trk-label">Room left in the dam</div>
+          <div class="trk-cap-row"><div class="trk-num" id="trkCap">11.4%</div><div class="trk-sub">of capacity at the spillway crest</div></div>
+          <div class="trk-capbar" role="img" aria-label="Reservoir fill compared with spillway capacity"><div class="trk-capfill" id="trkCapBar" style="width:11.4%"></div></div>
+          <div class="trk-sub" id="trkCapRoom">About 808,700 more acre-feet before the spillways come into play. The last time they were needed was 1993.</div>
+        </div>
+        <div class="trk-card trk-card-fish">
+          <div class="trk-label">&#127907; Fishing forecast &middot; San Carlos Lake</div>
+          <div class="trk-num">Not biting yet</div>
+          <div class="trk-sub">The water&#39;s back &#8212; the fish aren&#39;t. The lake has been closed to fishing since June 5, after the drought fish kill. Reopening and restocking are up to the San Carlos Apache Tribe&#39;s Recreation &amp; Wildlife Department, so check with them before you load the boat. <em>Tackle box: stay ready.</em></div>
+          <div class="trk-asof">Status as of Nov 3, 2026</div>
+        </div>
       </div>
       <div class="trk-chart-wrap">
         <div class="trk-chart-title">Water stored behind Coolidge Dam (acre-feet)</div>
