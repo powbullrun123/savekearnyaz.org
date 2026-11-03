@@ -8,8 +8,8 @@
    still labeled with its own date and time.
    ========================================================== */
 (function () {
-  var FALLBACK_AF = 102800;                      // USGS gage 09469000
-  var FALLBACK_LABEL = 'Nov 3, 10:30 am';        // time of that reading (MST)
+  var FALLBACK_AF = 103700;                      // USGS gage 09469000
+  var FALLBACK_LABEL = 'Nov 3, 1:30 pm';         // time of that reading (MST)
   var MAY_AF = 389;                              // NASA Earth Observatory, May 22, 2026
   var OCT17_AF = 38540;                          // USGS, Oct 17, 2026
   var SOURCES = [
@@ -68,8 +68,12 @@
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
-  function update(af, when) {
+  var shownMs = 0;
+  function update(af, when, ms) {
+    if (ms && ms <= shownMs) return;   // keep the newest reading everywhere on the page
+    if (ms) shownMs = ms;
     var txt = fmt(af);
+    if (window.skCapacity) window.skCapacity(af);
     document.querySelectorAll('.sk-live-af, .sk-live-ticker').forEach(function (el) { el.textContent = txt; });
     document.querySelectorAll('.sk-live-date').forEach(function (el) {
       var lead = el.textContent.charAt(0) === ' ' ? ' ' : '';
@@ -87,11 +91,12 @@
       .then(function (d) {
         var got = src.read(d);
         if (!got || !(got.af >= 0)) throw 'no value';
-        update(got.af, label(got.time));
+        update(got.af, label(got.time), Date.parse(got.time));
       })
       .catch(function () { tryNext(i + 1); });
   }
 
+  window.skWaterUpdate = function (af, time) { update(af, label(time), Date.parse(time)); };
   function start() { addBanner(); tryNext(0); }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
@@ -136,9 +141,11 @@
       ? 'About ' + n(Math.round(room / 100) * 100) + ' more acre-feet before the spillways come into play. The last time they were needed was 1993.'
       : 'At or above the spillway crest. Follow official dam and National Weather Service updates.');
   }
+  window.skCapacity = capacity;
   function tiles(h) {
     var c = h.change;
     capacity(h.latest.af);
+    if (window.skWaterUpdate) window.skWaterUpdate(h.latest.af, h.latest.time);
     set('trkLatest', n(h.latest.af) + ' acre-feet (' + fmtWhen(h.latest.time) + ')');
     if (c.h24) { set('trk24', signed(c.h24.af) + ' AF'); set('trk24s', '≈ ' + gallons(c.h24.af) + ' gallons ' + word(c.h24.af)); }
     else set('trk24s', 'Not enough data yet');
