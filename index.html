@@ -409,6 +409,37 @@ footer a { color: var(--gold-light); }
 .p88-fine { text-align: center; font-size: 0.78rem; color: #6b7a89; margin-top: 10px; }
 @media (max-width: 860px) { .p88-look { grid-template-columns: 1fr; padding: 32px 22px; } }
 @media (max-width: 560px) { .p88-q { padding: 70px 20px 20px; } .p88-q-num { top: 18px; left: 20px; } }
+
+/* LIVE RESERVOIR TRACKER */
+.trk { background: #0c2233; border: 1px solid rgba(47,159,214,0.35); border-radius: 14px; padding: 28px 26px 22px; margin: 0 0 40px; }
+.trk-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.trk-title { font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; color: #fff; margin: 0 0 4px; }
+.trk-meta { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 0; }
+.trk-range { display: inline-flex; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; overflow: hidden; }
+.trk-range button { background: transparent; color: rgba(255,255,255,0.75); border: 0; padding: 8px 14px; font: 700 0.78rem var(--font-body); letter-spacing: 0.04em; cursor: pointer; }
+.trk-range button[aria-pressed="true"] { background: rgba(47,159,214,0.25); color: #fff; }
+.trk-range button:focus-visible { outline: 2px solid #9fdcf5; outline-offset: -2px; }
+.trk-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px; }
+.trk-tile { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; }
+.trk-tile-rate { border-color: rgba(201,168,76,0.45); }
+.trk-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+.trk-num { font-family: var(--font-display); font-size: 1.55rem; font-weight: 900; color: #fff; line-height: 1.1; }
+.trk-sub { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 6px; line-height: 1.45; }
+.trk-chart-wrap { position: relative; }
+.trk-chart-title { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+.trk-chart svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+.trk-tip { position: absolute; pointer-events: none; background: #f5f0e8; color: #0c2233; border-radius: 8px; padding: 7px 10px; font-size: 0.78rem; line-height: 1.35; box-shadow: 0 6px 20px rgba(0,0,0,0.35); white-space: nowrap; transform: translate(-50%, -100%); }
+.trk-tip strong { display: block; font-size: 0.95rem; }
+.trk-tip span { color: #4a5868; }
+.trk-table { margin-top: 14px; color: rgba(255,255,255,0.8); font-size: 0.85rem; }
+.trk-table summary { cursor: pointer; font-weight: 700; color: #9fdcf5; }
+.trk-table table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.trk-table th, .trk-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.trk-table th:first-child, .trk-table td:first-child { text-align: left; }
+.trk-table th { font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+.trk-note { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin: 14px 0 0; }
+@media (max-width: 860px) { .trk-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .trk { padding: 20px 16px; } .trk-num { font-size: 1.3rem; } }
 </style>
 </head>
 <body>
@@ -483,6 +514,36 @@ footer a { color: var(--gold-light); }
       <div class="btr-row"><div class="btr-when">Oct 17</div><div class="btr-track"><div class="btr-bar btr-mid" style="width:37%"></div></div><div class="btr-val">38,540 AF</div></div>
       <div class="btr-row"><div class="btr-when">Now</div><div class="btr-track"><div class="btr-bar btr-high sk-live-bar" style="width:100%"></div></div><div class="btr-val"><span class="sk-live-af">102,800</span> AF</div></div>
       <p class="btr-source">Reservoir storage at Coolidge Dam, in acre-feet. Source: USGS gage 09469000 and NASA Earth Observatory. &#8220;Now&#8221; shows the latest USGS reading<span class="sk-live-date"> (USGS, Nov 3, 10:30 am)</span>. USGS data are provisional.</p>
+    </div>
+
+    <!-- LIVE RESERVOIR TRACKER — fills from /api/reservoir/history; stays hidden if data can't load -->
+    <div class="trk" id="skTracker" hidden>
+      <div class="trk-head">
+        <div>
+          <h3 class="trk-title">Live Reservoir Tracker</h3>
+          <p class="trk-meta">San Carlos Reservoir at Coolidge Dam &middot; USGS gage 09469000 &middot; latest reading <span id="trkLatest">&#8212;</span></p>
+        </div>
+        <div class="trk-range" role="group" aria-label="Chart time range">
+          <button type="button" data-days="7" aria-pressed="false">7 days</button>
+          <button type="button" data-days="30" aria-pressed="true">30 days</button>
+        </div>
+      </div>
+      <div class="trk-tiles">
+        <div class="trk-tile"><div class="trk-label">Last 24 hours</div><div class="trk-num" id="trk24">&#8212;</div><div class="trk-sub" id="trk24s"></div></div>
+        <div class="trk-tile"><div class="trk-label">Last 7 days</div><div class="trk-num" id="trk7">&#8212;</div><div class="trk-sub" id="trk7s"></div></div>
+        <div class="trk-tile"><div class="trk-label">Last 30 days</div><div class="trk-num" id="trk30">&#8212;</div><div class="trk-sub" id="trk30s"></div></div>
+        <div class="trk-tile trk-tile-rate"><div class="trk-label">Current pace</div><div class="trk-num" id="trkRate">&#8212;</div><div class="trk-sub" id="trkRates"></div></div>
+      </div>
+      <div class="trk-chart-wrap">
+        <div class="trk-chart-title">Water stored behind Coolidge Dam (acre-feet)</div>
+        <div class="trk-chart" id="trkChart"></div>
+        <div class="trk-tip" id="trkTip" hidden><strong></strong><span></span></div>
+      </div>
+      <details class="trk-table">
+        <summary>Show the daily numbers</summary>
+        <table><thead><tr><th>Date</th><th>Acre-feet</th><th>Change from day before</th></tr></thead><tbody id="trkRows"></tbody></table>
+      </details>
+      <p class="trk-note">These are net changes in storage: storm inflow minus water released downstream and lost to evaporation. 1 acre-foot = 325,851 gallons. USGS data are provisional and may be revised. A fuller reservoir does not by itself change Kearny&#39;s allotment, which is set under the 1935 Decree.</p>
     </div>
 
     <div class="btr-grid">
