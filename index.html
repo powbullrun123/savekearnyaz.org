@@ -79,7 +79,7 @@ a { color: inherit; text-decoration: none; }
 .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s 0.6s forwards; }
 .hero-title em { color: var(--gold); font-style: italic; }
 .hero-sub { font-family: var(--font-accent); font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 650px; margin: 0 auto 36px; opacity: 0; animation: fadeUp 1s 0.9s forwards; }
-.hero-stats { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 36px; opacity: 0; animation: fadeUp 1s 1.2s forwards; }
+.hero-stats { width: min(1180px, calc(100vw - 32px)); margin-left: calc(50% - min(590px, 50vw - 16px)); display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; opacity: 0; animation: fadeUp 1s 1.2s forwards; }
 .stat-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(201,168,76,0.3); border-radius: 10px; padding: 16px 20px; min-width: 140px; backdrop-filter: blur(8px); }
 .stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 900; color: var(--gold); }
 .stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
@@ -353,6 +353,8 @@ footer a { color: var(--gold-light); }
 @media (max-width: 480px) { .section-inner { padding: 0 16px; } .hero-title { font-size: 2.2rem; } .threat-grid { grid-template-columns: 1fr; } .pillar-grid { grid-template-columns: 1fr; } .pages-grid { grid-template-columns: 1fr 1fr; } .rules-grid { grid-template-columns: 1fr; } }
 
 /* BLESS THE RAIN — Nov 2026 */
+.hero-stats .stat-card { flex: 1 1 0; min-width: 150px; padding: 16px 14px; }
+@media (max-width: 768px) { .hero-stats .stat-card { flex: 1 1 42%; } }
 .hero-tagline { font-family: var(--font-accent); font-style: italic; font-size: clamp(1.4rem, 3.5vw, 2rem); color: var(--gold-light); margin: -8px 0 18px; opacity: 0; animation: fadeUp 1s 0.8s forwards; }
 .stat-card-live { border-color: rgba(135,206,235,0.6); box-shadow: 0 0 24px rgba(135,206,235,0.18); }
 .stat-card-live .stat-num { color: #9fdcf5; }
@@ -385,7 +387,7 @@ footer a { color: var(--gold-light); }
 <body>
 <!-- TICKER — original unchanged -->
 <div class="ticker">
-  &#127783;&#65039; BLESS THE RAIN — San Carlos Reservoir Is Refilling &nbsp;|&nbsp; <span class="sk-live-ticker">102,800</span> Acre-Feet Behind Coolidge Dam (USGS) &nbsp;|&nbsp; Up From 389 Acre-Feet in May &nbsp;|&nbsp; Kearny&#39;s 2027 Water Is Still Undecided &nbsp;|&nbsp; Conserve — Bank Every Drop
+  &#127783;&#65039; BLESS THE RAIN — San Carlos Reservoir Is Refilling &nbsp;|&nbsp; <span class="sk-live-ticker">102,800</span> Acre-Feet Behind Coolidge Dam (USGS) &nbsp;|&nbsp; Up From 389 Acre-Feet on May 22 &nbsp;|&nbsp; Kearny&#39;s 2027 Water Is Still Undecided &nbsp;|&nbsp; Conserve — Bank Every Drop
 </div>
 
 <!-- NAV — Water Rights Now link added -->
@@ -428,10 +430,11 @@ footer a { color: var(--gold-light); }
     <p class="hero-tagline">Now let&#39;s bank it.</p>
     <p class="hero-sub">Six months ago, the reservoir that feeds Kearny&#39;s allotment was down to a puddle. Then the storms came. San Carlos Reservoir behind Coolidge Dam is refilling fast &#8212; and this is the moment to make sure Kearny never runs this close to empty again.</p>
     <div class="hero-stats">
-      <div class="stat-card stat-card-live"><div class="stat-num"><span class="sk-live-af">102,800</span></div><div class="stat-label">Acre-Feet in San Carlos<br>Reservoir <span class="sk-live-date">(USGS, Nov 3)</span></div></div>
-      <div class="stat-card"><div class="stat-num">389</div><div class="stat-label">Acre-Feet Left<br>in May 2026</div></div>
+      <div class="stat-card stat-card-live"><div class="stat-num"><span class="sk-live-af">102,800</span></div><div class="stat-label">Acre-Feet in San Carlos Reservoir<br><span class="sk-live-date">(USGS, Nov 3, 10:30 am)</span></div></div>
+      <div class="stat-card"><div class="stat-num">389</div><div class="stat-label">Acre-Feet in the Reservoir<br>May 22, 2026</div></div>
       <div class="stat-card"><div class="stat-num">77</div><div class="stat-label">Acre-Feet Kearny<br>Was Allotted for 2026</div></div>
-      <div class="stat-card"><div class="stat-num">32.7%</div><div class="stat-label">Reduction Achieved<br>by Residents</div></div>
+      <div class="stat-card"><div class="stat-num">44</div><div class="stat-label">Acre-Feet Left in Kearny&#39;s<br>2026 Account (Mayor, late July)</div></div>
+      <div class="stat-card"><div class="stat-num">32.7%</div><div class="stat-label">Cut by Residents<br>(as of June 2026)</div></div>
     </div>
     <div class="hero-buttons">
       <a href="#bless-the-rain" class="btn btn-gold">What the Rain Means &#8595;</a>
@@ -452,7 +455,7 @@ footer a { color: var(--gold-light); }
       <div class="btr-row"><div class="btr-when">May 22</div><div class="btr-track"><div class="btr-bar btr-low" style="width:1.2%"></div></div><div class="btr-val">389 AF</div></div>
       <div class="btr-row"><div class="btr-when">Oct 17</div><div class="btr-track"><div class="btr-bar btr-mid" style="width:37%"></div></div><div class="btr-val">38,540 AF</div></div>
       <div class="btr-row"><div class="btr-when">Now</div><div class="btr-track"><div class="btr-bar btr-high sk-live-bar" style="width:100%"></div></div><div class="btr-val"><span class="sk-live-af">102,800</span> AF</div></div>
-      <p class="btr-source">Reservoir storage at Coolidge Dam, in acre-feet. Source: USGS gage 09469000 and NASA Earth Observatory. &#8220;Now&#8221; updates automatically from USGS<span class="sk-live-date"> (Nov 3, 2026)</span>.</p>
+      <p class="btr-source">Reservoir storage at Coolidge Dam, in acre-feet. Source: USGS gage 09469000 and NASA Earth Observatory. &#8220;Now&#8221; shows the latest USGS reading<span class="sk-live-date"> (USGS, Nov 3, 10:30 am)</span>. USGS data are provisional.</p>
     </div>
 
     <div class="btr-grid">
@@ -493,7 +496,7 @@ footer a { color: var(--gold-light); }
 
 <!-- COUNTDOWN BAND -->
 <div class="wui-countdown-band">
-  <div class="wui-cd-item">&#128276; <strong>Colorado River Compact</strong> expires 2026</div>
+  <div class="wui-cd-item">&#128276; <strong>Colorado River 2007 Guidelines</strong> expire 2026</div>
   <span class="wui-cd-sep">|</span>
   <div class="wui-cd-item">&#9878;&#65039; <strong>1935 Globe Decree</strong> &#8212; competing claims active now</div>
   <span class="wui-cd-sep">|</span>
@@ -536,7 +539,7 @@ footer a { color: var(--gold-light); }
           <p>A federal court ruling governing all Gila River-connected groundwater. Kearny&#39;s allotment was cut from 610 to <strong>77 acre-feet</strong> under this decree. Any well above 800 feet is subject to it. Kearny&#39;s Vault wells go deeper &#8212; but only a filed prior appropriation makes that protection legally permanent.</p>
         </div>
         <div class="wui-card red">
-          <div class="wui-card-title">&#127754; &nbsp;Colorado River Compact Expiration &#8212; 2026</div>
+          <div class="wui-card-title">&#127754; &nbsp;Colorado River Operating Guidelines Expire &#8212; 2026</div>
           <p>Seven states remain deadlocked. The feds are proposing <strong>pro-rata cuts for all users</strong> &#8212; bypassing prior appropriation seniority entirely. Arizona has already offered a 27% reduction. That cut lands hardest on communities with no independent, legally secured water source.</p>
         </div>
         <div class="wui-card gold">
@@ -803,7 +806,7 @@ footer a { color: var(--gold-light); }
     <h2 class="section-title">Frequently <em>Asked</em></h2>
     <hr class="divider">
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How is Kearny&#39;s water allotment calculated?</span><span class="faq-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">The amount of water in Coolidge Dam (San Carlos Reservoir) determines Kearny&#39;s annual apportionment. With the dam at less than 0.05% of capacity (about 377 of 910,000 acre-feet) as of June 2026, the allotment was slashed to just 77 acre-feet for the entire year.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How is Kearny&#39;s water allotment calculated?</span><span class="faq-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">The amount of water in Coolidge Dam (San Carlos Reservoir) determines Kearny&#39;s annual apportionment. Going into 2026 the reservoir was nearly empty, so the allotment was slashed to just 77 acre-feet for the entire year; by June it had fallen to about 377 acre-feet, less than 0.05% of capacity. Residents stretched that water, and in late July the Mayor reported 44 acre-feet left. The fall 2026 storms refilled the reservoir to more than 100,000 acre-feet, but the 2027 apportionment is set by the Gila Water Commissioner under the Decree and has not been announced.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Why are other towns like Hayden not affected the same way?</span><span class="faq-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">Kearny&#39;s water rights are "junior" &#8212; established later than neighboring towns. Under the prior appropriation doctrine, senior rights get water first. Kearny feels the shortage before anyone else.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What water restriction level is Kearny at right now?</span><span class="faq-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">As of the Town&#39;s June 4, 2026 update, Kearny is at <strong>Level 1WE &#8212; voluntary conservation</strong>. Temporary &ldquo;priority water&rdquo; from the Globe Equity Decree area is currently flowing and does not count against the Town&#39;s apportionment, which let the Town ease the earlier Level 5WE restrictions. The Town has cautioned this reprieve is almost certainly temporary and can end the moment a senior-rights holder calls for that water &#8212; which is exactly why securing an independent, decree-exempt supply still matters.</div></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What happens if we run out of water?</span><span class="faq-toggle">+</span></div><div class="faq-a"><div class="faq-a-inner">You turn on your faucet and nothing comes out &#8212; for any purpose. Drinking, bathing, cooking, sanitation &#8212; all gone. That&#39;s the reality Mayor Stacy described in the April 8 emergency letter, when the town was on track to reach zero around July 15. Resident conservation and temporary priority water have since pushed that danger back and eased restrictions to Level 1WE &#8212; but the underlying shortage hasn&#39;t gone away.</div></div></div>
